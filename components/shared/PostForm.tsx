@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '../ui/form'
 import { Label } from '../ui/label'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
-import { FileUploader } from './FileUpload'
+// import { FileUploader } from './FileUpload'
 import Tiptap from './FieldQuill'
 import { Card } from '../ui/card'
 

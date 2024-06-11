@@ -1,8 +1,12 @@
 import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
+import { prisma } from "@/lib/db/prisma"
 
-export default function Component() {
+export default async function page() {
+
+  const post = await prisma.blogPost.findMany()
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="bg-gray-950 text-white py-6 px-4 md:px-6">
@@ -19,89 +23,37 @@ export default function Component() {
       <main className="flex-1">
         <div className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-6">
           <div className="col-span-2 grid gap-8">
-            <article className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-              <Link href="#" className="col-span-1 md:col-span-1 group" prefetch={false}>
-                <Image
-                  src="https://placehold.co/400x300/png"
-                  width={400}
-                  height={300}
-                  alt="Blog post image"
-                  className="aspect-video object-cover rounded-lg transition-all group-hover:scale-105"
-                />
-              </Link>
-              <div className="col-span-1 md:col-span-2 space-y-2">
-                <Link href="#" className="block" prefetch={false}>
-                  <h2 className="text-xl font-bold tracking-tight hover:underline">
-                    Les 5 tendances immobilières à suivre en 2023
-                  </h2>
+            {post.map((pos, i) => (
+              <article key={i} className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <Link href={`/blog/${pos.slug}`} className="col-span-1 md:col-span-1 group" prefetch={false}>
+                  <Image
+                    src={pos.image}
+                    width={400}
+                    height={300}
+                    priority
+                    alt="Blog post image"
+                    className="aspect-video object-cover rounded-lg transition-all group-hover:scale-105"
+                  />
                 </Link>
-                <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
-                  Découvrez les principales tendances qui vont façonner le marché immobilier cette année, des nouvelles
-                  technologies aux préférences des acheteurs.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <div>12 avril 2023</div>
-                  <Separator orientation="vertical" className="h-4" />
-                  <div>5 min de lecture</div>
+                <div className="col-span-1 md:col-span-2 space-y-2">
+                  <Link href={`/blog/${pos.slug}`} className="block" prefetch={false}>
+                    <h2 className="text-xl font-bold tracking-tight hover:underline">
+                      {pos.title}
+                    </h2>
+                  </Link>
+                  <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
+                    Découvrez les principales tendances qui vont façonner le marché immobilier cette année, des nouvelles
+                    technologies aux préférences des acheteurs.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                    <div>12 avril 2023</div>
+                    <Separator orientation="vertical" className="h-4" />
+                    <div>5 min de lecture</div>
+                  </div>
                 </div>
-              </div>
-            </article>
-            <article className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-              <Link href="#" className="col-span-1 md:col-span-1 group" prefetch={false}>
-                <Image
-                  src="https://placehold.co/400x300/png"
-                  width={400}
-                  height={300}
-                  alt="Blog post image"
-                  className="aspect-video object-cover rounded-lg transition-all group-hover:scale-105"
-                />
-              </Link>
-              <div className="col-span-1 md:col-span-2 space-y-2">
-                <Link href="#" className="block" prefetch={false}>
-                  <h2 className="text-xl font-bold tracking-tight hover:underline">
-                    Comment bien choisir son agent immobilier
-                  </h2>
-                </Link>
-                <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
-                  Nos conseils pour trouver l&apos;agent immobilier idéal qui saura vous accompagner dans votre projet
-                  d&apos;achat ou de vente.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <div>8 avril 2023</div>
-                  <Separator orientation="vertical" className="h-4" />
-                  <div>7 min de lecture</div>
-                </div>
-              </div>
-            </article>
-            <article className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-              <Link href="#" className="col-span-1 md:col-span-1 group" prefetch={false}>
-                <Image
-                  src="https://placehold.co/400x300/png"
-                  width={400}
-                  height={300}
-                  alt="Blog post image"
-                  className="aspect-video object-cover rounded-lg transition-all group-hover:scale-105"
-                />
-              </Link>
-              <div className="col-span-1 md:col-span-2 space-y-2">
-                <Link href="#" className="block" prefetch={false}>
-                  <h2 className="text-xl font-bold tracking-tight hover:underline">
-                    Investir dans l&apos;immobilier : les clés du succès
-                  </h2>
-                </Link>
-                <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
-                  Découvrez nos meilleurs conseils pour réussir vos investissements immobiliers, de la sélection du bien
-                  à la gestion locative.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <div>2 avril 2023</div>
-                  <Separator orientation="vertical" className="h-4" />
-                  <div>9 min de lecture</div>
-                </div>
-              </div>
-            </article>
+              </article>))}
           </div>
-          <div className="col-span-1 space-y-8">
+          {/* <div className="col-span-1 space-y-8">
             <div>
               <h2 className="text-xl font-bold mb-4">Catégories</h2>
               <nav className="space-y-2">
@@ -189,14 +141,14 @@ export default function Component() {
                 </article>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </div>
   )
 }
 
-function FolderIcon(props:any) {
+function FolderIcon(props: any) {
   return (
     <svg
       {...props}

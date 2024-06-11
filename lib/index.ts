@@ -8,7 +8,7 @@ export const ContactValues = {
 export const PostValues = {
     title: "",
     content: undefined as unknown as any,
-    date: undefined as unknown as Date,
+    slug: '',
     image: undefined as unknown as string,
 }
 

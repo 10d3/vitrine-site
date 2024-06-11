@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm"
 export default function Hero() {
     return (
         <section className="w-full py-12 relative">
-            <div className="absolute inset-0 bg-[url('https://placehold.co/800x800/png')] bg-cover bg-center opacity-20 dark:opacity-30" />
+            <div className="absolute inset-0 bg-[url('/vitrine1.jpg')] bg-cover bg-center opacity-20 dark:opacity-30" />
             <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-6 relative z-10">
                 <div className="flex flex-col justify-center space-y-4">
                     <div className="space-y-2">

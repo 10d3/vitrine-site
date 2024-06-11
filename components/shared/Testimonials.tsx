@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export default function Testimonials() {
   const testimonials = [
@@ -10,6 +11,16 @@ export default function Testimonials() {
       name: "Juan L.",
       description: "La gestión integral de 4SRENT ha sido un salvavidas. No tengo que preocuparme por nada, y mi propiedad está siempre bien mantenida.",
       image: "/placeholder.svg",
+    },
+    {
+      name:'Ramírez C.',
+      description:"El equipo de 4SRENT ha superado todas mis expectativas. Su enfoque personalizado y su dedicación para mantener mi propiedad en perfectas condiciones me han proporcionado una gran paz mental. No podría estar más satisfecho.",
+      image: '/placeholder.svg',
+    },
+    {
+      name:'Javier M.',
+      description:"Gracias a 4SRENT, ya no tengo que preocuparme por la gestión de mi propiedad. Su equipo profesional y atento se encarga de todo. Recomiendo encarecidamente sus servicios a cualquier propietario que busque una gestión sin preocupaciones." ,
+      image: '/placeholder.svg',
     }
   ]
 
@@ -25,13 +36,16 @@ export default function Testimonials() {
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="flex flex-col items-center justify-center gap-4 rounded-lg bg-white p-6 shadow-md transition-all hover:scale-105 hover:shadow-lg dark:bg-gray-950">
-              <Image
-                src={`https://placehold.co/${80}x${80}/png`}
-                width={80}
-                height={80}
-                alt="Avatar"
-                className="h-20 w-20 rounded-full object-cover"
-              />
+              <Avatar>
+                <AvatarImage
+                  src={`https://placehold.co/`}
+                  width={80}
+                  height={80}
+                  alt="Avatar"
+                  className="h-20 w-20 rounded-full object-cover"
+                />
+                <AvatarFallback>{testimonial.name.slice(0, 2)}</AvatarFallback>
+              </Avatar>
               <div className="text-center">
                 <p className="text-lg font-medium">{testimonial.name}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">

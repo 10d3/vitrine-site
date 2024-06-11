@@ -12,7 +12,7 @@ export default function Nosotros() {
           </div>
           <div className="grid gap-4">
             <Image
-              src='https://placehold.co/600x400/png'
+              src='/vitrine5.jpg'
               width={600}
               height={400}
               alt="About Us"

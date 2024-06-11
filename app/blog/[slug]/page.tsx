@@ -1,3 +1,5 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { prisma } from "@/lib/db/prisma"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -6,7 +8,13 @@ interface paramsProp {
         slug: string
     }
 }
-export default function page({ params }: paramsProp) {
+export default async function page({ params }: paramsProp) {
+
+    const blog = await prisma.blogPost.findUnique({
+        where: {
+            slug: params.slug,
+        },
+    })
     console.log(params)
     return (
         <div className="flex flex-col min-h-[100dvh]">
@@ -14,12 +22,15 @@ export default function page({ params }: paramsProp) {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="max-w-3xl mx-auto space-y-4">
                         <h1 className="text-3xl md:text-4xl font-bold">
-                            The Future of Web Development: Embracing the Power of React
+                            {blog?.title}
                         </h1>
                         <div className="flex items-center space-x-4">
                             <div className="flex items-center space-x-2">
-                                <Image src="/placeholder.svg" alt="Author Avatar" width={40} height={40} className="rounded-full" />
-                                <span className="text-sm font-medium">John Doe</span>
+                                <Avatar>
+                                    <AvatarImage src="/placeholder.svg" alt="Author Avatar" width={40} height={40} className="rounded-full" />
+                                    <AvatarFallback>A</AvatarFallback>
+                                </Avatar>
+                                <span className="text-sm font-medium">{blog?.author}</span>
                             </div>
                             <span className="text-sm text-gray-400">May 15, 2023</span>
                         </div>

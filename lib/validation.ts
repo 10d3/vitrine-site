@@ -18,8 +18,8 @@ export type NewsletterSchemaProps = z.infer<typeof NewsletterSchema>
 export const PostSchema = z.object({
     title: z.string(),
     content: z.any(),
-    // date: z.date(),
-    // image: z.string(),
+    slug: z.string(),
+    image: z.string(),
 })
 
 export type PostSchemaProps = z.infer<typeof PostSchema>

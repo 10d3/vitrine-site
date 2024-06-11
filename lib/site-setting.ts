@@ -1,0 +1,16 @@
+export const siteSetting = {
+    title: "4SRENT",
+    description: "Gestionamos tu propiedad, garantizamos tu ingreso",
+    keywords: "Vitrine",
+    author: "Jeannes",
+    url: "https://vitrine.com",
+    image: "https://vitrine.com/logo.png",
+    locale: "pt-BR",
+    siteName: "4SRENT",
+    siteDescription: "Gestionamos tu propiedad, garantizamos tu ingreso",
+    siteKeywords: "Vitrine",
+    siteAuthor: "Jeannes",
+    siteUrl: "https://vitrine.com",
+    siteImage: "https://vitrine.com/logo.png",
+    siteLocale: "es-ES",
+} as const

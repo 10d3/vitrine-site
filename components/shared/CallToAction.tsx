@@ -7,6 +7,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { NewsletterSchema } from "@/lib/validation"
 import { NewsletterValues } from "@/lib"
 import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form"
+import { NewsLetterAction } from "@/lib/actions/NewsLetterAction"
+import { Loader } from "./loader"
 
 export default function CallToAction() {
   const initiaValues = NewsletterValues
@@ -16,7 +18,14 @@ export default function CallToAction() {
   })
 
   async function onSubmit(values: z.infer<typeof NewsletterSchema>) {
-    console.log(values)
+    try {
+      const result = await NewsLetterAction(values)
+      if (result) {
+        form.reset()
+      }
+    } catch (error) {
+      return error
+    }
   }
   return (
     <section className="w-[96%] md:w-full rounded-sm mb-12 py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
@@ -47,7 +56,7 @@ export default function CallToAction() {
                   )}
                 />
               </div>
-              <Button type="submit">Je m&apos;inscris</Button>
+              <Button disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader/> : "Je m'inscris"}</Button>
             </form>
           </Form>
         </div>

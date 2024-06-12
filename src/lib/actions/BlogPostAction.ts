@@ -6,7 +6,7 @@ export const createBlogPost = async ({blogPost}:any) => {
         const newBlogPost = await prisma.blogPost.create({
             data:{
                 title: blogPost.title,
-                content: blogPost.content,
+                content: blogPost.sanitizedContent,
                 image: blogPost.image,
                 slug: blogPost.slug,
                 author: 'admin'

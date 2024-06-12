@@ -11,8 +11,6 @@ import Italic from '@tiptap/extension-italic';
 import Strike from '@tiptap/extension-strike';
 import BulletList from '@tiptap/extension-bullet-list';
 import OrderedList from '@tiptap/extension-ordered-list';
-import CodeBlock from '@tiptap/extension-code-block';
-import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import CharacterCount from '@tiptap/extension-character-count';
 import Color from '@tiptap/extension-color';
 import Document from '@tiptap/extension-document';
@@ -45,7 +43,6 @@ const Tiptap = ({ onFieldChange, setContent, content }: any) => {
       Strike,
       BulletList,
       OrderedList,
-      // CodeBlockLowlight,
       CharacterCount,
       Color,
       Document,
@@ -75,62 +72,21 @@ const Tiptap = ({ onFieldChange, setContent, content }: any) => {
     ],
     editorProps: {
       attributes: {
-        class:
-          "prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
+        class: "prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none m-5",
       },
     },
     content: content,
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
-      onFieldChange(html);
       setContent(html);
+      onFieldChange({ value: html });
     },
   });
 
-  const editorStyles = `
-    .ProseMirror h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    .ProseMirror h2 {
-      font-size: 1.5em;
-      margin-bottom: 0.5em;
-    }
-    .ProseMirror h3 {
-      font-size: 1.17em;
-      margin-bottom: 0.5em;
-    }
-    .ProseMirror p {
-      margin-bottom: 1em;
-      line-height: 1.5em;
-    }
-    .ProseMirror ul,
-    .ProseMirror ol {
-      padding-left: 2em;
-      margin-bottom: 1em;
-    }
-    .ProseMirror blockquote {
-      padding-left: 1em;
-      border-left: 2px solid #ddd;
-      margin-left: 0;
-      margin-right: 0;
-      font-style: italic;
-    }
-    .ProseMirror code {
-      background-color: #f5f5f5;
-      padding: 0 0.2em;
-      border-radius: 3px;
-    }
-    .ProseMirror {
-      cursor: text;
-    }
-  `;
-
   return (
-    <div className="w-full px-4">
-      <style>{editorStyles}</style>
+    <div className="rounded-lg border-gray-700 border">
       <Toolbar editor={editor} />
-      <EditorContent style={{ whiteSpace: "pre-line" }} editor={editor} />
+      <EditorContent editor={editor} />
     </div>
   );
 };

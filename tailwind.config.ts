@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      colors:{
+        'custom-primary':'#f6f4f3',
+        'custom-secondary':'#131200',
+        'custom-button-primary':'#276fbf',
+        'custom-button-secondary':'#183059',
+        'custom-destructive':'#A04668'
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

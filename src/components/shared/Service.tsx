@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from '../ui/card';
 import { Check } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const PricingCard = ({ plan, price, features, primary }: any) => {
     return (
@@ -18,7 +19,7 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
                 ))}
             </ul>
             <div className="mt-6">
-                <button className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Click here to get started!</button>
+                <Button className="w-full py-2 px-4  text-white rounded-md bg-custom-button-primary hover:bg-custom-button-secondary">Click here to get started!</Button>
             </div>
         </Card>
     );

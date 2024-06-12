@@ -10,6 +10,7 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { Switch } from '../ui/switch'
 import { Label } from '../ui/label'
+import { PhoneInput } from '../ui/phone-input'
 
 export default function ContactForm() {
     const initiaValues = ContactValues
@@ -44,7 +45,10 @@ export default function ContactForm() {
                         <FormItem className="w-full">
                             {/* <FormLabel>Event Description</FormLabel> */}
                             <FormControl>
-                                <Input placeholder='number' {...field} className=' input-field bg-white' />
+                            <PhoneInput
+                            placeholder="Enter a phone number"
+                            {...field}
+                          />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -82,7 +86,7 @@ export default function ContactForm() {
                         )}
                     />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-custom-button-primary hover:bg-custom-button-secondary">
                     Contacter
                 </Button>
             </form>

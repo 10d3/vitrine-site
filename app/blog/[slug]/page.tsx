@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { blogs } from "@/lib/blog/blog"
 import { prisma } from "@/lib/db/prisma"
 import Image from "next/image"
 import Link from "next/link"
@@ -8,14 +9,11 @@ interface paramsProp {
         slug: string
     }
 }
-export default async function page({ params }: paramsProp) {
+export default function page({ params }: paramsProp) {
 
-    const blog = await prisma.blogPost.findUnique({
-        where: {
-            slug: params.slug,
-        },
-    })
-    console.log(params)
+    const blog = blogs.find(blog => blog.slug === params.slug)
+    console.log(blog?.content)
+
     return (
         <div className="flex flex-col min-h-[100dvh]">
             <header className="bg-gray-900 text-white py-8 md:py-12">
@@ -37,9 +35,19 @@ export default async function page({ params }: paramsProp) {
                     </div>
                 </div>
             </header>
+            <div>
+                <Image
+                    src={blog?.image as string}
+                    alt="Blog Post Image"
+                    width={1200}
+                    height={600}
+                    className="rounded-lg object-cover w-[50%] h-auto"
+                />
+            </div>
             <main className="container mx-auto px-4 md:px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-12">
                 <div className="prose prose-gray max-w-none dark:prose-invert">
-                    <p>
+                    {blog?.content}
+                    {/* <p>
                         In the ever-evolving landscape of web development, React has emerged as a powerhouse, transforming the way
                         we build dynamic and responsive user interfaces. As a declarative JavaScript library, React simplifies the
                         process of creating complex UIs by breaking them down into reusable components.
@@ -73,16 +81,17 @@ export default async function page({ params }: paramsProp) {
                         As the web continues to evolve, React&apos;s focus on performance, modularity, and developer experience makes it
                         a compelling choice for building modern, scalable, and maintainable web applications. By embracing the power
                         of React, developers can create cutting-edge user experiences that delight users and drive business success.
-                    </p>
+                    </p> */}
                 </div>
                 <div className="space-y-8">
                     <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
                         <h3 className="text-lg font-bold mb-4">Recent Posts</h3>
                         <div className="space-y-4">
-                            <Link href="#" className="block hover:text-gray-900 dark:hover:text-white" prefetch={false}>
-                                Mastering React Hooks: A Deep Dive
-                            </Link>
-                            <Link href="#" className="block hover:text-gray-900 dark:hover:text-white" prefetch={false}>
+                            {blogs.map((blog, i) => (
+                            <Link key={i} href={`/blog${blog.slug}`} className="block hover:text-gray-900 dark:hover:text-white" prefetch={false}>
+                                {blog.title}
+                            </Link>))}
+                            {/* <Link href="#" className="block hover:text-gray-900 dark:hover:text-white" prefetch={false}>
                                 Optimizing React Performance with Memoization
                             </Link>
                             <Link href="#" className="block hover:text-gray-900 dark:hover:text-white" prefetch={false}>
@@ -90,10 +99,10 @@ export default async function page({ params }: paramsProp) {
                             </Link>
                             <Link href="#" className="block hover:text-gray-900 dark:hover:text-white" prefetch={false}>
                                 Implementing State Management in React with Redux
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
-                    <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
+                    {/* <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
                         <h3 className="text-lg font-bold mb-4">Categories</h3>
                         <div className="space-y-4">
                             <Link href="#" className="block hover:text-gray-900 dark:hover:text-white" prefetch={false}>
@@ -109,9 +118,9 @@ export default async function page({ params }: paramsProp) {
                                 JavaScript
                             </Link>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-            </main>
-        </div>
+            </main >
+        </div >
     )
 }

@@ -97,12 +97,6 @@ const Toolbar = ({ editor }: Props) => {
         <button onClick={() => editor.chain().focus().toggleBlockquote().run()} className={editor.isActive("blockquote") ? "bg-black text-white p-2 rounded-lg" : "text-black"}>
           <Quote size={15} />
         </button>
-        {/* <button onClick={() => editor.chain().focus().toggleEmoji().run()} className={editor.isActive("emoji") ? "bg-black text-white p-2 rounded-lg" : "text-black"}>
-          <EmojiIcon size={15} />
-        </button>
-        <button onClick={() => editor.chain().focus().toggleMathematics().run()} className={editor.isActive("mathematics") ? "bg-black text-white p-2 rounded-lg" : "text-black"}>
-          <MathFunctionIcon size={15} />
-        </button> */}
         <input type="file" onChange={addImage} className="hidden" id="upload-image" />
         <label htmlFor="upload-image" className="text-black">
           <ImageIcon size={15} />

@@ -56,7 +56,7 @@ export default function CallToAction() {
                   )}
                 />
               </div>
-              <Button disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader/> : "Je m'inscris"}</Button>
+              <Button className="bg-custom-button-primary hover:bg-custom-button-secondary" disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader/> : "Je m'inscris"}</Button>
             </form>
           </Form>
         </div>

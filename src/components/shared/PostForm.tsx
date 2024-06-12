@@ -16,6 +16,7 @@ import DatePicker from "react-datepicker";
 import { Loader } from './loader'
 import { useUploadThing } from "@/lib/uploadthings/uploadthing"
 import { createBlogPost } from '@/lib/actions/BlogPostAction'
+import DOMPurify from 'dompurify';
 
 
 export default function PostForm() {
@@ -47,9 +48,10 @@ export default function PostForm() {
 
             uploadedImageUrl = uploadedImages[0].url
         }
+        const sanitizedContent = DOMPurify.sanitize(content);
         try {
             const newEvent = await createBlogPost({
-                blogPost: { ...values, image: uploadedImageUrl, content },
+                blogPost: { ...values, image: uploadedImageUrl, sanitizedContent },
             })
 
             if (newEvent) {

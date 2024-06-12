@@ -1,11 +1,10 @@
 import Link from "next/link"
-import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 import { prisma } from "@/lib/db/prisma"
+import { Separator } from "@/components/ui/separator"
+import { blogs } from "@/lib/blog/blog"
 
-export default async function page() {
-
-  const post = await prisma.blogPost.findMany()
+export default function page() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -23,7 +22,7 @@ export default async function page() {
       <main className="flex-1">
         <div className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-6">
           <div className="col-span-2 grid gap-8">
-            {post.map((pos, i) => (
+            {blogs.map((pos, i) => (
               <article key={i} className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <Link href={`/blog/${pos.slug}`} className="col-span-1 md:col-span-1 group" prefetch={false}>
                   <Image
@@ -46,9 +45,9 @@ export default async function page() {
                     technologies aux préférences des acheteurs.
                   </p>
                   <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                    <div>12 avril 2023</div>
+                    <div>{pos.date}</div>
                     <Separator orientation="vertical" className="h-4" />
-                    <div>5 min de lecture</div>
+                    <div>{pos.tempsLecture}</div>
                   </div>
                 </div>
               </article>))}

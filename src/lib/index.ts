@@ -1,5 +1,6 @@
 export const ContactValues = {
     email: "",
+    name: "",
     number: '' as unknown as string,
     codePostal: "",
     owner: false,

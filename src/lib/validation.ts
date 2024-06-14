@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const ContactFormSchema = z.object({
     email: z.string().email().min(2),
+    name: z.string().min(5),
     number: z.string().min(6),
     codePostal: z.string(),
     owner: z.boolean(),

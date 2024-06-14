@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Form, FormControl, FormField, FormItem, FormMessage } from '../ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -30,9 +30,22 @@ export default function ContactForm() {
                     name="email"
                     render={({ field }) => (
                         <FormItem className="w-full">
-                            {/* <FormLabel>Email</FormLabel> */}
+                            {/* <FormLabel>Correo electrónico</FormLabel> */}
                             <FormControl>
-                                <Input placeholder='email' {...field} className=' input-field bg-white' />
+                                <Input placeholder='Correo electrónico' {...field} className=' input-field bg-white' />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                        <FormItem className="w-full">
+                            {/* <FormLabel>Nombre y Apellidos</FormLabel> */}
+                            <FormControl>
+                                <Input placeholder='Nombre y Apellidos' {...field} className=' input-field bg-white' />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -43,11 +56,12 @@ export default function ContactForm() {
                     name="number"
                     render={({ field }) => (
                         <FormItem className="w-full">
-                            {/* <FormLabel>Event Description</FormLabel> */}
+                            {/* <FormLabel>Número de teléfono</FormLabel> */}
                             <FormControl>
                             <PhoneInput
-                            placeholder="Enter a phone number"
+                            placeholder="Número de teléfono"
                             {...field}
+                            className='bg-white'
                           />
                             </FormControl>
                             <FormMessage />
@@ -59,9 +73,9 @@ export default function ContactForm() {
                     name="codePostal"
                     render={({ field }) => (
                         <FormItem className="w-full">
-                            {/* <FormLabel>Event Description</FormLabel> */}
+                            {/* <FormLabel>Codigo postal de la vivienda</FormLabel> */}
                             <FormControl>
-                                <Input placeholder='Code Postal' {...field} className=' input-field bg-white' />
+                                <Input placeholder='Codigo postal de la vivienda' {...field} className=' input-field bg-white' />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -73,7 +87,7 @@ export default function ContactForm() {
                         name="owner"
                         render={({ field }) => (
                             <FormItem className="flex items-center justify-between gap-10">
-                                <Label htmlFor="owner">Propriétaire</Label>
+                                <FormLabel htmlFor="owner">Soy Propietario</FormLabel>
                                 <FormControl>
                                     <Switch
                                         id="owner"
@@ -81,7 +95,7 @@ export default function ContactForm() {
                                         onCheckedChange={field.onChange}
                                     />
                                 </FormControl>
-                                <Label htmlFor="owner">Locataire</Label>
+                                <FormLabel htmlFor="owner">Soy inquilino</FormLabel>
                             </FormItem>
                         )}
                     />

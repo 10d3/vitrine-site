@@ -2,7 +2,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 
 export default function Preguntas() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+    <section className="w-[95%] md:w-full py-12 md:py-24 lg:py-32 mb-8 bg-gray-100 dark:bg-gray-800">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -20,7 +20,7 @@ export default function Preguntas() {
                 {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
               </AccordionTrigger>
               <AccordionContent>
-                <p className="text-gray-500 dark:text-gray-400">
+                <div className="text-gray-500 dark:text-gray-400">
                   Para alquilar una propiedad con 4SRENT, los requisitos principales son:
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Tener un empleo estable y un ingreso mínimo mensual.</li>
@@ -28,7 +28,7 @@ export default function Preguntas() {
                     <li>Pasar una verificación de antecedentes y de historial crediticio.</li>
                     <li>Pagar una fianza y el primer mes de alquiler por adelantado.</li>
                   </ul>
-                </p>
+                </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="question2">
@@ -37,7 +37,7 @@ export default function Preguntas() {
                 {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
               </AccordionTrigger>
               <AccordionContent>
-                <p className="text-gray-500 dark:text-gray-400">
+                <div className="text-gray-500 dark:text-gray-400">
                   Puedes comunicarte con nuestro equipo de atención al cliente de las siguientes maneras:
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Llamando a nuestro número de teléfono: +1 (555) 123-4567</li>
@@ -45,7 +45,7 @@ export default function Preguntas() {
                     <li>Visitando nuestra oficina en: Avenida Principal 123, Ciudad</li>
                     <li>Utilizando nuestro formulario de contacto en la página web</li>
                   </ul>
-                </p>
+                </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="question3">
@@ -54,7 +54,7 @@ export default function Preguntas() {
                 {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
               </AccordionTrigger>
               <AccordionContent>
-                <p className="text-gray-500 dark:text-gray-400">
+                <div className="text-gray-500 dark:text-gray-400">
                   En 4SRENT aceptamos las siguientes formas de pago:
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Tarjeta de crédito (Visa, Mastercard, American Express)</li>
@@ -62,7 +62,7 @@ export default function Preguntas() {
                     <li>Pago en efectivo en nuestra oficina</li>
                     <li>Pago a través de aplicaciones de pago digital (PayPal, Venmo)</li>
                   </ul>
-                </p>
+                </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="question4">
@@ -71,7 +71,7 @@ export default function Preguntas() {
                 {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
               </AccordionTrigger>
               <AccordionContent>
-                <p className="text-gray-500 dark:text-gray-400">
+                <div className="text-gray-500 dark:text-gray-400">
                   Para hacer una reserva de una propiedad con 4SRENT, puedes seguir estos pasos:
                   <ol className="list-decimal pl-6 space-y-2 mt-4">
                     <li>Navega por nuestro sitio web y encuentra la propiedad que te interesa.</li>
@@ -79,7 +79,7 @@ export default function Preguntas() {
                     <li>Realiza el pago de la fianza y el primer mes de alquiler por adelantado.</li>
                     <li>Recibirás una confirmación de tu reserva y coordinaremos la entrega de las llaves.</li>
                   </ol>
-                </p>
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

@@ -8,7 +8,7 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
         <Card className={`w-full bg-white rounded-lg p-8 ${primary ? 'border-4 border-indigo-600 shadow-2xl' : ''}`}>
             <div className="text-center">
                 <h2 className="text-2xl font-bold text-indigo-600">{plan}</h2>
-                <p className="mt-2 text-justify text-gray-900">{price}</p>
+                {/* <p className="mt-2 text-justify text-gray-900">{price}</p> */}
             </div>
             <ul className="mt-6 space-y-4">
                 {features.map((feature: any, index: any) => (

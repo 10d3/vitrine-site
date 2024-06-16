@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 py-12 w-full dark:bg-gray-800">
       <div className="container max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div className="grid gap-4">
+        <div className="flex flex-col gap-4 md:items-center">
           <h3 className="font-semibold">Contact</h3>
           <div className="grid gap-2 text-sm">
             <div className="flex items-center gap-2">
@@ -21,7 +21,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="grid gap-4">
+        <div className="flex flex-col gap-4 md:items-center">
           <h3 className="font-semibold">Follow Us</h3>
           <div className="flex gap-4">
             <Link href="#" aria-label="Facebook" prefetch={false}>
@@ -35,7 +35,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="grid gap-4">
+        <div className="flex flex-col gap-4 md:items-center">
           <h3 className="font-semibold">Legal</h3>
           <div className="grid gap-2 text-sm">
             <Link href="#" className="hover:underline" prefetch={false}>

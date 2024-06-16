@@ -32,31 +32,31 @@ export default function CallToAction() {
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
         <div className="space-y-3">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-            Trouvez votre prochaine maison de rêve
+            Encuentre la casa de sus sueños
           </h2>
           <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            Inscrivez-vous dès maintenant pour accéder à nos meilleures offres
+            Regístrese ahora para acceder a nuestras mejores ofertas
           </p>
         </div>
         <div className="mx-auto w-full max-w-sm space-y-2">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex space-x-2">
-              <div>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full flex space-x-2 flex-col md:flex-row gap-2 items-center">
+              <div className="w-full flex items-center justify-center">
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
-                    <FormItem className="w-full">
+                    <FormItem className="w-[90%] md:w-full">
                       {/* <FormLabel>Email</FormLabel> */}
                       <FormControl>
-                        <Input placeholder='email' {...field} className=' input-field bg-white' />
+                        <Input placeholder='Correo electrónico' {...field} className='w-full input-field bg-white' />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-              <Button className="bg-custom-button-primary hover:bg-custom-button-secondary" disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader/> : "Je m'inscris"}</Button>
+              <Button className=" md:w-auto bg-custom-button-primary hover:bg-custom-button-secondary" disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader /> : "Deseo inscribirme"}</Button>
             </form>
           </Form>
         </div>

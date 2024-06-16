@@ -1,13 +1,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
+import Image from "next/image"
 
 export default function NavBar() {
   return (
     <header className="flex h-16 w-full items-center justify-between bg-white px-4 shadow-sm dark:bg-gray-900 sm:px-6 lg:px-8">
       <Link href="/" className="flex items-center" prefetch={false}>
-        <HomeIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
-        <span className="ml-2 text-lg font-medium text-gray-800 dark:text-gray-200">4SRENT</span>
+        <Image className="w-auto h-8" src='/logo.svg' width={1000} height={1000} alt='logo 4srent' />
       </Link>
       <nav className="hidden space-x-4 sm:flex">
         <Link
@@ -46,7 +46,7 @@ export default function NavBar() {
           Blog
         </Link>
       </nav>
-      <Button size="sm" className="hidden sm:inline-flex">
+      <Button size="sm" className="hidden sm:inline-flex bg-custom-button-primary hover:bg-custom-button-primary">
         Registrarse
       </Button>
       <Sheet>

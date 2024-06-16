@@ -20,10 +20,10 @@ const config = {
     extend: {
       colors:{
         'custom-primary':'#f6f4f3',
-        'custom-secondary':'#131200',
+        'custom-secondary':'#191716',
         'custom-button-primary':'#276fbf',
         'custom-button-secondary':'#183059',
-        'custom-destructive':'#A04668'
+        'custom-destructive':'#AD8A64'
       },
       keyframes: {
         "accordion-down": {

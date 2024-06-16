@@ -1,6 +1,20 @@
 import Link from "next/link"
 
 export default function Footer() {
+  const legals = [
+    {
+      title: "Política de Privacidad",
+      link: "/politica-de-privacidad"
+    },
+    {
+      title: "Términos de Uso",
+      link: "/terminos-de-uso"
+    },
+    {
+      title: "Política de Cookies",
+      link: "/politica-de-cookies"
+    }
+  ]
   return (
     <footer className="bg-gray-100 py-12 w-full dark:bg-gray-800">
       <div className="container max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -38,15 +52,9 @@ export default function Footer() {
         <div className="flex flex-col gap-4 md:items-center">
           <h3 className="font-semibold">Legal</h3>
           <div className="grid gap-2 text-sm">
-            <Link href="#" className="hover:underline" prefetch={false}>
-              Terms of Use
-            </Link>
-            <Link href="#" className="hover:underline" prefetch={false}>
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:underline" prefetch={false}>
-              Cookie Policy
-            </Link>
+            {legals.map((legal, i) => ( <Link key={i} href={legal.link} className="hover:underline" prefetch={false}>
+              {legal.title}
+            </Link>))}
           </div>
         </div>
       </div>

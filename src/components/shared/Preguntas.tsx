@@ -1,6 +1,50 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
 export default function Preguntas() {
+
+  const faqs = [
+    {
+      question: '¿Qué es 4SRENT y cómo funciona?',
+      answer: '4SRENT es una empresa de gestión de propiedades que se encarga de alquilar y mantener tu vivienda. Garantizamos un ingreso mensual fijo, independientemente de si la propiedad está alquilada o no. Nos ocupamos de todo, desde la selección de inquilinos hasta el mantenimiento regular y la gestión de emergencias.'
+    },
+    {
+      question: '¿Qué tipos de propiedades gestionan?',
+      answer: 'Gestionamos una amplia variedad de propiedades residenciales, incluyendo apartamentos, casas y unidades multifamiliares.'
+    },
+    {
+      question: '¿Cómo garantizan el pago mensual si la propiedad no está alquilada?',
+      answer: 'En 4SRENT, ofrecemos un ingreso mensual fijo garantizado a los propietarios. Este modelo nos permite asegurarte un pago constante mientras nosotros nos encargamos de alquilar la propiedad y maximizar su rentabilidad.'
+    },
+    {
+      question: '¿Qué servicios están incluidos en cada plan?',
+      answer: 'Ofrecemos tres planes de gestión: "Alquiler Seguro", "Gestión Plus" y "Gestión Integral Premium". Cada plan incluye servicios específicos adaptados a diferentes necesidades. Puedes ver una comparación detallada de los servicios incluidos en cada plan en nuestra sección de Servicios.'
+    },
+    {
+      question: '¿Cómo seleccionan a los inquilinos?',
+      answer: 'Realizamos un riguroso proceso de selección que incluye verificación de antecedentes, referencias laborales y crediticias para asegurar que solo los inquilinos de calidad ocupen tu propiedad.'
+    },
+    {
+      question: '¿Qué sucede en caso de una emergencia en la propiedad?',
+      answer: 'Dependiendo del plan que elijas, ofrecemos gestión de emergencias durante el horario laboral o 24/7. Nos encargamos de resolver cualquier problema de manera rápida y eficiente para asegurar la tranquilidad de los inquilinos y mantener la propiedad en óptimas condiciones.'
+    },
+    {
+      question: '¿Cómo me mantendrán informado sobre mi propiedad?',
+      answer: 'Proporcionamos informes periódicos sobre el estado de tu propiedad y las gestiones realizadas. Los propietarios del Plan Premium reciben informes detallados mensuales y reuniones trimestrales para discutir mejoras y estrategias.'
+    },
+    {
+      question: '¿Cuál es el costo de sus servicios?',
+      answer: 'Nuestros costos varían según el plan que elijas. Te invitamos a contactarnos para una consulta gratuita donde podemos discutir tus necesidades y ofrecerte una cotización personalizada.'
+    },
+    {
+      question: '¿Qué tipo de mantenimiento realizan?',
+      answer: 'Nos encargamos de todo el mantenimiento regular y preventivo de la propiedad, incluyendo reparaciones básicas, renovaciones menores y mejoras estéticas según el plan seleccionado.'
+    },
+    {
+      question: '¿Cómo puedo comenzar con 4SRENT?',
+      answer: '¡Es muy sencillo! Ponte en contacto con nosotros a través de nuestro formulario de contacto, correo electrónico o teléfono. Programaremos una consulta gratuita para evaluar tu propiedad y discutir tus necesidades.'
+    },
+  ];
+
   return (
     <section className="w-[95%] md:w-full py-12 md:py-24 lg:py-32 mb-8 bg-gray-100 dark:bg-gray-800">
       <div className="container px-4 md:px-6">
@@ -13,97 +57,21 @@ export default function Preguntas() {
           </div>
         </div>
         <div className="mx-auto max-w-4xl space-y-6 py-12">
-          <Accordion type="single" collapsible>
-            <AccordionItem value="question1">
+        {faqs.map((faq, i) => (<Accordion key={i} type="single" collapsible>
+            <AccordionItem value={`question${i + 1}`}>
               <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
-                ¿Cuáles son los requisitos para alquilar una propiedad con 4SRENT?
-                {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
+                {faq.question}
               </AccordionTrigger>
               <AccordionContent>
                 <div className="text-gray-500 dark:text-gray-400">
-                  Para alquilar una propiedad con 4SRENT, los requisitos principales son:
-                  <ul className="list-disc pl-6 space-y-2 mt-4">
-                    <li>Tener un empleo estable y un ingreso mínimo mensual.</li>
-                    <li>Presentar documentos de identidad y comprobantes de ingresos.</li>
-                    <li>Pasar una verificación de antecedentes y de historial crediticio.</li>
-                    <li>Pagar una fianza y el primer mes de alquiler por adelantado.</li>
-                  </ul>
+                  {faq.answer}
                 </div>
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="question2">
-              <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
-                ¿Cómo puedo comunicarme con el equipo de 4SRENT?
-                {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="text-gray-500 dark:text-gray-400">
-                  Puedes comunicarte con nuestro equipo de atención al cliente de las siguientes maneras:
-                  <ul className="list-disc pl-6 space-y-2 mt-4">
-                    <li>Llamando a nuestro número de teléfono: +1 (555) 123-4567</li>
-                    <li>Enviando un correo electrónico a: info@4SRENT.com</li>
-                    <li>Visitando nuestra oficina en: Avenida Principal 123, Ciudad</li>
-                    <li>Utilizando nuestro formulario de contacto en la página web</li>
-                  </ul>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="question3">
-              <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
-                ¿Cuáles son las formas de pago aceptadas por 4SRENT?
-                {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="text-gray-500 dark:text-gray-400">
-                  En 4SRENT aceptamos las siguientes formas de pago:
-                  <ul className="list-disc pl-6 space-y-2 mt-4">
-                    <li>Tarjeta de crédito (Visa, Mastercard, American Express)</li>
-                    <li>Transferencia bancaria</li>
-                    <li>Pago en efectivo en nuestra oficina</li>
-                    <li>Pago a través de aplicaciones de pago digital (PayPal, Venmo)</li>
-                  </ul>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="question4">
-              <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
-                ¿Cómo puedo hacer una reserva de una propiedad?
-                {/* <ChevronDownIcon className="h-5 w-5 transition-all" /> */}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="text-gray-500 dark:text-gray-400">
-                  Para hacer una reserva de una propiedad con 4SRENT, puedes seguir estos pasos:
-                  <ol className="list-decimal pl-6 space-y-2 mt-4">
-                    <li>Navega por nuestro sitio web y encuentra la propiedad que te interesa.</li>
-                    <li>Haz clic en el botón &quot;Reservar&quot; y completa el formulario con tus datos.</li>
-                    <li>Realiza el pago de la fianza y el primer mes de alquiler por adelantado.</li>
-                    <li>Recibirás una confirmación de tu reserva y coordinaremos la entrega de las llaves.</li>
-                  </ol>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+            </Accordion>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
-
-function ChevronDownIcon(props:any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m6 9 6 6 6-6" />
-    </svg>
   )
 }

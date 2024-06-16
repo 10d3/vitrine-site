@@ -50,7 +50,7 @@ export default function Proceso() {
                             `hover:cursor-pointer flex flex-col w-full min-w-56 md:min-w-[40rem] max-w-3xl overflow-hidden relative rounded-lg
                              before:absolute before:content-[''] before:w-[50%] before:h-[200%] md:before:h-[50%] md:before:w-[180%] before:bg-red-600 before:rotate-45
                              after:absolute after:content-[''] after:inset-[5px] after:bg-white after:rounded-lg
-                             shadow-md hover:shadow-lg transition-shadow ${i % 2 == 0 ? 'md:flex-row-reverse self-start' : 'md:flex-row self-end'}`
+                             shadow-md hover:shadow-lg transition-shadow ${i % 2 == 0 ? 'md:flex-row-reverse self-start md:before:rotate-45' : 'md:flex-row self-end md:before:-rotate-45'}`
                         }>
                         <Link href="#" className={`z-50 flex-shrink-0 w-full md:w-1/2 overflow-hidden rounded-t-lg md:rounded-t-none ${i % 2 == 0 ? 'md:rounded-r-lg' : 'md:rounded-l-lg'}`} prefetch={false}>
                             <Image

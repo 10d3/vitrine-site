@@ -1,94 +1,102 @@
-'use client';
-
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Underline from "@tiptap/extension-underline";
-import Image from "@tiptap/extension-image";
-import TextAlign from '@tiptap/extension-text-align';
-import Highlight from '@tiptap/extension-highlight';
-import Bold from '@tiptap/extension-bold';
-import Italic from '@tiptap/extension-italic';
-import Strike from '@tiptap/extension-strike';
-import BulletList from '@tiptap/extension-bullet-list';
-import OrderedList from '@tiptap/extension-ordered-list';
-import CharacterCount from '@tiptap/extension-character-count';
-import Color from '@tiptap/extension-color';
-import Document from '@tiptap/extension-document';
-import Dropcursor from '@tiptap/extension-dropcursor';
-import Focus from '@tiptap/extension-focus';
-import FontFamily from '@tiptap/extension-font-family';
-import Heading from '@tiptap/extension-heading';
-import HorizontalRule from '@tiptap/extension-horizontal-rule';
-import Link from '@tiptap/extension-link';
-import Paragraph from '@tiptap/extension-paragraph';
-import Placeholder from '@tiptap/extension-placeholder';
-import Subscript from '@tiptap/extension-subscript';
-import Superscript from '@tiptap/extension-superscript';
-import TaskItem from '@tiptap/extension-task-item';
-import TaskList from '@tiptap/extension-task-list';
-import TextStyle from '@tiptap/extension-text-style';
-import Typography from '@tiptap/extension-typography';
+"use client";
+import React from "react";
+import { EditorContent, useEditor } from "@tiptap/react";
+import { StarterKit } from "@tiptap/starter-kit";
+import { useMutation } from "@tanstack/react-query";
+import { useCompletion } from "@ai-sdk/react";
+import { Button } from "../ui/button";
 import Toolbar from "./Toolbar";
+import { useDebounce } from "@/lib/hook/useDebounce";
+import Text from "@tiptap/extension-text";
 
-const Tiptap = ({ onFieldChange, setContent, content }: any) => {
-  const editor = useEditor({
-    extensions: [
-      StarterKit,
-      Underline,
-      Image,
-      Highlight,
-      TextAlign.configure({ types: ['heading', 'paragraph'] }),
-      Bold,
-      Italic,
-      Strike,
-      BulletList,
-      OrderedList,
-      CharacterCount,
-      Color,
-      Document,
-      Dropcursor,
-      Focus,
-      FontFamily,
-      Heading,
-      HorizontalRule,
-      Link,
-      Paragraph,
-      Placeholder,
-      Subscript,
-      Superscript,
-      TaskList.configure({
-        HTMLAttributes: {
-          class: "not-prose pl-2",
+
+interface Note {
+  id: string;
+  name: string;
+  editorState?: string;
+}
+
+const TipTapEditor = ({ note }: any) => {
+  const [editorState, setEditorState] = React.useState(
+    ''
+  );
+  const { complete, completion } = useCompletion({
+    api: "/api/completion",
+  });
+  // const saveNote = useMutation({
+  //   mutationFn: async () => {
+  //     // const response = await axios.post("/api/saveNote", {
+  //     //   noteId: note.id,
+  //     //   editorState,
+  //     // });
+  //     // return response.data;
+  //   },
+  // });
+  const customText = Text.extend({
+    addKeyboardShortcuts() {
+      return {
+        "Shift-a": () => {
+          // take the last 30 words
+          const prompt = this.editor.getText().split(" ").slice(-30).join(" ");
+          complete(prompt);
+          return true;
         },
-      }),
-      TaskItem.configure({
-        HTMLAttributes: {
-          class: "flex items-start my-4",
-        },
-        nested: true,
-      }),
-      TextStyle,
-      Typography
-    ],
-    editorProps: {
-      attributes: {
-        class: "prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none m-5",
-      },
-    },
-    content: content,
-    onUpdate: ({ editor }) => {
-      const html = editor.getHTML();
-      setContent(html);
-      onFieldChange({ value: html });
+      };
     },
   });
 
+  const editor = useEditor({
+    autofocus: true,
+    extensions: [StarterKit, customText],
+    content: editorState,
+    onUpdate: ({ editor }) => {
+      setEditorState(editor.getHTML());
+    },
+  });
+  const lastCompletion = React.useRef("");
+
+  React.useEffect(() => {
+    if (!completion || !editor) return;
+    const diff = completion.slice(lastCompletion.current.length);
+    lastCompletion.current = completion;
+    editor.commands.insertContent(diff);
+  }, [completion, editor]);
+
+  const debouncedEditorState = useDebounce(editorState, 500);
+  React.useEffect(() => {
+    // save to db
+    // if (debouncedEditorState === "") return;
+    // saveNote.mutate(undefined, {
+    //   onSuccess: (data) => {
+    //     console.log("success update!", data);
+    //   },
+    //   onError: (err) => {
+    //     console.error(err);
+    //   },
+    // });
+  }, [debouncedEditorState]);
   return (
-    <div className="rounded-lg border-gray-700 border">
-      <Toolbar editor={editor} />
-      <EditorContent editor={editor} />
-    </div>
+    <>
+      <div className="flex">
+        {editor && <Toolbar editor={editor} />}
+        <Button disabled variant={"outline"}>
+          {/* {saveNote.isLoading ? "Saving..." : "Saved"} */}
+        </Button>
+      </div>
+
+      <div className="prose prose-sm w-full mt-4">
+        <EditorContent editor={editor} />
+      </div>
+      <div className="h-4"></div>
+      <span className="text-sm">
+        Tip: Press{" "}
+        <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">
+          Shift + A
+        </kbd>{" "}
+        for AI autocomplete
+      </span>
+    </>
   );
 };
 
-export default Tiptap;
+export default TipTapEditor;

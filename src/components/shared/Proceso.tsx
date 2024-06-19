@@ -35,7 +35,7 @@ export default function Proceso() {
         }
     ]
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className=" py-12 md:py-24 lg:py-32 md:w-[90%] w-full">
             <div className="flex flex-col container px-4 md:px-6 gap-4 items-center">
                 <div className="max-w-3xl mx-auto space-y-6 text-center">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nuestro Proceso</h2>
@@ -48,7 +48,7 @@ export default function Proceso() {
                     <Card key={i}
                         className={
                             `hover:cursor-pointer flex flex-col w-full min-w-56 md:min-w-[40rem] max-w-3xl overflow-hidden relative rounded-lg
-                             before:absolute before:content-[''] before:w-[50%] before:h-[200%] md:before:h-[50%] md:before:w-[180%] before:bg-red-600 before:rotate-45
+                             before:absolute before:content-[''] before:w-[50%] before:h-[200%] md:before:h-[50%] md:before:w-[180%] before:bg-custom-button-primary before:rotate-45
                              after:absolute after:content-[''] after:inset-[5px] after:bg-white after:rounded-lg
                              shadow-md hover:shadow-lg transition-shadow ${i % 2 == 0 ? 'md:flex-row-reverse self-start md:before:rotate-45' : 'md:flex-row self-end md:before:-rotate-45'}`
                         }>
@@ -61,11 +61,11 @@ export default function Proceso() {
                                 className="object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-105"
                             />
                         </Link>
-                        <CardContent className="z-50 flex flex-col justify-between flex-1 p-6">
+                        <CardContent className="z-50 flex flex-col flex-1 p-6 justify-center">
                             <CardTitle className="block mb-2 text-lg font-bold text-gray-900 dark:text-gray-100">
                                 <Link
                                     href="#"
-                                    className=" hover:underline dark:text-gray-100"
+                                    className=" dark:text-gray-100"
                                     prefetch={false}
                                 >
                                     {Proceso.title}

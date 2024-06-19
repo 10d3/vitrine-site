@@ -126,4 +126,168 @@ export const blogs = [
     date: '10 Juin 2024',
     tempsLecture: '6 min de lecture'
   },
+  {
+    title: "Checklist para nuevos propietarios que desean alquilar su propiedad",
+    content: (
+      <>
+        <div className="container mx-auto my-8 px-4">
+          <h1 className="text-4xl font-bold mb-4">
+            Checklist para nuevos propietarios que desean alquilar su propiedad
+          </h1>
+          <p className="text-lg mb-6 text-justify">
+            Alquilar una propiedad puede ser una excelente fuente de ingresos, pero requiere una preparación adecuada para asegurar una experiencia exitosa. Aquí te ofrecemos una guía completa para que no se te escape ningún detalle importante.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Evaluación de la Propiedad</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Inspección General:</strong> Asegúrate de que la propiedad está en buenas condiciones, sin desperfectos estructurales.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Reparaciones Necesarias:</strong> Identifica y realiza las reparaciones que sean necesarias, desde plomería hasta electricidad.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Documentación Legal</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Certificación Energética:</strong> Asegúrate de tener el certificado energético de la propiedad.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Licencias y Permisos:</strong> Verifica si necesitas alguna licencia específica para alquilar tu propiedad.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Preparación de la Propiedad</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Limpieza Profunda:</strong> Realiza una limpieza a fondo de la propiedad, incluyendo alfombras, ventanas y áreas de difícil acceso.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Amueblado y Decoración:</strong> Decide si vas a alquilar la propiedad amueblada o sin amueblar. Asegúrate de que los muebles estén en buen estado.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Marketing y Publicidad</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Fotografías Profesionales:</strong> Contrata a un fotógrafo profesional para tomar fotos de la propiedad.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Anuncios Atractivos:</strong> Redacta descripciones detalladas y atractivas de la propiedad para los anuncios.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Selección de Inquilinos</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Verificación de Solvencia:</strong> Realiza una verificación de solvencia y antecedentes de los potenciales inquilinos.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Contrato de Alquiler:</strong> Redacta un contrato de alquiler claro que cubra todas las normas y expectativas.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Gestión y Mantenimiento</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Plan de Mantenimiento:</strong> Establece un plan regular de mantenimiento para asegurarte de que la propiedad se mantiene en buen estado.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Comunicación con Inquilinos:</strong> Mantén una comunicación abierta y efectiva con los inquilinos para resolver problemas rápidamente.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Gestión Financiera</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Sistema de Pagos:</strong> Configura un sistema seguro y conveniente para recibir los pagos de alquiler.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Reserva para Gastos:</strong> Mantén una reserva para cubrir gastos inesperados o reparaciones urgentes.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Cumplimiento Legal y Fiscal</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Declaración de Ingresos:</strong> Asegúrate de declarar los ingresos obtenidos por el alquiler y cumplir con todas las obligaciones fiscales.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Seguro de Propiedad:</strong> Contrata un seguro que cubra posibles daños a la propiedad y problemas con los inquilinos.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Utiliza Servicios Profesionales</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Agencia de Gestión:</strong> Considera contratar una agencia de gestión de propiedades como 4SRENT para manejar todos los aspectos del alquiler.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Asesoramiento Legal:</strong> Consulta con un abogado para asegurarte de que todos los aspectos legales están cubiertos.
+          </p>
+
+          <p className="text-lg mb-6 text-justify">
+            Siguiendo esta checklist, podrás alquilar tu propiedad con confianza, asegurando una experiencia positiva tanto para ti como para tus inquilinos. En 4SRENT, estamos aquí para ayudarte en cada paso del camino, ofreciendo servicios integrales para la gestión de tu propiedad. ¡Contáctanos para más información!
+          </p>
+        </div>
+      </>
+    ),
+    slug: "checklist-para-nuevos-propietarios",
+    image: "/vitrine2.jpg",
+    author: 'admin',
+    date: '20 Juin 2024',
+    tempsLecture: '5 min de lectura'
+  },
+  {
+    title: "4SRENT: Gestión Integral de Propiedades",
+    content: (
+      <>
+        <div className="container mx-auto my-8 px-4">
+          <h1 className="text-4xl font-bold mb-4">4S.RENT: Gestión Integral de Propiedades</h1>
+          <p className="text-lg mb-6 text-justify">
+            En 4S.RENT, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">¿Qué Hacemos?</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Gestión Integral de Propiedades:</strong> Nuestro servicio principal es la gestión completa de propiedades residenciales. Esto incluye la búsqueda de inquilinos, la gestión de contratos, la cobranza de rentas, y la supervisión del mantenimiento. Nos encargamos de todo, desde la primera visita hasta la renovación del contrato, asegurando que tu propiedad esté en las mejores manos.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Alquiler de Media y Larga Estancia:</strong> Ofrecemos opciones de alquiler tanto de media como de larga estancia. Esto permite a los propietarios adaptarse a diferentes mercados y maximizar sus ingresos, mientras que los inquilinos pueden encontrar soluciones flexibles que se ajusten a sus necesidades.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Mantenimiento y Reparaciones:</strong> Contamos con un equipo de profesionales dedicados al mantenimiento regular y a las reparaciones de emergencia. Nuestro objetivo es garantizar que la propiedad se mantenga en óptimas condiciones, previniendo problemas mayores y asegurando la satisfacción de los inquilinos.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Marketing y Publicidad:</strong> Utilizamos estrategias de marketing efectivas para promocionar las propiedades en los principales portales inmobiliarios y redes sociales. Esto incluye fotografía profesional y descripciones atractivas que resaltan las características únicas de cada inmueble.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">¿Cómo Trabajamos?</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Proceso de Selección de Inquilinos:</strong> Realizamos un riguroso proceso de selección para asegurar que los inquilinos sean confiables y responsables. Esto incluye la verificación de antecedentes, historial de alquiler y solvencia financiera.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Contrato y Documentación:</strong> Nos ocupamos de todos los aspectos legales, asegurando que los contratos de alquiler cumplan con las normativas vigentes. Esto proporciona seguridad tanto a propietarios como a inquilinos.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Gestión Financiera:</strong> Supervisamos la cobranza de rentas y gestionamos los pagos a los propietarios de manera puntual. Ofrecemos informes financieros detallados para que los propietarios puedan monitorear el rendimiento de sus inversiones.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Atención al Cliente:</strong> Proporcionamos un servicio al cliente excepcional, disponible para resolver cualquier duda o problema que puedan tener los inquilinos o propietarios. Nuestro objetivo es ofrecer una experiencia sin preocupaciones para todos nuestros clientes.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">¿Cómo Podemos Ayudarte?</h2>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Tranquilidad y Seguridad:</strong> En 4S.RENT, sabemos lo valioso que es tu tiempo. Al encargarnos de la gestión completa de tu propiedad, te ofrecemos la tranquilidad de saber que tu inmueble está bien cuidado y que tus ingresos están asegurados, alquilada o no la vivienda.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Maximización de Ingresos:</strong> Nuestra experiencia en el mercado nos permite ajustar las estrategias de alquiler para maximizar tus ingresos. Ya sea a través del alquiler por habitaciones o de la propiedad completa, adaptamos nuestras soluciones a tus necesidades específicas.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Asesoramiento Personalizado:</strong> Entendemos que cada propietario y propiedad es única. Por eso, ofrecemos asesoramiento personalizado para ayudarte a tomar las mejores decisiones en la gestión de tu inmueble.
+          </p>
+          <p className="text-lg mb-4 text-justify">
+            <strong>Transparencia y Confianza:</strong> Fomentamos una relación de confianza con nuestros clientes, proporcionando transparencia en todas nuestras operaciones. Informamos de cada paso del proceso, manteniendo una comunicación abierta y honesta.
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">Conclusión</h2>
+          <p className="text-lg mb-6 text-justify">
+            En 4S.RENT, nuestra misión es ofrecer una gestión integral que libere a los propietarios de las preocupaciones del día a día, proporcionando tranquilidad y garantizando la maximización de los ingresos. Con un enfoque profesional y personalizado, cuidamos de tu propiedad como si fuera nuestra. Confía en nosotros para gestionar tu inmueble y disfruta de los beneficios sin el estrés de la administración.
+          </p>
+          <p className="text-lg mb-6 text-justify">
+            Para más información sobre cómo podemos ayudarte, no dudes en contactarnos. En 4S.RENT, estamos aquí para hacer tu vida más fácil y tu inversión más rentable.
+          </p>
+        </div>
+      </>
+    ),
+    slug: "gestion-integral-de-propiedades",
+    image: "/gestion-propiedades.jpg",
+    author: 'admin',
+    date: '20 Juin 2024',
+    tempsLecture: '5 min de lectura'
+  }
 ];

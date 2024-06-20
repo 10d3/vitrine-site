@@ -20,7 +20,7 @@ export default function Hero() {
                         <Button variant="secondary">Louer</Button>
                     </div> */}
                 </div>
-                <div className="max-w-md bg-gray-100 dark:bg-gray-800 rounded-xl p-6 md:p-8 lg:p-10 space-y-4">
+                <div className="md:min-w-[30rem] bg-gray-100 dark:bg-gray-800 rounded-xl p-6 md:p-8 lg:p-10 space-y-4">
                     <h2 className="text-2xl font-bold">Encuentre su próxima propiedad</h2>
                     <ContactForm />
                 </div>

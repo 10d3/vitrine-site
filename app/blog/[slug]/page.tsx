@@ -39,7 +39,8 @@ export default function page({ params }: paramsProp) {
                     src={blog?.image as string}
                     alt="Blog Post Image"
                     width={1200}
-                    height={600}
+                    height={1200}
+                    priority
                     className=" object-cover w-full max-h-[400px]"
                 />
             </div>

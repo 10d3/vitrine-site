@@ -13,9 +13,10 @@ export default function Nosotros() {
           <div className="grid gap-4">
             <Image
               src='/vitrine5.jpg'
-              width={600}
-              height={400}
+              width={1000}
+              height={1000}
               alt="About Us"
+              priority
               className="overflow-hidden rounded-xl object-cover object-center"
             />
           </div>

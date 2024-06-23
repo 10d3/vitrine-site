@@ -19,9 +19,9 @@ const config = {
     },
     extend: {
       colors:{
-        'custom-primary':'#f6f4f3',
+        'custom-primary':'#276fbf',
         'custom-secondary':'#191716',
-        'custom-button-primary':'#276fbf',
+        'custom-button-primary':'#f6f4f3',
         'custom-button-secondary':'#183059',
         'custom-destructive':'#AD8A64'
       },

@@ -19,7 +19,7 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
                 ))}
             </ul>
             <div className="mt-6">
-                <Button className="w-full py-2 px-4  text-white rounded-md bg-custom-button-primary hover:bg-custom-button-secondary">Click here to get started!</Button>
+                <Button className="w-full py-2 px-4  text-white rounded-md bg-custom-primary hover:bg-custom-button-secondary">Click here to get started!</Button>
             </div>
         </Card>
     );
@@ -71,11 +71,21 @@ const Services = () => {
     ];
 
     return (
-        <div className="flex justify-center p-8 flex-col md:flex-row w-full gap-4 md:gap-0">
-            {plans.map((plan, index) => (
-                <PricingCard key={index} {...plan} />
-            ))}
-        </div>
+        <section className='w-full py-12 md:mb-12 bg-gray-100 rounded-sm'>
+            <div className="text-center">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                    Servicios de Gestión Integral
+                </h2>
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                    Ofrecemos una variedad de planes para satisfacer las necesidades de nuestros clientes.
+                </p>
+            </div>
+            <div className="flex justify-center p-8 flex-col md:flex-row w-full gap-4 md:gap-0">
+                {plans.map((plan, index) => (
+                    <PricingCard key={index} {...plan} />
+                ))}
+            </div>
+        </section>
     );
 };
 

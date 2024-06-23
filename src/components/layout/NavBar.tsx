@@ -46,7 +46,7 @@ export default function NavBar() {
           Blog
         </Link>
       </nav>
-      <Button size="sm" className="hidden sm:inline-flex bg-custom-button-primary hover:bg-custom-button-primary">
+      <Button size="sm" className="hidden sm:inline-flex bg-custom-primary hover:bg-custom-button-secondary">
         Registrarse
       </Button>
       <Sheet>
@@ -100,7 +100,7 @@ export default function NavBar() {
                 Blog
               </Link>
             </nav>
-            <Button size="sm" className="mx-4">
+            <Button size="sm" className="mx-4 bg-custom-primary hover:bg-custom-button-secondary">
               Registrarse
             </Button>
           </div>

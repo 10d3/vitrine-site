@@ -56,7 +56,7 @@ export default function CallToAction() {
                   )}
                 />
               </div>
-              <Button className=" md:w-auto bg-custom-button-primary hover:bg-custom-button-secondary" disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader /> : "Deseo inscribirme"}</Button>
+              <Button className=" md:w-auto bg-custom-primary hover:bg-custom-button-secondary" disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader /> : "Deseo inscribirme"}</Button>
             </form>
           </Form>
         </div>

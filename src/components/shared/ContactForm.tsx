@@ -100,7 +100,7 @@ export default function ContactForm() {
                         )}
                     />
                 </div>
-                <Button type="submit" className="w-full bg-custom-button-primary hover:bg-custom-button-secondary">
+                <Button type="submit" className="w-full bg-custom-primary hover:bg-custom-button-secondary">
                     Contacter
                 </Button>
             </form>

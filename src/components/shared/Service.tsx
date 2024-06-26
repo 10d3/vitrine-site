@@ -7,7 +7,7 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
     return (
         <Card className={`w-full bg-white rounded-lg p-8 ${primary ? 'border-4 border-custom-button-secondary shadow-2xl' : ''}`}>
             <div className="text-center">
-                {/* <h2 className="text-2xl font-bold text-indigo-600">{plan}</h2> */}
+                <h2 className="text-2xl font-bold text-indigo-600">{plan}</h2>
                 {/* <p className="mt-2 text-justify text-gray-900">{price}</p> */}
             </div>
             <ul className="mt-6 space-y-4">
@@ -28,7 +28,7 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
 const Services = () => {
     const plans = [
         {
-            plan: 'Plan Básico: "Alquiler Seguro"',
+            plan: 'Alquiler Seguro',
             price: 'El Plan Básico "Alquiler Seguro" está diseñado para propietarios que buscan una gestión eficaz y confiable de sus propiedades, asegurando un pago mensual fijo. Nos encargamos de todo para que tú no tengas que preocuparte por nada',
             features: [
                 'Ingreso mensual garantizado, alquilada o no',
@@ -42,7 +42,7 @@ const Services = () => {
             primary: false,
         },
         {
-            plan: 'Plan Intermedio: "Gestión Plus"',
+            plan: 'Gestión Plus',
             price: 'El Plan "Gestión Plus" está diseñado para propietarios que buscan un equilibrio entre una gestión segura y servicios adicionales para optimizar la rentabilidad y el mantenimiento de su propiedad',
             features: [
                 "Todos los servicios del Plan Básico",
@@ -55,7 +55,7 @@ const Services = () => {
             primary: true,
         },
         {
-            plan: 'Plan Premium: "Gestión Integral Premium"',
+            plan: 'Gestión Integral Premium',
             price: 'El Plan Premium "Gestión Integral Premium" ofrece una gestión completa y proactiva de tu propiedad, asegurando no solo un ingreso mensual garantizado, sino también la optimización continua de su rentabilidad',
             features: [
                 'Todos los servicios del Plan Básico y del Plan Intermedio',

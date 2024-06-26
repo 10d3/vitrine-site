@@ -37,14 +37,6 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-4 md:items-center">
-          <h3 className="font-semibold">Legal</h3>
-          <div className="grid gap-2 text-sm">
-            {legals.map((legal, i) => (<Link key={i} href={legal.link} className="hover:underline" prefetch={false}>
-              {legal.title}
-            </Link>))}
-          </div>
-        </div>
-        <div className="flex flex-col gap-4 md:items-center">
           <h3 className="font-semibold">Follow Us</h3>
           <div className="flex gap-4">
             <Link href="#" aria-label="Facebook" prefetch={false}>
@@ -56,6 +48,14 @@ export default function Footer() {
             <Link href="#" aria-label="LinkedIn" prefetch={false}>
               <Linkedin className="h-6 w-6 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50" />
             </Link>
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 md:items-center">
+          <h3 className="font-semibold">Legal</h3>
+          <div className="grid gap-2 text-sm">
+            {legals.map((legal, i) => (<Link key={i} href={legal.link} className="hover:underline" prefetch={false}>
+              {legal.title}
+            </Link>))}
           </div>
         </div>
       </div>

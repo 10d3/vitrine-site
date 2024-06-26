@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NavBAr />
-        <div className=" md:px-24">
+        <div className=" md:px-24 text-custom-button-secondary">
           {children}
         </div>
         <Footer />

@@ -1,26 +1,28 @@
 import Image from "next/image";
 
-export default function Nosotros() {
-    return (
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center justify-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
-          <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">¿Quiénes Somos?</h2>
-            <p className="max-w-[600px] text-gray-500 md:text-base/relaxed lg:text-base/relaxed xl:text-base/relaxed dark:text-gray-400">
-            En 4SRENT, somos expertos en la gestión de propiedades, dedicados a ofrecer a los propietarios una solución completa y sin preocupaciones. Nuestro compromiso es gestionar tu propiedad de manera profesional, asegurándote un ingreso mensual fijo y manteniendo tu inmueble en óptimas condiciones. Con años de experiencia en el sector y un enfoque personalizado, nos aseguramos de maximizar la rentabilidad de tu propiedad mientras tú disfrutas de la tranquilidad que mereces.
-            </p>
-          </div>
-          <div className="grid gap-4">
-            <Image
-              src='/vitrine5.jpg'
-              width={1000}
-              height={1000}
-              alt="About Us"
-              priority
-              className="overflow-hidden rounded-xl object-cover object-center"
-            />
-          </div>
+export default function Nosotros({ah, index}:{ah:any,index:number}) {
+  return (
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className={`container flex flex-col items-center ${(index + 1) % 2 == 0 ?'md:flex-row' : "md:flex-row-reverse" } justify-center gap-8 px-4 md:px-6`}>
+        <div className="space-y-4">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            {ah.title}
+          </h2>
+          <p className="max-w-[600px] text-justify md:text-base/relaxed lg:text-base/relaxed xl:text-base/relaxed">
+            {ah.description}
+          </p>
         </div>
-      </section>
-    )
-  }
+        <div className="flex-1 gap-4">
+          <Image
+            src={ah.image}
+            width={1000}
+            height={1000}
+            alt="About Us"
+            priority
+            className="overflow-hidden rounded-xl object-cover object-center"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}

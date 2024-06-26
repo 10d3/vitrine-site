@@ -1,30 +1,36 @@
-'use client'
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { NewsletterSchema } from "@/lib/validation"
-import { NewsletterValues } from "@/lib"
-import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form"
-import { NewsLetterAction } from "@/lib/actions/NewsLetterAction"
-import { Loader } from "./loader"
+"use client";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { NewsletterSchema } from "@/lib/validation";
+import { NewsletterValues } from "@/lib";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
+import { NewsLetterAction } from "@/lib/actions/NewsLetterAction";
+import { Loader } from "./loader";
 
 export default function CallToAction() {
-  const initiaValues = NewsletterValues
+  const initiaValues = NewsletterValues;
   const form = useForm<z.infer<typeof NewsletterSchema>>({
     resolver: zodResolver(NewsletterSchema),
-    defaultValues: initiaValues
-  })
+    defaultValues: initiaValues,
+  });
 
   async function onSubmit(values: z.infer<typeof NewsletterSchema>) {
     try {
-      const result = await NewsLetterAction(values)
+      const result = await NewsLetterAction(values);
       if (result) {
-        form.reset()
+        form.reset();
       }
     } catch (error) {
-      return error
+      return error;
     }
   }
   return (
@@ -40,7 +46,10 @@ export default function CallToAction() {
         </div>
         <div className="mx-auto w-full max-w-sm space-y-2">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full flex space-x-2 flex-col md:flex-row gap-2 items-center">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="w-full flex space-x-2 flex-col md:flex-row gap-2 items-center"
+            >
               <div className="w-full flex items-center justify-center">
                 <FormField
                   control={form.control}
@@ -49,18 +58,28 @@ export default function CallToAction() {
                     <FormItem className="w-[90%] md:w-full">
                       {/* <FormLabel>Email</FormLabel> */}
                       <FormControl>
-                        <Input placeholder='Correo electrónico' {...field} className='w-full input-field bg-white' />
+                        <Input
+                          placeholder="Correo electrónico"
+                          {...field}
+                          className="w-full input-field bg-white"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-              <Button className=" md:w-auto bg-custom-primary hover:bg-custom-button-secondary" disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? <Loader /> : "Deseo inscribirme"}</Button>
+              <Button
+                className=" md:w-auto bg-custom-primary hover:bg-custom-button-secondary"
+                disabled={form.formState.isSubmitting}
+                type="submit"
+              >
+                {form.formState.isSubmitting ? <Loader /> : "Deseo inscribirme"}
+              </Button>
             </form>
           </Form>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -20,6 +20,7 @@ import { Label } from "../ui/label";
 import { PhoneInput } from "../ui/phone-input";
 import { Checkbox } from "../ui/checkbox";
 import Link from "next/link";
+import { Loader } from "./loader";
 
 export default function ContactForm() {
   const initiaValues = ContactValues;
@@ -118,17 +119,31 @@ export default function ContactForm() {
                 </FormControl>
                 <FormLabel htmlFor="owner" className="text-[0.8rem]">
                   Declaro que soy mayor de 18 años, he leído y acepto las
-                  siguientes condiciones de la <Link className="text-blue-500" href='/política-de-privacidad'>política de privacidad</Link>.
+                  siguientes condiciones de la{" "}
+                  <Link
+                    className="text-blue-500"
+                    href="/politica-de-privacidad"
+                  >
+                    política de privacidad
+                  </Link>
+                  .
                 </FormLabel>
               </FormItem>
             )}
           />
         </div>
-        <Button
+        {/* <Button
           type="submit"
           className="w-full bg-custom-primary hover:bg-custom-button-secondary"
         >
           Contacter
+        </Button> */}
+        <Button
+          className=" w-full bg-custom-primary hover:bg-custom-button-secondary"
+          disabled={form.formState.isSubmitting}
+          type="submit"
+        >
+          {form.formState.isSubmitting ? <Loader /> : "Contacter"}
         </Button>
       </form>
     </Form>

@@ -25,9 +25,9 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="w-full relative py-16 md:py-24 lg:py-32 rounded-sm bg-cover bg-center">
+    <section className="w-full relative my-12 py-16 md:py-24 lg:py-32 rounded-sm">
       <div className="absolute w-full h-full bg-cover bg-center -z-50">
-        <Image priority src='/vitrine3.jpg' alt="bg of testimonials" height={1000} width={1000} className="w-full h-full"/>
+        <Image priority src='/vitrine3.jpg' alt="bg of testimonials" height={1000} width={1000} className="w-full h-[95%] md:h-[80%]"/>
       </div>
       <div className="container grid items-center justify-center gap-4 px-12 text-center md:px-6 lg:gap-10">
         <div className="space-y-3">

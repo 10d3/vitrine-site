@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="w-[100dvw] min-h-screen py-12 relative  bg-cover bg-center flex flex-col md:flex-row items-center justify-around">
-      <div className="absolute h-full w-full bg-cover bg-center -z-50 " >
-        <Image priority src='/vitrine1.jpg' alt="bg" height={1000} width={1000} className="h-full w-full" />
+      <div className="absolute h-full w-full bg-auto md:bg-cover bg-center -z-50 " >
+        <Image priority src='/vitrine1.jpg' alt="bg" height={1000} width={1000} className="h-full w-auto md:w-full" />
       </div>
       <div className="flex flex-col md:flex-row justify-around items-center gap-8 px-4 md:px-24 relative z-10">
         <div className="flex flex-col justify-center space-y-4">

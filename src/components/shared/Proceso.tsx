@@ -36,10 +36,10 @@ export default function Proceso() {
     ]
     return (
         <section className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container px-4 md:px-6">
+            <div className="container w-[90%] md:w-full px-4 md:px-6">
                 <div className="max-w-3xl mx-auto space-y-6 text-center">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nuestro Proceso</h2>
-                    <p className="text-gray-500 md:text-xl dark:text-gray-400">
+                    <p className=" md:text-xl dark:text-gray-400">
                         Descubre cómo trabajamos para brindar una experiencia sin preocupaciones a los propietarios de bienes
                         raíces.
                     </p>
@@ -50,7 +50,7 @@ export default function Proceso() {
                             {proceso.icon}
                         </div>
                         <h3 className="text-lg font-semibold">{proceso.title}</h3>
-                        <p className="text-gray-500 dark:text-gray-400">
+                        <p className=" dark:text-gray-400">
                             {proceso.description}
                         </p>
                     </div>))}

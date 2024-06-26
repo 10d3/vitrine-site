@@ -5,15 +5,15 @@ import { Button } from '../ui/button';
 
 const PricingCard = ({ plan, price, features, primary }: any) => {
     return (
-        <Card className={`w-full bg-white rounded-lg p-8 ${primary ? 'border-4 border-indigo-600 shadow-2xl' : ''}`}>
+        <Card className={`w-full bg-white rounded-lg p-8 ${primary ? 'border-4 border-custom-button-secondary shadow-2xl' : ''}`}>
             <div className="text-center">
-                <h2 className="text-2xl font-bold text-indigo-600">{plan}</h2>
+                {/* <h2 className="text-2xl font-bold text-indigo-600">{plan}</h2> */}
                 {/* <p className="mt-2 text-justify text-gray-900">{price}</p> */}
             </div>
             <ul className="mt-6 space-y-4">
                 {features.map((feature: any, index: any) => (
                     <li key={index} className="flex flex-row gap-2">
-                        <Check className="text-indigo-600" size={20} />
+                        <Check className="text-custom-button-secondary" size={20} />
                         <span className=" text-gray-700">{feature}</span>
                     </li>
                 ))}
@@ -73,10 +73,10 @@ const Services = () => {
     return (
         <section className='w-full py-12 md:mb-12 bg-gray-100 rounded-sm'>
             <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-custom-button-secondary">
                     Servicios de Gestión Integral
                 </h2>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                <p className="mx-auto max-w-[700px] text-custom-button-secondary md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                     Ofrecemos una variedad de planes para satisfacer las necesidades de nuestros clientes.
                 </p>
             </div>

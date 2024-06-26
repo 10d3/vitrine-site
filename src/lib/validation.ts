@@ -5,7 +5,7 @@ export const ContactFormSchema = z.object({
     name: z.string().min(5),
     number: z.string().min(6),
     codePostal: z.string(),
-    owner: z.boolean(),
+    consent: z.literal(true),
 })
 
 export type ContactFormSchemaProps = z.infer<typeof ContactFormSchema>

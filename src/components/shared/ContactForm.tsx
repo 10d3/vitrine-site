@@ -11,6 +11,7 @@ import { Button } from '../ui/button'
 import { Switch } from '../ui/switch'
 import { Label } from '../ui/label'
 import { PhoneInput } from '../ui/phone-input'
+import { Checkbox } from '../ui/checkbox'
 
 export default function ContactForm() {
     const initiaValues = ContactValues
@@ -25,6 +26,19 @@ export default function ContactForm() {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                        <FormItem className="w-full">
+                            {/* <FormLabel>Nombre y Apellidos</FormLabel> */}
+                            <FormControl>
+                                <Input placeholder='Nombre y Apellidos' {...field} className=' input-field bg-white' />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
                 <FormField
                     control={form.control}
                     name="email"
@@ -33,19 +47,6 @@ export default function ContactForm() {
                             {/* <FormLabel>Correo electrónico</FormLabel> */}
                             <FormControl>
                                 <Input placeholder='Correo electrónico' {...field} className=' input-field bg-white' />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                        <FormItem className="w-full">
-                            {/* <FormLabel>Nombre y Apellidos</FormLabel> */}
-                            <FormControl>
-                                <Input placeholder='Nombre y Apellidos' {...field} className=' input-field bg-white' />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -84,12 +85,12 @@ export default function ContactForm() {
                 <div className="flex items-center justify-between">
                     <FormField
                         control={form.control}
-                        name="owner"
+                        name="consent"
                         render={({ field }) => (
-                            <FormItem className="flex items-center justify-between gap-10">
-                                <FormLabel htmlFor="owner">Soy Propietario</FormLabel>
+                            <FormItem className="flex items-center justify-center gap-2">
+                                {/* <FormLabel htmlFor="owner">Soy Propietario</FormLabel> */}
                                 <FormControl>
-                                    <Switch
+                                    <Checkbox
                                         id="owner"
                                         checked={field.value}
                                         onCheckedChange={field.onChange}

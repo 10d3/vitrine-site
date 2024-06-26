@@ -24,15 +24,15 @@ export default function Footer() {
           <div className="grid gap-2 text-sm">
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-              <p>123 Main St, Anytown USA</p>
+              <p>Valencia, España</p>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-              <a href="#">+1 (234) 567-890</a>
+              <a href="tel:+34642815465">+3 (464) 281-5465</a>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-              <a href="#">info@example.com</a>
+              <a href="mailto:info@4srent.es">info@4srent.es</a>
             </div>
           </div>
         </div>

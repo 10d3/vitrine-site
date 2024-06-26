@@ -38,10 +38,12 @@ export default function CallToAction() {
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
         <div className="space-y-3">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-            Encuentre la casa de sus sueños
+            Únete a Nuestro Newsletter
           </h2>
           <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            Regístrese ahora para acceder a nuestras mejores ofertas
+            Mantente al día con las últimas tendencias y consejos en gestión de
+            propiedades. ¡Suscríbete a nuestro newsletter y recibe información
+            exclusiva directamente en tu correo!
           </p>
         </div>
         <div className="mx-auto w-full max-w-sm space-y-2">

@@ -7,7 +7,7 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
     return (
         <Card className={`w-full bg-white rounded-lg p-8 ${primary ? 'border-4 border-custom-button-secondary shadow-2xl' : ''}`}>
             <div className="text-center">
-                <h2 className="text-2xl font-bold text-indigo-600">{plan}</h2>
+                <h2 className="text-2xl font-bold text-custom-button-secondary">{plan}</h2>
                 {/* <p className="mt-2 text-justify text-gray-900">{price}</p> */}
             </div>
             <ul className="mt-6 space-y-4">

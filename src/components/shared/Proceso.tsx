@@ -1,34 +1,32 @@
-import { Briefcase, BriefcaseBusiness, Calendar, Clipboard, Currency } from "lucide-react"
-import Image from "next/image"
-import { Card, CardContent, CardDescription, CardTitle } from "../ui/card"
-import Link from "next/link"
+import {Clock, FileText, Phone, ScanSearch } from "lucide-react"
+
 
 export default function Proceso() {
     const Procesos = [
         {
             id: 1,
-            icon: <Clipboard size={20} className=" text-gray-500 dark:text-gray-400" />,
+            icon: <ScanSearch size={20} className=" text-gray-500 dark:text-gray-400" />,
             image: '/process1.jpg',
             title: "Evaluación Inicial",
             description: "Realizamos una evaluación exhaustiva de tu propiedad para determinar el mejor enfoque de gestión."
         },
         {
             id: 2,
-            icon: <Briefcase size={20} className=" text-gray-500 dark:text-gray-400" />,
+            icon: <FileText size={20} className=" text-gray-500 dark:text-gray-400" />,
             image: '/process2.jpg',
             title: "Configuración de Alquiler",
             description: "Nos encargamos de todos los aspectos legales y logísticos para preparar tu propiedad para el alquiler."
         },
         {
             id: 3,
-            icon: <Calendar size={20} className=" text-gray-500 dark:text-gray-400" />,
+            icon: <Phone size={20} className=" text-gray-500 dark:text-gray-400" />,
             image: '/process3.jpg',
             title: "Gestión Continua",
             description: "Nos ocupamos de todo, desde la selección de inquilinos hasta la resolución de problemas, para que tú teenfoques en otras cosas."
         },
         {
             id: 4,
-            icon: <Currency size={20} className=" text-gray-500 dark:text-gray-400" />,
+            icon: <Clock size={20} className=" text-gray-500 dark:text-gray-400" />,
             image: '/process4.jpg',
             title: "Pago Garantizado",
             description: "Recibe tus pagos de alquiler a tiempo, incluso si el inquilino se retrasa, con nuestra garantía de pago."

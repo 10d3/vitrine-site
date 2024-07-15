@@ -3,7 +3,7 @@ export const blogs = [
     title: "Todo lo que necesitas saber sobre alquilar tu propiedad con 4SRENT",
     content: (<><div className="container mx-auto my-8 px-4">
       <p className="text-lg mb-6 text-justify">
-        Imagina tener una propiedad que quieres alquilar, pero sin las preocupaciones y complicaciones habituales. Así es como 4S.RENT hace la diferencia.
+        Imagina tener una propiedad que quieres alquilar, pero sin las preocupaciones y complicaciones habituales. Así es como 4SRENT hace la diferencia.
       </p>
       <p className="text-lg mb-6 text-justify">
         Déjame contarte una historia sobre cómo gestionamos las propiedades para nuestros clientes.
@@ -11,7 +11,7 @@ export const blogs = [
 
       <h2 className="text-3xl font-semibold mb-2">Tranquilidad desde el primer contacto</h2>
       <p className="text-lg mb-4 text-justify">
-        Cuando Pedro decidió alquilar su apartamento, no sabía por dónde empezar. Escuchó hablar de 4S.RENT y decidió contactarnos. Desde el primer momento, sintió que estaba en buenas manos. Nuestro equipo le explicó todo el proceso, resolviendo sus dudas y ofreciéndole la tranquilidad que necesitaba.
+        Cuando Pedro decidió alquilar su apartamento, no sabía por dónde empezar. Escuchó hablar de 4SRENT y decidió contactarnos. Desde el primer momento, sintió que estaba en buenas manos. Nuestro equipo le explicó todo el proceso, resolviendo sus dudas y ofreciéndole la tranquilidad que necesitaba.
       </p>
 
       <h2 className="text-3xl font-semibold mb-2">Evaluación y preparación de la propiedad</h2>
@@ -26,7 +26,7 @@ export const blogs = [
 
       <h2 className="text-3xl font-semibold mb-2">Mantenimiento continuo</h2>
       <p className="text-lg mb-4 text-justify">
-        Una vez que Ana se mudó, no terminó nuestro trabajo. En 4S.RENT nos encargamos de todo el mantenimiento. Cuando surgió un problema con la calefacción, nuestro equipo lo solucionó rápidamente, manteniendo la propiedad en perfectas condiciones y asegurando la satisfacción de Ana.
+        Una vez que Ana se mudó, no terminó nuestro trabajo. En 4SRENT nos encargamos de todo el mantenimiento. Cuando surgió un problema con la calefacción, nuestro equipo lo solucionó rápidamente, manteniendo la propiedad en perfectas condiciones y asegurando la satisfacción de Ana.
       </p>
 
       <h2 className="text-3xl font-semibold mb-2">Ingresos garantizados</h2>
@@ -58,14 +58,15 @@ export const blogs = [
 
       <h2 className="text-3xl font-semibold mb-2">Conclusión</h2>
       <p className="text-lg mb-4 text-justify">
-        Alquilar tu propiedad con 4S.RENT significa tranquilidad y ganancias aseguradas. Nos encargamos de todo, desde la selección de inquilinos hasta el mantenimiento, garantizándote ingresos mensuales. Contáctanos hoy y descubre cómo podemos ayudarte a sacar el máximo provecho de tu propiedad.
+        Alquilar tu propiedad con 4SRENT significa tranquilidad y ganancias aseguradas. Nos encargamos de todo, desde la selección de inquilinos hasta el mantenimiento, garantizándote ingresos mensuales. Contáctanos hoy y descubre cómo podemos ayudarte a sacar el máximo provecho de tu propiedad.
       </p>
     </div></>),
     slug: "todo-lo-que-necesitas-saber-sobre-alquilar-tu-propiedad-con-4SRENT",
     image: "/vitrine5.jpg",
     author: 'admin',
     date: '10 Juin 2024',
-    tempsLecture: '6 min de lecture'
+    tempsLecture: '6 min de lecture',
+    description:'Imagina tener una propiedad que quieres alquilar, pero sin las preocupaciones y complicaciones habituales. Así es como 4SRENT hace la diferencia.'
   },
   {
     title:
@@ -124,7 +125,8 @@ export const blogs = [
     image: "/vitrine1.jpg",
     author: 'admin',
     date: '10 Juin 2024',
-    tempsLecture: '6 min de lecture'
+    tempsLecture: '6 min de lecture',
+    description:'En este artículo, exploramos las principales tendencias que están moldeando este dinámico sector.'
   },
   {
     title: "Checklist para nuevos propietarios que desean alquilar su propiedad",
@@ -220,16 +222,17 @@ export const blogs = [
     image: "/vitrine2.jpg",
     author: 'admin',
     date: '20 Juin 2024',
-    tempsLecture: '5 min de lectura'
+    tempsLecture: '5 min de lectura',
+    description:'Alquilar una propiedad puede ser una excelente fuente de ingresos, pero requiere una preparación adecuada para asegurar una experiencia exitosa. Aquí te ofrecemos una guía completa para que no se te escape ningún detalle importante.'
   },
   {
     title: "4SRENT: Gestión Integral de Propiedades",
     content: (
       <>
         <div className="container mx-auto my-8 px-4">
-          <h1 className="text-4xl font-bold mb-4">4S.RENT: Gestión Integral de Propiedades</h1>
+          <h1 className="text-4xl font-bold mb-4">4SRENT: Gestión Integral de Propiedades</h1>
           <p className="text-lg mb-6 text-justify">
-            En 4S.RENT, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.
+            En 4SRENT, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.
           </p>
 
           <h2 className="text-3xl font-semibold mb-2">¿Qué Hacemos?</h2>
@@ -262,7 +265,7 @@ export const blogs = [
 
           <h2 className="text-3xl font-semibold mb-2">¿Cómo Podemos Ayudarte?</h2>
           <p className="text-lg mb-4 text-justify">
-            <strong>Tranquilidad y Seguridad:</strong> En 4S.RENT, sabemos lo valioso que es tu tiempo. Al encargarnos de la gestión completa de tu propiedad, te ofrecemos la tranquilidad de saber que tu inmueble está bien cuidado y que tus ingresos están asegurados, alquilada o no la vivienda.
+            <strong>Tranquilidad y Seguridad:</strong> En 4SRENT, sabemos lo valioso que es tu tiempo. Al encargarnos de la gestión completa de tu propiedad, te ofrecemos la tranquilidad de saber que tu inmueble está bien cuidado y que tus ingresos están asegurados, alquilada o no la vivienda.
           </p>
           <p className="text-lg mb-4 text-justify">
             <strong>Maximización de Ingresos:</strong> Nuestra experiencia en el mercado nos permite ajustar las estrategias de alquiler para maximizar tus ingresos. Ya sea a través del alquiler por habitaciones o de la propiedad completa, adaptamos nuestras soluciones a tus necesidades específicas.
@@ -276,18 +279,19 @@ export const blogs = [
 
           <h2 className="text-3xl font-semibold mb-2">Conclusión</h2>
           <p className="text-lg mb-6 text-justify">
-            En 4S.RENT, nuestra misión es ofrecer una gestión integral que libere a los propietarios de las preocupaciones del día a día, proporcionando tranquilidad y garantizando la maximización de los ingresos. Con un enfoque profesional y personalizado, cuidamos de tu propiedad como si fuera nuestra. Confía en nosotros para gestionar tu inmueble y disfruta de los beneficios sin el estrés de la administración.
+            En 4SRENT, nuestra misión es ofrecer una gestión integral que libere a los propietarios de las preocupaciones del día a día, proporcionando tranquilidad y garantizando la maximización de los ingresos. Con un enfoque profesional y personalizado, cuidamos de tu propiedad como si fuera nuestra. Confía en nosotros para gestionar tu inmueble y disfruta de los beneficios sin el estrés de la administración.
           </p>
           <p className="text-lg mb-6 text-justify">
-            Para más información sobre cómo podemos ayudarte, no dudes en contactarnos. En 4S.RENT, estamos aquí para hacer tu vida más fácil y tu inversión más rentable.
+            Para más información sobre cómo podemos ayudarte, no dudes en contactarnos. En 4SRENT, estamos aquí para hacer tu vida más fácil y tu inversión más rentable.
           </p>
         </div>
       </>
     ),
     slug: "gestion-integral-de-propiedades",
-    image: "/gestion-propiedades.jpg",
+    image: "/vitrine3.jpg",
     author: 'admin',
     date: '20 Juin 2024',
-    tempsLecture: '5 min de lectura'
+    tempsLecture: '5 min de lectura',
+    description:'En 4SRENT, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.'
   }
 ];

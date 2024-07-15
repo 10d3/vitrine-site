@@ -41,8 +41,7 @@ export default function page() {
                     </h2>
                   </Link>
                   <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
-                    Découvrez les principales tendances qui vont façonner le marché immobilier cette année, des nouvelles
-                    technologies aux préférences des acheteurs.
+                    {pos.description}
                   </p>
                   <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                     <div>{pos.date}</div>

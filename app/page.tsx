@@ -16,7 +16,7 @@ export default function Home() {
     },
     {
       title: "¿Cómo podemos ayudarte?",
-      image: "/vitrine5.jpg",
+      image: "/image9.jpg",
       description:
         "En 4SRENT, te ofrecemos una gestión integral para alquilar tu propiedad sin preocupaciones. Evaluamos tu inmueble, lo preparamos para destacar en el mercado, y diseñamos estrategias de marketing efectivas. Seleccionamos cuidadosamente a los inquilinos adecuados y gestionamos toda la parte administrativa y contractual. Además, nos encargamos del mantenimiento y las reparaciones necesarias para mantener tu propiedad en las mejores condiciones. Con nosotros, tu inversión está en buenas manos, garantizando tranquilidad y rentabilidad.",
     },

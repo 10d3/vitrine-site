@@ -62,7 +62,7 @@ export const blogs = [
       </p>
     </div></>),
     slug: "todo-lo-que-necesitas-saber-sobre-alquilar-tu-propiedad-con-4SRENT",
-    image: "/vitrine5.jpg",
+    image: "/image5.jpg",
     author: 'admin',
     date: '10 Juin 2024',
     tempsLecture: '6 min de lecture',
@@ -122,7 +122,7 @@ export const blogs = [
       </p>
     </div></>),
     slug: "tendencias-actuales-del-mercado-de-alquiler-en-la-Comunidad-Valenciana.",
-    image: "/vitrine1.jpg",
+    image: "/image6.jpg",
     author: 'admin',
     date: '10 Juin 2024',
     tempsLecture: '6 min de lecture',
@@ -288,7 +288,7 @@ export const blogs = [
       </>
     ),
     slug: "gestion-integral-de-propiedades",
-    image: "/vitrine3.jpg",
+    image: "/image7.jpg",
     author: 'admin',
     date: '20 Juin 2024',
     tempsLecture: '5 min de lectura',

@@ -1,21 +1,20 @@
-import Link from "next/link"
-import Image from "next/image"
-import { prisma } from "@/lib/db/prisma"
-import { Separator } from "@/components/ui/separator"
-import { blogs } from "@/lib/blog/blog"
+import Link from "next/link";
+import Image from "next/image";
+import { prisma } from "@/lib/db/prisma";
+import { Separator } from "@/components/ui/separator";
+import { blogs } from "@/lib/blog/blog";
 
 export default function page() {
-
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="bg-gray-950 text-white py-6 px-4 md:px-6">
         <div className="container max-w-5xl mx-auto">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Bienvenue sur notre blog immobilier
+            Bienvenido a nuestro blog inmobiliario
           </h1>
           <p className="mt-4 max-w-3xl text-gray-400 sm:text-lg md:text-xl">
-            Découvrez nos derniers articles sur l&apos;actualité du marché immobilier, les conseils d&apos;experts et les
-            tendances du secteur.
+            Explora nuestros artículos más recientes sobre el mercado
+            inmobiliario, recomendaciones de expertos y tendencias del sector.
           </p>
         </div>
       </header>
@@ -23,8 +22,15 @@ export default function page() {
         <div className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-6">
           <div className="col-span-2 grid gap-8">
             {blogs.map((pos, i) => (
-              <article key={i} className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <Link href={`/blog/${pos.slug}`} className="col-span-1 md:col-span-1 group" prefetch={false}>
+              <article
+                key={i}
+                className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+              >
+                <Link
+                  href={`/blog/${pos.slug}`}
+                  className="col-span-1 md:col-span-1 group"
+                  prefetch={false}
+                >
                   <Image
                     src={pos.image}
                     width={400}
@@ -35,7 +41,11 @@ export default function page() {
                   />
                 </Link>
                 <div className="col-span-1 md:col-span-2 space-y-2">
-                  <Link href={`/blog/${pos.slug}`} className="block" prefetch={false}>
+                  <Link
+                    href={`/blog/${pos.slug}`}
+                    className="block"
+                    prefetch={false}
+                  >
                     <h2 className="text-xl font-bold tracking-tight hover:underline">
                       {pos.title}
                     </h2>
@@ -49,7 +59,8 @@ export default function page() {
                     <div>{pos.tempsLecture}</div>
                   </div>
                 </div>
-              </article>))}
+              </article>
+            ))}
           </div>
           {/* <div className="col-span-1 space-y-8">
             <div>
@@ -143,7 +154,7 @@ export default function page() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 function FolderIcon(props: any) {
@@ -162,5 +173,5 @@ function FolderIcon(props: any) {
     >
       <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
     </svg>
-  )
+  );
 }

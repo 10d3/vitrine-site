@@ -19,10 +19,10 @@ export default function Preguntas() {
       question: '¿Qué servicios están incluidos en cada plan?',
       answer: 'Ofrecemos tres planes de gestión: "Alquiler Seguro", "Gestión Plus" y "Gestión Integral Premium". Cada plan incluye servicios específicos adaptados a diferentes necesidades. Puedes ver una comparación detallada de los servicios incluidos en cada plan en nuestra sección de Servicios.'
     },
-    {
-      question: '¿Cómo seleccionan a los inquilinos?',
-      answer: 'Realizamos un riguroso proceso de selección que incluye verificación de antecedentes, referencias laborales y crediticias para asegurar que solo los inquilinos de calidad ocupen tu propiedad.'
-    },
+    // {
+    //   question: '¿Cómo seleccionan a los inquilinos?',
+    //   answer: 'Realizamos un riguroso proceso de selección que incluye verificación de antecedentes, referencias laborales y crediticias para asegurar que solo los inquilinos de calidad ocupen tu propiedad.'
+    // },
     {
       question: '¿Qué sucede en caso de una emergencia en la propiedad?',
       answer: 'Dependiendo del plan que elijas, ofrecemos gestión de emergencias durante el horario laboral o 24/7. Nos encargamos de resolver cualquier problema de manera rápida y eficiente para asegurar la tranquilidad de los inquilinos y mantener la propiedad en óptimas condiciones.'

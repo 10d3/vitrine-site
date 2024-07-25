@@ -11,6 +11,7 @@ import {
   Row,
   Section,
   Text,
+  Tailwind,
 } from "@react-email/components";
 
 interface EmailTemplateProps {
@@ -34,65 +35,62 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   <Html>
     <Head>
       <Preview>Asunto: Nuevo Interesado en Contacto</Preview>
-      <Body>
-        <Container>
-          <Section className="w-full flex flex-column justify-center items-center">
-            <Img style={logo} src={`${baseUrl}/public/logo.svg`} />
-          </Section>
-          <Section style={content}>
-            <Heading
-              as="h1"
-              style={{
-                fontSize: 32,
-                fontWeight: "bold",
-                textAlign: "center",
-              }}
-            >
-              Asunto: Nuevo Interesado en Contacto Estimado equipo de 4SRENT.es,
-            </Heading>
-            <Heading as="h2">
-              Tienen un nuevo interesado que desea ponerse en contacto con
-              ustedes.
-            </Heading>
-            <Text style={{fontSize:13,}}>Nombre : {name}</Text>
-            <Text style={{fontSize:13,}}>
-              Correo electrónico : <a href={`mailto:${email}`}>{email}</a>
-            </Text>
-            <Text style={{fontSize:13,}}>
-              Tel : <a href={`tel:${number}`}>{number}</a>
-            </Text>
-            <Text>
-              <a href={`https://api.whatsapp.com/send?phone=${number}`}>
-                Clicker ici pour ecrire {name} sur WhatsApp
-              </a>
-            </Text>
-            <Heading as="h3">
-              Por favor, pónganse en contacto con él cuando les sea más
-              conveniente.
-            </Heading>
-            <Heading as="h3">
-              Gracias.
-            </Heading>
-          </Section>
-          <Section style={containerImageFooter}>
-            <Img
-              style={image}
-              width={620}
-              src={`${baseUrl}/public/logo.svg`}
-            />
-          </Section>
+      <Tailwind>
+        <Body>
+          <Container>
+            <Section className="w-full flex flex-column justify-center items-center">
+              <Img style={logo} src={`${baseUrl}/logo.svg`} />
+            </Section>
+            <Section style={content}>
+              <Heading
+                as="h1"
+                style={{
+                  fontSize: 32,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                Asunto: Nuevo Interesado en Contacto Estimado equipo de
+                4SRENT.es,
+              </Heading>
+              <Heading as="h2">
+                Tienen un nuevo interesado que desea ponerse en contacto con
+                ustedes.
+              </Heading>
+              <Text style={{ fontSize: 13 }}>Nombre : {name}</Text>
+              <Text style={{ fontSize: 13 }}>
+                Correo electrónico : <a href={`mailto:${email}`}>{email}</a>
+              </Text>
+              <Text style={{ fontSize: 13 }}>
+                Tel : <a href={`tel:${number}`}>{number}</a>
+              </Text>
+              <Text>
+                <a href={`https://api.whatsapp.com/send?phone=${number}`}>
+                  Clicker ici pour ecrire {name} sur WhatsApp
+                </a>
+              </Text>
+              <Heading as="h3">
+                Por favor, pónganse en contacto con él cuando les sea más
+                conveniente.
+              </Heading>
+              <Heading as="h3">Gracias.</Heading>
+            </Section>
+            <Section style={containerImageFooter}>
+              <Img
+                style={image}
+                width={620}
+                src={`${baseUrl}/logo.svg`}
+              />
+            </Section>
 
-          <Text
-            style={{
-              textAlign: "center",
-              fontSize: 12,
-              color: "rgb(0,0,0, 0.7)",
-            }}
-          >
-            © 2023 | 4SRENT Inc., Valencia, España, | www.4srent.es
-          </Text>
-        </Container>
-      </Body>
+            <Text
+            className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]"
+            >
+              © 2023 | 4SRENT Inc., Valencia, España, | www.4srent.es
+            </Text>
+          </Container>
+        </Body>
+      </Tailwind>
     </Head>
   </Html>
 );

@@ -21,6 +21,7 @@ import { PhoneInput } from "../ui/phone-input";
 import { Checkbox } from "../ui/checkbox";
 import Link from "next/link";
 import { Loader } from "./loader";
+import { sendEmail } from "@/lib/actions/resend";
 
 export default function ContactForm() {
   const initiaValues = ContactValues;
@@ -30,7 +31,8 @@ export default function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof ContactFormSchema>) {
-    console.log(values);
+    // console.log(values);
+    await sendEmail(values)
   }
   return (
     <Form {...form}>
@@ -143,7 +145,7 @@ export default function ContactForm() {
           disabled={form.formState.isSubmitting}
           type="submit"
         >
-          {form.formState.isSubmitting ? <Loader /> : "Contacter"}
+          {form.formState.isSubmitting ? <Loader /> : "Contacto"}
         </Button>
       </form>
     </Form>

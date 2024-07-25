@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { prisma } from "@/lib/db/prisma";
 import { Separator } from "@/components/ui/separator";
 import { blogs } from "@/lib/blog/blog";
 

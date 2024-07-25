@@ -18,9 +18,9 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
                     </li>
                 ))}
             </ul>
-            <div className="mt-6">
+            {/* <div className="mt-6">
                 <Button className="w-full py-2 px-4  text-white rounded-md bg-custom-primary hover:bg-custom-button-secondary">Click here to get started!</Button>
-            </div>
+            </div> */}
         </Card>
     );
 };

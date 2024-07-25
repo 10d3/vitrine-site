@@ -70,6 +70,9 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
               Por favor, pónganse en contacto con él cuando les sea más
               conveniente.
             </Heading>
+            <Heading as="h3">
+              Gracias.
+            </Heading>
           </Section>
           <Section style={containerImageFooter}>
             <Img

@@ -79,7 +79,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
               <Img
                 style={image}
                 width={620}
-                src={`${baseUrl}/logo.svg`}
+                src='/public/logo.svg'
               />
             </Section>
 

@@ -22,7 +22,7 @@ export default function Proceso() {
             icon: <Phone size={20} className=" text-gray-500 dark:text-gray-400" />,
             image: '/process3.jpg',
             title: "Gestión Continua",
-            description: "Nos ocupamos de todo, desde la selección de inquilinos hasta la resolución de problemas, para que tú teenfoques en otras cosas."
+            description: "Nos ocupamos de todo, desde la selección de inquilinos hasta la resolución de problemas, para que tú teen foques en otras cosas."
         },
         {
             id: 4,

@@ -21,7 +21,7 @@ import { PhoneInput } from "../ui/phone-input";
 import { Checkbox } from "../ui/checkbox";
 import Link from "next/link";
 import { Loader } from "./loader";
-import { sendEmail } from "@/lib/actions/resend";
+import { sendEmail, sendEmailCustomer } from "@/lib/actions/resend";
 
 export default function ContactForm() {
   const initiaValues = ContactValues;
@@ -33,6 +33,7 @@ export default function ContactForm() {
   async function onSubmit(values: z.infer<typeof ContactFormSchema>) {
     // console.log(values);
     await sendEmail(values)
+    await sendEmailCustomer(values)
   }
   return (
     <Form {...form}>

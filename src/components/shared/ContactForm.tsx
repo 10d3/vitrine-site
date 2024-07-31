@@ -34,6 +34,7 @@ export default function ContactForm() {
     // console.log(values);
     await sendEmail(values)
     await sendEmailCustomer(values)
+    form.reset()
   }
   return (
     <Form {...form}>

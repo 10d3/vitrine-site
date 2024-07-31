@@ -40,7 +40,7 @@ export const sendEmailCustomer = async (values:valuesProps) =>{
         const {data, error} = await resend.emails.send({
             from:'4SRENT <info@4srent.es>',
             to:`${values.email}`,
-            subject:'Gracias ',
+            subject:'Gracias por contactarnos ',
             react: customerEmailTemplate({name:`${values?.name}`, number:`${values.number}`, email:`${values.email}`, codePostal:`${values.codePostal}`}),
             // text:`${formData.text}`,
         })

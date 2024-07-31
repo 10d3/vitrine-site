@@ -26,38 +26,31 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-export const customerEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+export const customerEmailTemplate = ({
   name,
   email,
   number,
   codePostal,
-}) => (
+} : EmailTemplateProps) => (
   <Html>
     <Head>
-      <Preview>Asunto: Nuevo Interesado en Contacto</Preview>
+      <Preview>Gracias por contactarnos.</Preview>
       <Tailwind>
         <Body>
           <Container>
             <Section className="w-full flex flex-column justify-center items-center">
-              <Img src={`${baseUrl}/logo.svg`} />
+              <Img src={`https://4srent.es/logo.svg`} />
             </Section>
             <Section>
-              <Heading as="h1">
-                Asunto: Nuevo Interesado en Contacto Estimado equipo de
-                4SRENT.es,
-              </Heading>
+              <Heading as="h1">Gracias por contactarnos.</Heading>
               <Heading as="h2">
-                Tienen un nuevo interesado que desea ponerse en contacto con
-                ustedes.
+                Hemos recibido sus datos y nos pondremos en contacto con usted
+                en breve.
               </Heading>
-              <Heading as="h3">
-                Por favor, pónganse en contacto con él cuando les sea más
-                conveniente.
-              </Heading>
-              <Heading as="h3">Gracias.</Heading>
+              <Heading as="h3">Equipo de 4SRENT</Heading>
             </Section>
             <Section>
-              <Img src="/public/logo.svg" />
+              <Img src="https://4srent.es/logo.svg" />
             </Section>
             <Text className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]">
               © 2023 | 4SRENT Inc., Valencia, España, | www.4srent.es
@@ -68,3 +61,17 @@ export const customerEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     </Head>
   </Html>
 );
+
+customerEmailTemplate.PreviewProps = {
+  username: "alanturing",
+  userImage: `localhost:3000/logo.svg`,
+  invitedByUsername: "Alan",
+  invitedByEmail: "alan.turing@example.com",
+  teamName: "Enigma",
+  teamImage: `${baseUrl}/static/vercel-team.png`,
+  inviteLink: "https://vercel.com/teams/invite/foo",
+  inviteFromIp: "204.13.186.218",
+  inviteFromLocation: "São Paulo, Brazil",
+} as EmailTemplateProps;
+
+export default customerEmailTemplate;

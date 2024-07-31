@@ -39,7 +39,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         <Body>
           <Container>
             <Section className="w-full flex flex-column justify-center items-center">
-              <Img style={logo} src={`${baseUrl}/logo.svg`} />
+              <Img width={100} height={10} src="https://4srent.es/logo.svg" />
             </Section>
             <Section style={content}>
               <Heading
@@ -78,14 +78,13 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             <Section style={containerImageFooter}>
               <Img
                 style={image}
-                width={620}
-                src='/public/logo.svg'
+                width={100}
+                height={10}
+                src="https://4srent.es/logo.svg"
               />
             </Section>
 
-            <Text
-            className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]"
-            >
+            <Text className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]">
               © 2023 | 4SRENT Inc., Valencia, España, | www.4srent.es
             </Text>
           </Container>

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "email": "email dev --dir src/components/emailTemplate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.2.0",
@@ -27,6 +28,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@react-email/components": "0.0.22",
+    "@react-email/render": "0.0.17",
     "@tanstack/react-query": "^5.45.1",
     "@tiptap/pm": "^2.4.0",
     "@tiptap/react": "^2.4.0",

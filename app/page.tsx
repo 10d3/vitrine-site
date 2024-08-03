@@ -1,3 +1,4 @@
+import BlurFade from "@/components/magicui/blur-fade";
 import CallToAction from "@/components/shared/CallToAction";
 import Hero from "@/components/shared/Hero";
 import Nosotros from "@/components/shared/Nosotros";
@@ -6,6 +7,7 @@ import Proceso from "@/components/shared/Proceso";
 import Services from "@/components/shared/Service";
 import Testimonials from "@/components/shared/Testimonials";
 
+const BLUR_FADE_DELAY = 0.04;
 export default function Home() {
   const aboutHelp = [
     {
@@ -23,15 +25,34 @@ export default function Home() {
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Hero />
-      <Proceso />
-      <Services />
-      {aboutHelp.map((ah: any, i: any) => (
-        <Nosotros key={i} ah={ah} index={i + 1} />
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <Hero />
+      </BlurFade>
+      <BlurFade delay={BLUR_FADE_DELAY * 15}>
+        <Proceso />
+      </BlurFade>
+      <BlurFade delay={BLUR_FADE_DELAY * 30}>
+        <Services />
+      </BlurFade>
+      {aboutHelp.map((ah: any, i: number) => (
+        <BlurFade
+          key={i}
+          delay={
+            (i + 1) % 2 === 0 ? BLUR_FADE_DELAY * 60 : BLUR_FADE_DELAY * 45
+          }
+        >
+          <Nosotros ah={ah} index={i + 1} />
+        </BlurFade>
       ))}
-      <Testimonials />
-      <Preguntas />
-      <CallToAction />
+      <BlurFade delay={BLUR_FADE_DELAY * 75}>
+        <Testimonials />{" "}
+      </BlurFade>
+      <BlurFade delay={BLUR_FADE_DELAY * 90}>
+        <Preguntas />
+      </BlurFade>
+      <BlurFade delay={BLUR_FADE_DELAY * 105}>
+        <CallToAction />
+      </BlurFade>
     </main>
   );
 }

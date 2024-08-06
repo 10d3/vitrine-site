@@ -25,32 +25,34 @@ export default function Home() {
   ];
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <BlurFade delay={BLUR_FADE_DELAY}>
+      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Hero />
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 15}>
+      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Proceso />
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 30}>
+      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Services />
       </BlurFade>
       {aboutHelp.map((ah: any, i: number) => (
         <BlurFade
           key={i}
-          delay={
-            (i + 1) % 2 === 0 ? BLUR_FADE_DELAY * 60 : BLUR_FADE_DELAY * 45
-          }
+          // delay={
+          //   (i + 1) % 2 === 0 ? BLUR_FADE_DELAY * 60 : BLUR_FADE_DELAY * 45
+          // }
+          delay={BLUR_FADE_DELAY * 10}
+          inView
         >
           <Nosotros ah={ah} index={i + 1} />
         </BlurFade>
       ))}
-      <BlurFade delay={BLUR_FADE_DELAY * 75}>
+      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Testimonials />{" "}
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 90}>
+      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Preguntas />
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 105}>
+      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <CallToAction />
       </BlurFade>
     </main>

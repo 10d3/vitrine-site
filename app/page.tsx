@@ -24,7 +24,7 @@ export default function Home() {
     },
   ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-between w-full">
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Hero />
       </BlurFade>
@@ -49,10 +49,10 @@ export default function Home() {
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Testimonials />{" "}
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
+      <BlurFade className="w-[96%] md:w-full" delay={BLUR_FADE_DELAY * 10} inView>
         <Preguntas />
       </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
+      <BlurFade className="w-[96%] md:w-full" delay={BLUR_FADE_DELAY * 10} inView>
         <CallToAction />
       </BlurFade>
     </main>

@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: paramsProp) {
         siteName: '4srent',
         images: [
           {
-            url: blog?.image, // Dynamic og route
+            url: `${process.env.VERCEL_URL}/${blog?.image}`, // Dynamic og route
             width: 800,
             height: 600,
           },
           {
-            url: blog?.image, // Dynamic og route
+            url: `${process.env.VERCEL_URL}/${blog?.image}`, // Dynamic og route
             width: 1800,
             height: 1600,
             alt: `image of ${blog?.title}`,

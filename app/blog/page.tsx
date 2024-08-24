@@ -7,25 +7,26 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "4srent Blog",
   description:
-    "Découvrez les dernières tendances du marché immobilier, des conseils d'achat et de vente de propriétés, des guides pour les investisseurs, et des astuces pour trouver la maison ou l'appartement de vos rêves. Restez informé sur l'immobilier commercial et résidentiel avec des articles et des analyses d'experts.",
+    "Descubre las últimas tendencias del mercado inmobiliario, consejos para comprar y vender propiedades, guías para inversores y trucos para encontrar la casa o apartamento de tus sueños. Mantente informado sobre bienes raíces comerciales y residenciales con artículos y análisis de expertos",
   openGraph: {
     title: "4srent Blog",
-    description: "Découvrez les dernières tendances du marché immobilier, des conseils d'achat et de vente de propriétés, des guides pour les investisseurs, et des astuces pour trouver la maison ou l'appartement de vos rêves. Restez informé sur l'immobilier commercial et résidentiel avec des articles et des analyses d'experts.",
+    description:
+      "Descubre las últimas tendencias del mercado inmobiliario, consejos para comprar y vender propiedades, guías para inversores y trucos para encontrar la casa o apartamento de tus sueños. Mantente informado sobre bienes raíces comerciales y residenciales con artículos y análisis de expertos",
     tags: [
-      "immobilier",
-      "vente de maisons",
-      "achat de propriétés",
-      "location d'appartements",
-      "marché immobilier",
-      "conseils immobiliers",
-      "investissement immobilier",
-      "agences immobilières",
-      "biens immobiliers",
-      "tendances immobilières",
-      "immobilier commercial",
-      "nouvelles propriétés",
-      "meilleures villes pour acheter",
-      "immobilier en ligne"
+      "inmobiliaria",
+      "venta de casas",
+      "compra de propiedades",
+      "alquiler de apartamentos",
+      "mercado inmobiliario",
+      "consejos inmobiliarios",
+      "inversión inmobiliaria",
+      "agencias inmobiliarias",
+      "bienes raíces",
+      "tendencias inmobiliarias",
+      "inmobiliaria comercial",
+      "nuevas propiedades",
+      "mejores ciudades para comprar",
+      "inmobiliaria en línea",
     ],
     images: [
       {

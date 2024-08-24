@@ -2,6 +2,46 @@ import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { blogs } from "@/lib/blog/blog";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "4srent Blog",
+  description:
+    "Découvrez les dernières tendances du marché immobilier, des conseils d'achat et de vente de propriétés, des guides pour les investisseurs, et des astuces pour trouver la maison ou l'appartement de vos rêves. Restez informé sur l'immobilier commercial et résidentiel avec des articles et des analyses d'experts.",
+  openGraph: {
+    title: "4srent Blog",
+    description: "Découvrez les dernières tendances du marché immobilier, des conseils d'achat et de vente de propriétés, des guides pour les investisseurs, et des astuces pour trouver la maison ou l'appartement de vos rêves. Restez informé sur l'immobilier commercial et résidentiel avec des articles et des analyses d'experts.",
+    tags: [
+      "immobilier",
+      "vente de maisons",
+      "achat de propriétés",
+      "location d'appartements",
+      "marché immobilier",
+      "conseils immobiliers",
+      "investissement immobilier",
+      "agences immobilières",
+      "biens immobiliers",
+      "tendances immobilières",
+      "immobilier commercial",
+      "nouvelles propriétés",
+      "meilleures villes pour acheter",
+      "immobilier en ligne"
+    ],
+    images: [
+      {
+        url: `https://i.postimg.cc/FKLVqrQC/metadata.png`, // Dynamic og route
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `https://i.postimg.cc/FKLVqrQC/metadata.png`, // Dynamic og route
+        width: 1800,
+        height: 1600,
+        alt: `image of 4srent`,
+      },
+    ],
+  },
+};
 
 export default function page() {
   return (

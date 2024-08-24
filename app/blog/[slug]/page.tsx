@@ -8,6 +8,33 @@ interface paramsProp {
         slug: string
     }
 }
+export async function generateMetadata({ params }: paramsProp) {
+    const blog = blogs.find(blog => blog.slug === params.slug)
+    return {
+      title: blog?.title,
+      openGraph: {
+        title: blog?.title,
+        description: `${blog?.description}`,
+        url: `${process.env.VERCEL_URL}/blog/${blog?.slug}`,
+        siteName: '4srent',
+        images: [
+          {
+            url: blog?.image, // Dynamic og route
+            width: 800,
+            height: 600,
+          },
+          {
+            url: blog?.image, // Dynamic og route
+            width: 1800,
+            height: 1600,
+            alt: `image of ${blog?.title}`,
+          },
+        ],
+        locale: 'es_SP',
+        type: 'website',
+      },
+    };
+  }
 export default function page({ params }: paramsProp) {
 
     const blog = blogs.find(blog => blog.slug === params.slug)

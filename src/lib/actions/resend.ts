@@ -20,7 +20,7 @@ export const sendEmail = async (values:valuesProps) =>{
     try {
         const {data, error} = await resend.emails.send({
             from:'4SRENT <info@4srent.es>',
-            to:'qerystore@gmail.com',
+            to:'4srent.es@gmail.com',
             subject:'Asunto: Nuevo Interesado en Contacto',
             react: EmailTemplate({name:`${values?.name}`, number:`${values.number}`, email:`${values.email}`, codePostal:`${values.codePostal}`}),
             // text:`${formData.text}`,

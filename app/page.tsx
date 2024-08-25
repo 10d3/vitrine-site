@@ -6,7 +6,45 @@ import Preguntas from "@/components/shared/Preguntas";
 import Proceso from "@/components/shared/Proceso";
 import Services from "@/components/shared/Service";
 import Testimonials from "@/components/shared/Testimonials";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Bienvenido a Nuestra 4SRENT - Compra, Venta y Alquiler de Propiedades",
+  description:
+    "Bienvenido a nuestro sitio inmobiliario, donde puedes encontrar las mejores propiedades en venta y alquiler. Descubre casas, apartamentos y locales comerciales disponibles. Ofrecemos asesoramiento experto para ayudarte a encontrar la propiedad perfecta para ti",
+  openGraph: {
+    title: "Bienvenido a Nuestra 4SRENT - Compra, Venta y Alquiler de Propiedades",
+    description:
+      "Bienvenido a nuestro sitio inmobiliario, donde puedes encontrar las mejores propiedades en venta y alquiler. Descubre casas, apartamentos y locales comerciales disponibles. Ofrecemos asesoramiento experto para ayudarte a encontrar la propiedad perfecta para ti",
+    tags:[
+      "inicio",
+      "página principal",
+      "búsqueda de propiedades",
+      "compra de casas",
+      "venta de casas",
+      "alquiler de propiedades",
+      "inmobiliaria en línea",
+      "propiedades en venta",
+      "propiedades en alquiler",
+      "inversiones inmobiliarias",
+      "asesoramiento inmobiliario",
+      "mejores ofertas inmobiliarias"
+    ],
+    images: [
+      {
+        url: `https://utfs.io/f/ecd60567-ed61-4f74-aca5-9f590cc35b5c-qt9zcy.jpg`, // Dynamic og route
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `https://utfs.io/f/ecd60567-ed61-4f74-aca5-9f590cc35b5c-qt9zcy.jpg`, // Dynamic og route
+        width: 1800,
+        height: 1600,
+        alt: `image of 4srent`,
+      },
+    ],
+  },
+};
 const BLUR_FADE_DELAY = 0.04;
 export default function Home() {
   const aboutHelp = [

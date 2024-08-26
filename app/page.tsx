@@ -9,11 +9,11 @@ import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bienvenido a Nuestra 4SRENT - Compra, Venta y Alquiler de Propiedades",
+  title: "Bienvenido a 4SRENT - Compra, Venta y Alquiler de Propiedades",
   description:
     "Bienvenido a nuestro sitio inmobiliario, donde puedes encontrar las mejores propiedades en venta y alquiler. Descubre casas, apartamentos y locales comerciales disponibles. Ofrecemos asesoramiento experto para ayudarte a encontrar la propiedad perfecta para ti",
   openGraph: {
-    title: "Bienvenido a Nuestra 4SRENT - Compra, Venta y Alquiler de Propiedades",
+    title: "Bienvenido a 4SRENT - Compra, Venta y Alquiler de Propiedades",
     description:
       "Bienvenido a nuestro sitio inmobiliario, donde puedes encontrar las mejores propiedades en venta y alquiler. Descubre casas, apartamentos y locales comerciales disponibles. Ofrecemos asesoramiento experto para ayudarte a encontrar la propiedad perfecta para ti",
     tags:[

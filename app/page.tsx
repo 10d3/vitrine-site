@@ -12,11 +12,23 @@ export const metadata: Metadata = {
   title: "Bienvenido a 4SRENT - Compra, Venta y Alquiler de Propiedades",
   description:
     "Bienvenido a nuestro sitio inmobiliario, donde puedes encontrar las mejores propiedades en venta y alquiler. Descubre casas, apartamentos y locales comerciales disponibles. Ofrecemos asesoramiento experto para ayudarte a encontrar la propiedad perfecta para ti",
+  keywords: [
+    "inmobiliaria",
+    "compra de casas",
+    "venta de casas",
+    "alquiler de propiedades",
+    "propiedades en venta",
+    "propiedades en alquiler",
+    "búsqueda de propiedades",
+    "asesoramiento inmobiliario",
+    "mercado inmobiliario",
+    "mejores ofertas inmobiliarias",
+  ],
   openGraph: {
     title: "Bienvenido a 4SRENT - Compra, Venta y Alquiler de Propiedades",
     description:
       "Bienvenido a nuestro sitio inmobiliario, donde puedes encontrar las mejores propiedades en venta y alquiler. Descubre casas, apartamentos y locales comerciales disponibles. Ofrecemos asesoramiento experto para ayudarte a encontrar la propiedad perfecta para ti",
-    tags:[
+    tags: [
       "inicio",
       "página principal",
       "búsqueda de propiedades",
@@ -28,7 +40,7 @@ export const metadata: Metadata = {
       "propiedades en alquiler",
       "inversiones inmobiliarias",
       "asesoramiento inmobiliario",
-      "mejores ofertas inmobiliarias"
+      "mejores ofertas inmobiliarias",
     ],
     images: [
       {
@@ -87,10 +99,18 @@ export default function Home() {
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Testimonials />{" "}
       </BlurFade>
-      <BlurFade className="w-[96%] md:w-full" delay={BLUR_FADE_DELAY * 10} inView>
+      <BlurFade
+        className="w-[96%] md:w-full"
+        delay={BLUR_FADE_DELAY * 10}
+        inView
+      >
         <Preguntas />
       </BlurFade>
-      <BlurFade className="w-[96%] md:w-full" delay={BLUR_FADE_DELAY * 10} inView>
+      <BlurFade
+        className="w-[96%] md:w-full"
+        delay={BLUR_FADE_DELAY * 10}
+        inView
+      >
         <CallToAction />
       </BlurFade>
     </main>

@@ -27,12 +27,12 @@ export const metadata: Metadata = {
       ],
       images: [
         {
-          url: `https://i.postimg.cc/FKLVqrQC/metadata.png`, // Dynamic og route
+          url: `https://utfs.io/f/597d0520-95fb-4630-ac1e-65bc18b289c0-gmfrrw.jpg`, // Dynamic og route
           width: 800,
           height: 600,
         },
         {
-          url: `https://i.postimg.cc/FKLVqrQC/metadata.png`, // Dynamic og route
+          url: `https://utfs.io/f/597d0520-95fb-4630-ac1e-65bc18b289c0-gmfrrw.jpg`, // Dynamic og route
           width: 1800,
           height: 1600,
           alt: `image of 4srent`,

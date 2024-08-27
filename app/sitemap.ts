@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+    const VERCEL_URL = 'https://www.4srent.es'
   return [
     {
-      url: `${process.env.VERCEL_URL}`,
+      url: `${VERCEL_URL}`,
       lastModified: new Date(),
     //   alternates: {
     //     languages: {
@@ -13,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   },
     },
     {
-      url: `${process.env.VERCEL_URL}/servicios`,
+      url: `${VERCEL_URL}/servicios`,
       lastModified: new Date(),
     //   alternates: {
     //     languages: {
@@ -23,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   },
     },
     {
-      url: `${process.env.VERCEL_URL}/blog`,
+      url: `${VERCEL_URL}/blog`,
       lastModified: new Date(),
     //   alternates: {
     //     languages: {
@@ -33,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   },
     },
     {
-      url: `${process.env.VERCEL_URL}/sobre-nosotros`,
+      url: `${VERCEL_URL}/sobre-nosotros`,
       lastModified: new Date(),
     //   alternates: {
     //     languages: {
@@ -43,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   },
     },
     {
-      url: `${process.env.VERCEL_URL}/testimonios`,
+      url: `${VERCEL_URL}/testimonios`,
       lastModified: new Date(),
     //   alternates: {
     //     languages: {
@@ -53,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   },
     },
     {
-      url: `${process.env.VERCEL_URL}/preguntas-frecuentes`,
+      url: `${VERCEL_URL}/preguntas-frecuentes`,
       lastModified: new Date(),
     //   alternates: {
     //     languages: {

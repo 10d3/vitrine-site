@@ -18,9 +18,11 @@ const PricingCard = ({ plan, price, features, primary }: any) => {
       </div>
       <ul className="mt-6 space-y-4">
         {features.map((feature: any, index: any) => (
-          <li key={index} className="flex flex-row gap-2">
-            <Check className="text-custom-button-secondary" size={20} />
-            <span className=" text-gray-700">{feature}</span>
+          <li key={index} className="flex flex-row gap-2 items-center">
+            <div className="w-5 h-5 flex justify-center items-center">
+              <Check className="text-custom-button-secondary" size={20} />
+            </div>
+            <span className="text-gray-700">{feature}</span>
           </li>
         ))}
       </ul>

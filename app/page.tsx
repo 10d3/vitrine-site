@@ -9,9 +9,9 @@ import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bienvenido a 4SRENT - Compra, Venta y Alquiler de Propiedades",
+  title: "Bienvenido a 4SRENT - Gestión Integral de Propiedades",
   description:
-    "Bienvenido a nuestro sitio inmobiliario, donde puedes encontrar las mejores propiedades en venta y alquiler. Descubre casas, apartamentos y locales comerciales disponibles. Ofrecemos asesoramiento experto para ayudarte a encontrar la propiedad perfecta para ti",
+    "Descubre cómo 4S.RENT facilita el alquiler y la gestión de tu propiedad con un enfoque personalizado. Nos encargamos de todo para que disfrutes de los beneficios sin preocupaciones. ¡Contáctanos para más información!",
   keywords: [
     "inmobiliaria",
     "compra de casas",

@@ -39,7 +39,11 @@ const Services = () => {
       plan: "Gestión Básico",
       price:
         'El Plan Básico "Gestión Básico" está diseñado para propietarios que buscan una gestión eficaz y confiable de sus propiedades',
-      features: ["Check in", " Check out", "Limpieza", "Mantenimiento"],
+      features: [
+        "Check-in y Check-out: Coordinación y supervisión de la entrada y salida de los inquilinos.",
+        "Limpieza: Servicio de limpieza regular y profunda entre inquilinos.",
+        "Mantenimiento: Inspección y reparación de pequeños desperfectos.",
+      ],
       primary: false,
     },
     {
@@ -48,12 +52,12 @@ const Services = () => {
         'El Plan "Gestión Plus" está diseñado para propietarios que buscan un equilibrio entre una gestión segura y servicios adicionales para optimizar la rentabilidad y el mantenimiento de su propiedad',
       features: [
         "Todos los servicios del Plan Gestión Básico",
-        "Atención al cliente",
-        "Gestión de los inquilinos",
-        "Gestión de los cobros y pagos",
-        "Control de las facturas de suministros",
-        "Control y gestión de los gastos",
-        "Atención a los siniestros",
+        "Atención al Cliente: Soporte y asistencia a los inquilinos durante su estancia.",
+        "Gestión de Inquilinos: Selección, evaluación y gestión de contratos de alquiler.",
+        "Gestión de Cobros y Pagos: Administración de los pagos de alquiler y otros cobros.",
+        "Control de Facturas de Suministros: Supervisión y pago de facturas de agua, luz, gas, etc.",
+        "Control y Gestión de Gastos: Monitoreo y optimización de los gastos operativos.",
+        "Atención a Siniestros: Gestión de incidencias y siniestros, incluyendo seguros.",
       ],
       primary: true,
     },
@@ -63,8 +67,9 @@ const Services = () => {
         'El Plan Premium "Gestión Premium" ofrece una gestión completa y proactiva de tu propiedad, asegurando no solo un ingreso mensual garantizado, sino también la optimización continua de su rentabilidad',
       features: [
         "Todos los servicios del Plan Gestión Básico y del Plan Gestión Plus",
-        "Alquilamos tu propiedad y nos encargamos de todo: Mantenimiento, reparaciones, remodelaciones, etc…",
-        "Servicio Vip y atención personalizada",
+        "Alquiler de Propiedad: Nos encargamos de alquilar tu propiedad, incluyendo marketing y promoción.",
+        "Mantenimiento Integral: Gestión completa del mantenimiento, reparaciones y remodelaciones.",
+        "Servicio VIP y Atención Personalizada: Atención exclusiva y personalizada para propietarios e inquilinos.",
       ],
       primary: false,
     },

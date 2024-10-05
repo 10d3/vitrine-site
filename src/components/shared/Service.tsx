@@ -41,7 +41,7 @@ const Services = () => {
         'El Plan Básico "Gestión Básico" está diseñado para propietarios que buscan una gestión eficaz y confiable de sus propiedades',
       features: [
         "Check-in y Check-out: Coordinación y supervisión de la entrada y salida de los inquilinos.",
-        "Limpieza: Servicio de limpieza regular y profunda entre inquilinos.",
+        "Limpieza: Servicio de limpieza regular y profunda de la vivienda.",
         "Mantenimiento: Inspección y reparación de pequeños desperfectos.",
       ],
       primary: false,

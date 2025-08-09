@@ -5,11 +5,11 @@ import { blogs } from "@/lib/blog/blog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "4srent Blog",
+  title: "ISOLA Blog",
   description:
     "Descubre las últimas tendencias del mercado inmobiliario, consejos para comprar y vender propiedades, guías para inversores y trucos para encontrar la casa o apartamento de tus sueños. Mantente informado sobre bienes raíces comerciales y residenciales con artículos y análisis de expertos",
   openGraph: {
-    title: "4srent Blog",
+    title: "ISOLA Blog",
     description:
       "Descubre las últimas tendencias del mercado inmobiliario, consejos para comprar y vender propiedades, guías para inversores y trucos para encontrar la casa o apartamento de tus sueños. Mantente informado sobre bienes raíces comerciales y residenciales con artículos y análisis de expertos",
     tags: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: `https://utfs.io/f/c06cf746-d96c-44db-960c-6e0f68575272-jlo1c4.jpg`, // Dynamic og route
         width: 1800,
         height: 1600,
-        alt: `image of 4srent`,
+        alt: `image of ISOLA`,
       },
     ],
   },

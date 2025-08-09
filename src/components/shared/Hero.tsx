@@ -41,7 +41,7 @@ export default function Hero() {
               text={`Gestionamos tu propiedad, garantizamos tu ingreso`}
             />
             {/* <p className="max-w-[600px] md:text-xl">
-              En 4SRENT, nos encargamos de todo para que disfrutes de ingresos
+              En ISOLA, nos encargamos de todo para que disfrutes de ingresos
               seguros y tranquilidad. Alquilada o no, tu propiedad siempre está
               en buenas manos.
             </p> */}
@@ -49,7 +49,7 @@ export default function Hero() {
               delay={BLUR_FADE_DELAY * 8}
               className="max-w-[600px] md:text-xl"
               yOffset={8}
-              text={`En 4SRENT, nos encargamos de todo para que disfrutes de ingresos
+              text={`En ISOLA, nos encargamos de todo para que disfrutes de ingresos
               seguros y tranquilidad. Alquilada o no, tu propiedad siempre está
               en buenas manos.`}
             />
@@ -68,7 +68,7 @@ export default function Hero() {
             <p className="text-[0.6rem] text-justify">
               En cumplimiento de la normativa vigente en materia de Protección
               de Datos de Carácter Personal, le informamos que cualquier dato
-              personal que nos haya facilitado será tratado por 4SRENT con la
+              personal que nos haya facilitado será tratado por ISOLA con la
               finalidad de prestar los servicios solicitados, atender sus
               consultas y enviarle información de interés.
             </p>

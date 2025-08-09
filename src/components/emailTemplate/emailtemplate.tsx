@@ -51,7 +51,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
                 }}
               >
                 Asunto: Nuevo Interesado en Contacto Estimado equipo de
-                4SRENT.es,
+                isola.es,
               </Heading>
               <Heading as="h2">
                 Tienen un nuevo interesado que desea ponerse en contacto con

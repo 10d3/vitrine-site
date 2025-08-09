@@ -9,9 +9,9 @@ import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bienvenido a 4SRENT - Gestión Integral de Propiedades",
+  title: "Bienvenido a ISOLA - Gestión Integral de Propiedades",
   description:
-    "Descubre cómo 4S.RENT facilita el alquiler y la gestión de tu propiedad con un enfoque personalizado. Nos encargamos de todo para que disfrutes de los beneficios sin preocupaciones. ¡Contáctanos para más información!",
+    "Descubre cómo ISOLA facilita el alquiler y la gestión de tu propiedad con un enfoque personalizado. Nos encargamos de todo para que disfrutes de los beneficios sin preocupaciones. ¡Contáctanos para más información!",
   keywords: [
     "inmobiliaria",
     "compra de casas",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "mejores ofertas inmobiliarias",
   ],
   openGraph: {
-    title: "Bienvenido a 4S.RENT - Gestión Integral de Propiedades",
+    title: "Bienvenido a ISOLA - Gestión Integral de Propiedades",
     description:
-      "Descubre cómo 4S.RENT facilita el alquiler y la gestión de tu propiedad con un enfoque personalizado. Nos encargamos de todo para que disfrutes de los beneficios sin preocupaciones. ¡Contáctanos para más información!",
+      "Descubre cómo ISOLA facilita el alquiler y la gestión de tu propiedad con un enfoque personalizado. Nos encargamos de todo para que disfrutes de los beneficios sin preocupaciones. ¡Contáctanos para más información!",
     tags: [
       "inicio",
       "página principal",
@@ -52,7 +52,8 @@ export const metadata: Metadata = {
         url: `https://utfs.io/f/ecd60567-ed61-4f74-aca5-9f590cc35b5c-qt9zcy.jpg`, // Dynamic og route
         width: 1800,
         height: 1600,
-        alt: `image of 4srent`,
+        alt: `image of ISOLA`,
+
       },
     ],
   },
@@ -64,13 +65,15 @@ export default function Home() {
       title: "¿Quiénes Somos?",
       image: "/vitrine5.jpg",
       description:
-        "En 4SRENT, somos expertos en la gestión de propiedades, dedicados a ofrecer a los propietarios una solución completa y sin preocupaciones. Nuestro compromiso es gestionar tu propiedad de manera profesional, asegurándote un ingreso mensual fijo y manteniendo tu inmueble en óptimas condiciones. Con años de experiencia en el sector y un enfoque personalizado, nos aseguramos de maximizar la rentabilidad de tu propiedad mientras tú disfrutas de la tranquilidad que mereces.",
+        "En ISOLA, somos expertos en la gestión de propiedades, dedicados a ofrecer a los propietarios una solución completa y sin preocupaciones. Nuestro compromiso es gestionar tu propiedad de manera profesional, asegurándote un ingreso mensual fijo y manteniendo tu inmueble en óptimas condiciones. Con años de experiencia en el sector y un enfoque personalizado, nos aseguramos de maximizar la rentabilidad de tu propiedad mientras tú disfrutas de la tranquilidad que mereces.",
+
     },
     {
       title: "¿Cómo podemos ayudarte?",
       image: "/image9.jpg",
       description:
-        "En 4SRENT, te ofrecemos una gestión integral para alquilar tu propiedad sin preocupaciones. Evaluamos tu inmueble, lo preparamos para destacar en el mercado, y diseñamos estrategias de marketing efectivas. Seleccionamos cuidadosamente a los inquilinos adecuados y gestionamos toda la parte administrativa y contractual. Además, nos encargamos del mantenimiento y las reparaciones necesarias para mantener tu propiedad en las mejores condiciones. Con nosotros, tu inversión está en buenas manos, garantizando tranquilidad y rentabilidad.",
+        "En ISOLA, te ofrecemos una gestión integral para alquilar tu propiedad sin preocupaciones. Evaluamos tu inmueble, lo preparamos para destacar en el mercado, y diseñamos estrategias de marketing efectivas. Seleccionamos cuidadosamente a los inquilinos adecuados y gestionamos toda la parte administrativa y contractual. Además, nos encargamos del mantenimiento y las reparaciones necesarias para mantener tu propiedad en las mejores condiciones. Con nosotros, tu inversión está en buenas manos, garantizando tranquilidad y rentabilidad.",
+
     },
   ];
   return (

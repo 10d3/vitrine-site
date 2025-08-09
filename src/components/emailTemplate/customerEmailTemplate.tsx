@@ -47,13 +47,13 @@ export const customerEmailTemplate = ({
                 Hemos recibido sus datos y nos pondremos en contacto con usted
                 en breve.
               </Heading>
-              <Heading as="h3">Equipo de 4SRENT</Heading>
+              <Heading as="h3">Equipo de ISOLA</Heading>
             </Section>
             <Section>
               <Img src="https://4srent.es/logo.svg" />
             </Section>
             <Text className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]">
-              © 2023 | 4SRENT Inc., Valencia, España, | www.4srent.es
+              © 2023 | ISOLA Inc., Valencia, España, | www.4srent.es
             </Text>
           </Container>
         </Body>

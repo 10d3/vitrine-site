@@ -143,7 +143,7 @@ export default function ContactForm() {
           Contacter
         </Button> */}
         <Button
-          className=" w-full bg-custom-primary hover:bg-custom-button-secondary"
+          className=" w-full bg-[#fe6b01] text-white hover:bg-[#fe6b01]/90"
           disabled={form.formState.isSubmitting}
           type="submit"
         >

@@ -5,21 +5,21 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "María G.",
-      description: "Con 4SRENT, puedo dormir tranquila sabiendo que mi propiedad está en buenas manos y que recibo mi pago mensual a tiempo.",
+      description: "Con ISOLA, puedo dormir tranquila sabiendo que mi propiedad está en buenas manos y que recibo mi pago mensual a tiempo.",
       image: "/placeholder.svg",
     }, {
       name: "Juan L.",
-      description: "La gestión integral de 4SRENT ha sido un salvavidas. No tengo que preocuparme por nada, y mi propiedad está siempre bien mantenida.",
+      description: "La gestión integral de ISOLA ha sido un salvavidas. No tengo que preocuparme por nada, y mi propiedad está siempre bien mantenida.",
       image: "/placeholder.svg",
     },
     {
       name:'Ramírez C.',
-      description:"El equipo de 4SRENT ha superado todas mis expectativas. Su enfoque personalizado y su dedicación para mantener mi propiedad en perfectas condiciones me han proporcionado una gran paz mental. No podría estar más satisfecho.",
+      description:"El equipo de ISOLA ha superado todas mis expectativas. Su enfoque personalizado y su dedicación para mantener mi propiedad en perfectas condiciones me han proporcionado una gran paz mental. No podría estar más satisfecho.",
       image: '/placeholder.svg',
     },
     {
       name:'Javier M.',
-      description:"Gracias a 4SRENT, ya no tengo que preocuparme por la gestión de mi propiedad. Su equipo profesional y atento se encarga de todo. Recomiendo encarecidamente sus servicios a cualquier propietario que busque una gestión sin preocupaciones." ,
+      description:"Gracias a ISOLA, ya no tengo que preocuparme por la gestión de mi propiedad. Su equipo profesional y atento se encarga de todo. Recomiendo encarecidamente sus servicios a cualquier propietario que busque una gestión sin preocupaciones." ,
       image: '/placeholder.svg',
     }
   ]

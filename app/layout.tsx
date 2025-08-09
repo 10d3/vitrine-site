@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "4SRENT | Home",
+  title: "ISOLA | Home",
   description: "Gestionamos tu propiedad, garantizamos tu ingreso",
 };
 

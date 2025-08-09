@@ -72,7 +72,7 @@ export default function CallToAction() {
                 />
               </div>
               <Button
-                className=" md:w-auto bg-custom-primary hover:bg-custom-button-secondary"
+                className=" md:w-auto bg-[#fe6b01] text-white hover:bg-[#fe6b01]/90"
                 disabled={form.formState.isSubmitting}
                 type="submit"
               >

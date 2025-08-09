@@ -46,7 +46,7 @@ export default function NavBar() {
           Blog
         </Link>
       </nav>
-      <Button size="sm" className="hidden sm:inline-flex bg-custom-primary hover:bg-custom-button-secondary">
+      <Button size="sm" className="hidden sm:inline-flex bg-[#fe6b01] text-white hover:bg-[#fe6b01]/90">
         Registrarse
       </Button>
       <Sheet>

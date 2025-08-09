@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: paramsProp) {
         title: blog?.title,
         description: `${blog?.description}`,
         url: `${process.env.VERCEL_URL}/blog/${blog?.slug}`,
-        siteName: '4srent',
+        siteName: 'ISOLA',
         images: [
           {
             url: `${process.env.VERCEL_URL}/${blog?.image}`, // Dynamic og route

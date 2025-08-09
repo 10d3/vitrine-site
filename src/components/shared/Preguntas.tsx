@@ -4,8 +4,8 @@ export default function Preguntas() {
 
   const faqs = [
     {
-      question: '¿Qué es 4SRENT y cómo funciona?',
-      answer: '4SRENT es una empresa de gestión de propiedades que se encarga de alquilar y mantener tu vivienda. Garantizamos un ingreso mensual fijo, independientemente de si la propiedad está alquilada o no. Nos ocupamos de todo, desde la selección de inquilinos hasta el mantenimiento regular y la gestión de emergencias.'
+      question: '¿Qué es ISOLA y cómo funciona?',
+      answer: 'ISOLA es una empresa de gestión de propiedades que se encarga de alquilar y mantener tu vivienda. Garantizamos un ingreso mensual fijo, independientemente de si la propiedad está alquilada o no. Nos ocupamos de todo, desde la selección de inquilinos hasta el mantenimiento regular y la gestión de emergencias.'
     },
     {
       question: '¿Qué tipos de propiedades gestionan?',
@@ -13,7 +13,7 @@ export default function Preguntas() {
     },
     {
       question: '¿Cómo garantizan el pago mensual si la propiedad no está alquilada?',
-      answer: 'En 4SRENT, ofrecemos un ingreso mensual fijo garantizado a los propietarios. Este modelo nos permite asegurarte un pago constante mientras nosotros nos encargamos de alquilar la propiedad y maximizar su rentabilidad.'
+      answer: 'En ISOLA, ofrecemos un ingreso mensual fijo garantizado a los propietarios. Este modelo nos permite asegurarte un pago constante mientras nosotros nos encargamos de alquilar la propiedad y maximizar su rentabilidad.'
     },
     {
       question: '¿Qué servicios están incluidos en cada plan?',
@@ -40,7 +40,7 @@ export default function Preguntas() {
       answer: 'Nos encargamos de todo el mantenimiento regular y preventivo de la propiedad, incluyendo reparaciones básicas, renovaciones menores y mejoras estéticas según el plan seleccionado.'
     },
     {
-      question: '¿Cómo puedo comenzar con 4SRENT?',
+      question: '¿Cómo puedo comenzar con ISOLA?',
       answer: '¡Es muy sencillo! Ponte en contacto con nosotros a través de nuestro formulario de contacto, correo electrónico o teléfono. Programaremos una consulta gratuita para evaluar tu propiedad y discutir tus necesidades.'
     },
   ];

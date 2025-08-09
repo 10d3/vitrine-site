@@ -8,7 +8,8 @@ export default function page() {
                 <div className="flex flex-col gap-1">
                     <h3 className="text-2xl font-medium">Introducción</h3>
                     <p className="text-justify">
-                        4SRENT se compromete a proteger la privacidad de los usuarios. Esta política explica cómo recopilamos y utilizamos la información personal.
+                        ISOLA se compromete a proteger la privacidad de los usuarios. Esta política explica cómo recopilamos y utilizamos la información personal.
+
                     </p>
                 </div>
                 <div className="flex flex-col gap-1">

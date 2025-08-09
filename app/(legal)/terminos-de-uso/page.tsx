@@ -9,7 +9,8 @@ export default function page() {
                     <div>
                         <h3 className="text-2xl font-medium">Introducción</h3>
                         <p className="text-justify">
-                            4SRENT proporciona estos Términos de Uso para regular el acceso y uso de su sitio web y servicios.
+                            ISOLA proporciona estos Términos de Uso para regular el acceso y uso de su sitio web y servicios.
+
                         </p>
                     </div>
                     <div className="flex flex-col gap-2 md:gap-1">

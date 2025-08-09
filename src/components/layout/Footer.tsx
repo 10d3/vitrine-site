@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container max-w-7xl mt-8 px-4 md:px-6 text-center text-sm text-gray-500 dark:text-gray-400">
-        &copy; 2024 4SRENT. All rights reserved.
+        &copy; 2024 ISOLA. All rights reserved.
       </div>
     </footer>
   )

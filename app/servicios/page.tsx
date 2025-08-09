@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: `https://utfs.io/f/2b830903-cdfc-4886-ae06-5aec83196528-gmfrrx.jpg`, // Dynamic og route
         width: 1800,
         height: 1600,
-        alt: `image of 4srent`,
+        alt: `image of ISOLA`,
       },
     ],
   },

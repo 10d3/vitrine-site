@@ -1,9 +1,9 @@
 export const blogs = [
   {
-    title: "Todo lo que necesitas saber sobre alquilar tu propiedad con 4SRENT",
+    title: "Todo lo que necesitas saber sobre alquilar tu propiedad con ISOLA",
     content: (<><div className="container mx-auto my-8 px-4">
       <p className="text-lg mb-6 text-justify">
-        Imagina tener una propiedad que quieres alquilar, pero sin las preocupaciones y complicaciones habituales. Así es como 4SRENT hace la diferencia.
+        Imagina tener una propiedad que quieres alquilar, pero sin las preocupaciones y complicaciones habituales. Así es como ISOLA hace la diferencia.
       </p>
       <p className="text-lg mb-6 text-justify">
         Déjame contarte una historia sobre cómo gestionamos las propiedades para nuestros clientes.
@@ -11,7 +11,7 @@ export const blogs = [
 
       <h2 className="text-3xl font-semibold mb-2">Tranquilidad desde el primer contacto</h2>
       <p className="text-lg mb-4 text-justify">
-        Cuando Pedro decidió alquilar su apartamento, no sabía por dónde empezar. Escuchó hablar de 4SRENT y decidió contactarnos. Desde el primer momento, sintió que estaba en buenas manos. Nuestro equipo le explicó todo el proceso, resolviendo sus dudas y ofreciéndole la tranquilidad que necesitaba.
+        Cuando Pedro decidió alquilar su apartamento, no sabía por dónde empezar. Escuchó hablar de ISOLA y decidió contactarnos. Desde el primer momento, sintió que estaba en buenas manos. Nuestro equipo le explicó todo el proceso, resolviendo sus dudas y ofreciéndole la tranquilidad que necesitaba.
       </p>
 
       <h2 className="text-3xl font-semibold mb-2">Evaluación y preparación de la propiedad</h2>
@@ -26,7 +26,7 @@ export const blogs = [
 
       <h2 className="text-3xl font-semibold mb-2">Mantenimiento continuo</h2>
       <p className="text-lg mb-4 text-justify">
-        Una vez que Ana se mudó, no terminó nuestro trabajo. En 4SRENT nos encargamos de todo el mantenimiento. Cuando surgió un problema con la calefacción, nuestro equipo lo solucionó rápidamente, manteniendo la propiedad en perfectas condiciones y asegurando la satisfacción de Ana.
+        Una vez que Ana se mudó, no terminó nuestro trabajo. En ISOLA nos encargamos de todo el mantenimiento. Cuando surgió un problema con la calefacción, nuestro equipo lo solucionó rápidamente, manteniendo la propiedad en perfectas condiciones y asegurando la satisfacción de Ana.
       </p>
 
       <h2 className="text-3xl font-semibold mb-2">Ingresos garantizados</h2>
@@ -58,15 +58,15 @@ export const blogs = [
 
       <h2 className="text-3xl font-semibold mb-2">Conclusión</h2>
       <p className="text-lg mb-4 text-justify">
-        Alquilar tu propiedad con 4SRENT significa tranquilidad y ganancias aseguradas. Nos encargamos de todo, desde la selección de inquilinos hasta el mantenimiento, garantizándote ingresos mensuales. Contáctanos hoy y descubre cómo podemos ayudarte a sacar el máximo provecho de tu propiedad.
+        Alquilar tu propiedad con ISOLA significa tranquilidad y ganancias aseguradas. Nos encargamos de todo, desde la selección de inquilinos hasta el mantenimiento, garantizándote ingresos mensuales. Contáctanos hoy y descubre cómo podemos ayudarte a sacar el máximo provecho de tu propiedad.
       </p>
     </div></>),
-    slug: "todo-lo-que-necesitas-saber-sobre-alquilar-tu-propiedad-con-4SRENT",
+    slug: "todo-lo-que-necesitas-saber-sobre-alquilar-tu-propiedad-con-ISOLA",
     image: "/image5.jpg",
     author: 'admin',
     date: '10 Juin 2024',
     tempsLecture: '6 min de lecture',
-    description:'Imagina tener una propiedad que quieres alquilar, pero sin las preocupaciones y complicaciones habituales. Así es como 4SRENT hace la diferencia.'
+    description:'Imagina tener una propiedad que quieres alquilar, pero sin las preocupaciones y complicaciones habituales. Así es como ISOLA hace la diferencia.'
   },
   {
     title:
@@ -118,7 +118,7 @@ export const blogs = [
       </p>
 
       <p className="text-lg mb-4 text-justify">
-        El mercado de alquiler en la Comunidad Valenciana está en constante evolución, influenciado por una variedad de factores. Para propietarios y gestores de viviendas, entender estas tendencias es crucial para tomar decisiones informadas y ofrecer servicios que respondan a las expectativas del mercado actual. En 4SRENT, nos comprometemos a gestionar las propiedades con la máxima eficiencia y responsabilidad, asegurando tranquilidad y rentabilidad para nuestros clientes.
+        El mercado de alquiler en la Comunidad Valenciana está en constante evolución, influenciado por una variedad de factores. Para propietarios y gestores de viviendas, entender estas tendencias es crucial para tomar decisiones informadas y ofrecer servicios que respondan a las expectativas del mercado actual. En ISOLA, nos comprometemos a gestionar las propiedades con la máxima eficiencia y responsabilidad, asegurando tranquilidad y rentabilidad para nuestros clientes.
       </p>
     </div></>),
     slug: "tendencias-actuales-del-mercado-de-alquiler-en-la-Comunidad-Valenciana.",
@@ -206,14 +206,14 @@ export const blogs = [
 
           <h2 className="text-3xl font-semibold mb-2">Utiliza Servicios Profesionales</h2>
           <p className="text-lg mb-4 text-justify">
-            <strong>Agencia de Gestión:</strong> Considera contratar una agencia de gestión de propiedades como 4SRENT para manejar todos los aspectos del alquiler.
+            <strong>Agencia de Gestión:</strong> Considera contratar una agencia de gestión de propiedades como ISOLA para manejar todos los aspectos del alquiler.
           </p>
           <p className="text-lg mb-4 text-justify">
             <strong>Asesoramiento Legal:</strong> Consulta con un abogado para asegurarte de que todos los aspectos legales están cubiertos.
           </p>
 
           <p className="text-lg mb-6 text-justify">
-            Siguiendo esta checklist, podrás alquilar tu propiedad con confianza, asegurando una experiencia positiva tanto para ti como para tus inquilinos. En 4SRENT, estamos aquí para ayudarte en cada paso del camino, ofreciendo servicios integrales para la gestión de tu propiedad. ¡Contáctanos para más información!
+            Siguiendo esta checklist, podrás alquilar tu propiedad con confianza, asegurando una experiencia positiva tanto para ti como para tus inquilinos. En ISOLA, estamos aquí para ayudarte en cada paso del camino, ofreciendo servicios integrales para la gestión de tu propiedad. ¡Contáctanos para más información!
           </p>
         </div>
       </>
@@ -226,13 +226,13 @@ export const blogs = [
     description:'Alquilar una propiedad puede ser una excelente fuente de ingresos, pero requiere una preparación adecuada para asegurar una experiencia exitosa. Aquí te ofrecemos una guía completa para que no se te escape ningún detalle importante.'
   },
   {
-    title: "4SRENT: Gestión Integral de Propiedades",
+    title: "ISOLA: Gestión Integral de Propiedades",
     content: (
       <>
         <div className="container mx-auto my-8 px-4">
-          <h1 className="text-4xl font-bold mb-4">4SRENT: Gestión Integral de Propiedades</h1>
+          <h1 className="text-4xl font-bold mb-4">ISOLA: Gestión Integral de Propiedades</h1>
           <p className="text-lg mb-6 text-justify">
-            En 4SRENT, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.
+            En ISOLA, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.
           </p>
 
           <h2 className="text-3xl font-semibold mb-2">¿Qué Hacemos?</h2>
@@ -265,7 +265,7 @@ export const blogs = [
 
           <h2 className="text-3xl font-semibold mb-2">¿Cómo Podemos Ayudarte?</h2>
           <p className="text-lg mb-4 text-justify">
-            <strong>Tranquilidad y Seguridad:</strong> En 4SRENT, sabemos lo valioso que es tu tiempo. Al encargarnos de la gestión completa de tu propiedad, te ofrecemos la tranquilidad de saber que tu inmueble está bien cuidado y que tus ingresos están asegurados, alquilada o no la vivienda.
+            <strong>Tranquilidad y Seguridad:</strong> En ISOLA, sabemos lo valioso que es tu tiempo. Al encargarnos de la gestión completa de tu propiedad, te ofrecemos la tranquilidad de saber que tu inmueble está bien cuidado y que tus ingresos están asegurados, alquilada o no la vivienda.
           </p>
           <p className="text-lg mb-4 text-justify">
             <strong>Maximización de Ingresos:</strong> Nuestra experiencia en el mercado nos permite ajustar las estrategias de alquiler para maximizar tus ingresos. Ya sea a través del alquiler por habitaciones o de la propiedad completa, adaptamos nuestras soluciones a tus necesidades específicas.
@@ -279,10 +279,10 @@ export const blogs = [
 
           <h2 className="text-3xl font-semibold mb-2">Conclusión</h2>
           <p className="text-lg mb-6 text-justify">
-            En 4SRENT, nuestra misión es ofrecer una gestión integral que libere a los propietarios de las preocupaciones del día a día, proporcionando tranquilidad y garantizando la maximización de los ingresos. Con un enfoque profesional y personalizado, cuidamos de tu propiedad como si fuera nuestra. Confía en nosotros para gestionar tu inmueble y disfruta de los beneficios sin el estrés de la administración.
+            En ISOLA, nuestra misión es ofrecer una gestión integral que libere a los propietarios de las preocupaciones del día a día, proporcionando tranquilidad y garantizando la maximización de los ingresos. Con un enfoque profesional y personalizado, cuidamos de tu propiedad como si fuera nuestra. Confía en nosotros para gestionar tu inmueble y disfruta de los beneficios sin el estrés de la administración.
           </p>
           <p className="text-lg mb-6 text-justify">
-            Para más información sobre cómo podemos ayudarte, no dudes en contactarnos. En 4SRENT, estamos aquí para hacer tu vida más fácil y tu inversión más rentable.
+            Para más información sobre cómo podemos ayudarte, no dudes en contactarnos. En ISOLA, estamos aquí para hacer tu vida más fácil y tu inversión más rentable.
           </p>
         </div>
       </>
@@ -292,6 +292,6 @@ export const blogs = [
     author: 'admin',
     date: '20 Juin 2024',
     tempsLecture: '5 min de lectura',
-    description:'En 4SRENT, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.'
+    description:'En ISOLA, nos especializamos en ofrecer una gestión integral de propiedades para propietarios que desean maximizar el rendimiento de sus inmuebles sin preocuparse por la administración diaria. Con un enfoque personalizado y profesional, nos encargamos de todos los aspectos relacionados con el alquiler y mantenimiento de viviendas, garantizando tranquilidad y satisfacción para nuestros clientes.'
   }
 ];

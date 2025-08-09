@@ -8,7 +8,8 @@ export default function page() {
                 <div className="flex flex-col gap-1">
                     <h3 className='text-2xl font-medium'>Introducción</h3>
                     <p className=" text-justify">
-                        4SRENT utiliza cookies para mejorar la experiencia del usuario en nuestro sitio web. Esta política explica cómo usamos las cookies y cómo puede gestionarlas.
+                        ISOLA utiliza cookies para mejorar la experiencia del usuario en nuestro sitio web. Esta política explica cómo usamos las cookies y cómo puede gestionarlas.
+
                     </p>
                 </div>
                 <div className="flex flex-col gap-1">

@@ -5,7 +5,7 @@ import { blogs } from "@/lib/blog/blog";
 // Main function to generate a sitemap
 export default function sitemap(): MetadataRoute.Sitemap {
   // Make sure the environment variable is defined
-  const baseUrl = 'https://www.4srent.es' || "https://your-default-domain.com";
+  const baseUrl = "https://www.4srent.es";
 
   // Generate the sitemap entries
   return blogs.map((blog) => ({

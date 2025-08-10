@@ -22,9 +22,7 @@ interface EmailTemplateProps {
   consent?: boolean;
 }
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
+const baseUrl = 'https://www.4srent.es';
 
 export const customerEmailTemplate = ({
   name,

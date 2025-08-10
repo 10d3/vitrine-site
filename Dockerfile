@@ -1,49 +1,56 @@
-# Stage 1: Build
+# Build stage
 FROM node:alpine AS builder
 
-# Install dependencies
-RUN apk add --no-cache curl openssl
+# Install system dependencies including OpenSSL
+RUN apk add --no-cache curl openssl libc6-compat
 
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
-# Copy and install dependencies
+# Copy package files
 COPY package.json ./
+
+# Install ALL dependencies (including devDependencies)
 RUN pnpm install
 
-# Copy the rest of the app
+# Copy source code
 COPY . .
 
-# Generate Prisma client
+# Set Prisma environment variables
 ENV PRISMA_SCHEMA_ENGINE_TYPE=binary
 ENV PRISMA_QUERY_ENGINE_TYPE=binary
+
+# Generate Prisma client
 RUN pnpm dlx prisma generate
 
-# Build Next.js app
+# Build the application
 RUN pnpm build
 
-# Stage 2: Production
+# Production stage
 FROM node:alpine AS runner
 
-# Install runtime dependencies
-RUN apk add --no-cache curl openssl
+# Install runtime dependencies including OpenSSL
+RUN apk add --no-cache curl openssl libc6-compat
 
 WORKDIR /app
 
-# Environment variables
+# Set environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 
-# Copy only necessary files from builder
+# Copy built application from builder stage
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-# Create a non-root user
+# Create non-root user for security
 RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
+
+# Change ownership of the app directory
+RUN chown -R nextjs:nodejs /app
 USER nextjs
 
 # Healthcheck
@@ -53,5 +60,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 # Expose port
 EXPOSE 3000
 
-# Start the app
+# Start the application
 CMD ["node", "server.js"]

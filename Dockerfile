@@ -14,6 +14,8 @@ RUN bun install --frozen-lockfile
 COPY . .
 
 # Generate Prisma client (if you're using Prisma)
+ENV PRISMA_SCHEMA_ENGINE_TYPE=binary
+ENV PRISMA_QUERY_ENGINE_TYPE=binary
 RUN bunx prisma generate
 
 # Build the application

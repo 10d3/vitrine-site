@@ -5,7 +5,7 @@ RUN apk add --no-cache curl openssl
 
 WORKDIR /app
 
-COPY package.json bun.lock ./
+COPY package.json bun.lockb ./
 
 RUN bun install --frozen-lockfile
 
@@ -16,7 +16,7 @@ ENV PRISMA_SCHEMA_ENGINE_TYPE=binary
 ENV PRISMA_QUERY_ENGINE_TYPE=binary
 RUN bunx -bun prisma generate
 
-RUN bun build
+RUN bun run build
 
 FROM oven/bun:1 AS runner
 

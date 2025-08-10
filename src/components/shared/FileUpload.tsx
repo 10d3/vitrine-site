@@ -1,36 +1,41 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-'use client'
+"use client";
 
-import { useCallback, Dispatch, SetStateAction } from 'react'
+import { useCallback, Dispatch, SetStateAction } from "react";
 // import type { FileWithPath } from '@uploadthing/react/'
-import { useDropzone } from '@uploadthing/react/hooks'
-import { generateClientDropzoneAccept } from 'uploadthing/client'
+import { useDropzone } from "@uploadthing/react/hooks";
+import { generateClientDropzoneAccept } from "uploadthing/client";
 
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
-import { convertFileToUrl } from '@/lib/uploadthings/utils'
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { convertFileToUrl } from "@/lib/uploadthings/utils";
 
 type FileUploaderProps = {
-  onFieldChange: (url: string) => void
-  image: string
-  setFiles: Dispatch<SetStateAction<File[]>>
-}
+  onFieldChange: (url: string) => void;
+  image: string;
+  setFiles: Dispatch<SetStateAction<File[]>>;
+};
 
-export function FileUploader({ image, onFieldChange, setFiles }: FileUploaderProps) {
+export function FileUploader({
+  image,
+  onFieldChange,
+  setFiles,
+}: FileUploaderProps) {
   const onDrop = useCallback((acceptedFiles: File[]) => {
-    setFiles(acceptedFiles)
-    onFieldChange(convertFileToUrl(acceptedFiles[0]))
-  }, [])
+    setFiles(acceptedFiles);
+    onFieldChange(convertFileToUrl(acceptedFiles[0]));
+  }, []);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: 'image/*' ? generateClientDropzoneAccept(['image/*']) : undefined,
-  })
+    accept: generateClientDropzoneAccept(["image/*"]),
+  });
 
   return (
     <div
       {...getRootProps()}
-      className="flex-center bg-dark-3 flex h-72 cursor-pointer flex-col overflow-hidden rounded-xl bg-gray-50">
+      className="flex-center bg-dark-3 flex h-72 cursor-pointer flex-col overflow-hidden rounded-xl bg-gray-50"
+    >
       <input {...getInputProps()} className="cursor-pointer" />
 
       {image ? (
@@ -45,7 +50,12 @@ export function FileUploader({ image, onFieldChange, setFiles }: FileUploaderPro
         </div>
       ) : (
         <div className="flex items-center flex-col py-5 text-grey-500">
-          <Image src="/assets/icons/file-upload.svg" width={77} height={77} alt="file upload" />
+          <Image
+            src="/assets/icons/file-upload.svg"
+            width={77}
+            height={77}
+            alt="file upload"
+          />
           <h3 className="mb-2 mt-2">Drag photo here</h3>
           <p className="p-medium-12 mb-4">SVG, PNG, JPG</p>
           <Button type="button" className="rounded-full">
@@ -54,5 +64,5 @@ export function FileUploader({ image, onFieldChange, setFiles }: FileUploaderPro
         </div>
       )}
     </div>
-  )
+  );
 }

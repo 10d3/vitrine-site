@@ -14,6 +14,7 @@ COPY package.json ./
 
 # Install ALL dependencies (including devDependencies)
 RUN pnpm install
+RUN pnpm add ai @ai-sdk/react @ai-sdk/openai
 
 # Copy source code
 COPY . .

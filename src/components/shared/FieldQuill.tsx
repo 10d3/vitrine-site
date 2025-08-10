@@ -2,7 +2,7 @@
 import React from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import { StarterKit } from "@tiptap/starter-kit";
-import { useMutation } from "@tanstack/react-query";
+// import { useMutation } from "@tanstack/react-query";
 import { useCompletion } from "@ai-sdk/react";
 import { Button } from "../ui/button";
 import Toolbar from "./Toolbar";

@@ -10,9 +10,9 @@ import { Label } from '../ui/label'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { FileUploader } from './FileUpload'
-import Tiptap from './FieldQuill'
+// import Tiptap from './FieldQuill'
 import { Card } from '../ui/card'
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import { Loader } from './loader'
 import { useUploadThing } from "@/lib/uploadthings/uploadthing"
 import { createBlogPost } from '@/lib/actions/BlogPostAction'
@@ -118,7 +118,7 @@ export default function PostForm() {
                                 <FormItem className="w-full">
                                     {/* <FormLabel>Event Description</FormLabel> */}
                                     <FormControl className=" h-72">
-                                        <Tiptap content={field.value} onFieldChange={field.onChange} setContent={setContent} />
+                                        {/* <Tiptap content={field.value} onFieldChange={field.onChange} setContent={setContent} /> */}
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

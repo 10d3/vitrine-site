@@ -2,8 +2,6 @@ FROM oven/bun:1 AS builder
 
 RUN apk add --no-cache curl openssl
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 

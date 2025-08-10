@@ -54,6 +54,10 @@ RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
 RUN chown -R nextjs:nodejs /app
 USER nextjs
 
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:3000/api/health || exit 1
+
 # Expose port
 EXPOSE 3000
 

@@ -1,55 +1,57 @@
-# Build stage
-FROM oven/bun:1 AS builder
+# Stage 1: Build
+FROM node:alpine AS builder
+
+# Install dependencies
+RUN apk add --no-cache curl openssl
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
-# Copy package files
+# Copy and install dependencies
 COPY package.json ./
-COPY bun.lockb ./
+RUN pnpm install
 
-# Install ALL dependencies (including devDependencies)
-RUN bun install --frozen-lockfile
-
-# Copy source code
+# Copy the rest of the app
 COPY . .
 
-# Generate Prisma client (if you're using Prisma)
+# Generate Prisma client
 ENV PRISMA_SCHEMA_ENGINE_TYPE=binary
 ENV PRISMA_QUERY_ENGINE_TYPE=binary
-RUN bunx prisma generate
+RUN pnpm dlx prisma generate
 
-# Build the application
-RUN bun run build
+# Build Next.js app
+RUN pnpm build
 
-# Production stage
-FROM oven/bun:1 AS runner
+# Stage 2: Production
+FROM node:alpine AS runner
+
+# Install runtime dependencies
+RUN apk add --no-cache curl openssl
 
 WORKDIR /app
 
-# Copy package files
-COPY package.json ./
-COPY bun.lockb ./
-
-# Install only production dependencies
-RUN bun install --frozen-lockfile --production
-
-# Copy built application from builder stage
-COPY --from=builder /app/dist ./dist
-# Copy other necessary files (adjust paths as needed)
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-
-# Set environment variables
+# Environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
 
-# Create non-root user for security
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+# Copy only necessary files from builder
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+# Create a non-root user
+RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
 USER nextjs
+
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:3000/api/health || exit 1
 
 # Expose port
 EXPOSE 3000
 
-# Start the application
-CMD ["bun", "start"]
+# Start the app
+CMD ["node", "server.js"]

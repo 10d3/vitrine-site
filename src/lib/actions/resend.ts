@@ -19,7 +19,7 @@ export const sendEmail = async (values:valuesProps) =>{
     // console.log(values)
     try {
         const {data, error} = await resend.emails.send({
-            from:'4SRENT <info@4srent.es>',
+            from:'IsolatuCasa <info@isolatucasa.com>',
             to:'4srent.es@gmail.com',
             subject:'Asunto: Nuevo Interesado en Contacto',
             react: EmailTemplate({name:`${values?.name}`, number:`${values.number}`, email:`${values.email}`, codePostal:`${values.codePostal}`}),
@@ -38,7 +38,7 @@ export const sendEmailCustomer = async (values:valuesProps) =>{
     // console.log(values)
     try {
         const {data, error} = await resend.emails.send({
-            from:'4SRENT <info@4srent.es>',
+            from:'IsolatuCasa <info@isolatucasa.com>',
             to:`${values.email}`,
             subject:'Gracias por contactarnos ',
             react: customerEmailTemplate({name:`${values?.name}`, number:`${values.number}`, email:`${values.email}`, codePostal:`${values.codePostal}`}),

@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <header className="flex h-16 w-full items-center justify-between bg-white px-4 shadow-sm dark:bg-gray-900 sm:px-6 lg:px-8">
       <Link href="/" className="flex items-center" prefetch={false}>
-        <Image className="w-auto h-8" src='/logo.svg' width={1000} height={1000} alt='logo 4srent' />
+        <Image className="w-auto h-8" src='/logo.png' width={1000} height={1000} alt='logo 4srent' />
       </Link>
       <nav className="hidden space-x-4 sm:flex">
         <Link

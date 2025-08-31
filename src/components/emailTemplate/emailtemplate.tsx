@@ -22,7 +22,7 @@ interface EmailTemplateProps {
   consent?: boolean;
 }
 
-const baseUrl = 'https://www.4srent.es';
+const baseUrl = 'https://www.isolatucasa.com';
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
@@ -37,7 +37,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         <Body>
           <Container>
             <Section className="w-full flex flex-column justify-center items-center">
-              <Img width={100} height={10} src="https://4srent.es/logo.svg" />
+              <Img width={100} height={10} src="https://isolatucasa.com/logo.png" />
             </Section>
             <Section style={content}>
               <Heading
@@ -78,12 +78,12 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
                 style={image}
                 width={100}
                 height={10}
-                src="https://4srent.es/logo.svg"
+                src="https://isolatucasa.com/logo.png"
               />
             </Section>
 
             <Text className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]">
-              © 2023 | 4SRENT Inc., Valencia, España, | www.4srent.es
+              © 2023 | ISOLA Inc., Valencia, España, | www.isolatucasa.com
             </Text>
           </Container>
         </Body>

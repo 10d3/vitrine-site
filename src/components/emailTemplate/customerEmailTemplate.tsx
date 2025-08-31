@@ -22,7 +22,7 @@ interface EmailTemplateProps {
   consent?: boolean;
 }
 
-const baseUrl = 'https://www.4srent.es';
+const baseUrl = 'https://www.isolatucasa.com';
 
 export const customerEmailTemplate = ({
   name,
@@ -37,7 +37,7 @@ export const customerEmailTemplate = ({
         <Body>
           <Container>
             <Section className="w-full flex flex-column justify-center items-center">
-              <Img src={`https://4srent.es/logo.svg`} />
+              <Img src={`https://isolatucasa.com/logo.png`} />
             </Section>
             <Section>
               <Heading as="h1">Gracias por contactarnos.</Heading>
@@ -48,10 +48,10 @@ export const customerEmailTemplate = ({
               <Heading as="h3">Equipo de ISOLA</Heading>
             </Section>
             <Section>
-              <Img src="https://4srent.es/logo.svg" />
+              <Img src="https://isolatucasa.com/logo.png" />
             </Section>
             <Text className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]">
-              © 2023 | ISOLA Inc., Valencia, España, | www.4srent.es
+              © 2023 | ISOLA Inc., Valencia, España, | www.isolatucasa.com
             </Text>
           </Container>
         </Body>
@@ -62,7 +62,7 @@ export const customerEmailTemplate = ({
 
 customerEmailTemplate.PreviewProps = {
   username: "alanturing",
-  userImage: `localhost:3000/logo.svg`,
+  userImage: `localhost:3000/logo.png`,
   invitedByUsername: "Alan",
   invitedByEmail: "alan.turing@example.com",
   teamName: "Enigma",

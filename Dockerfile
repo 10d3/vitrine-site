@@ -63,3 +63,18 @@ EXPOSE 3000
 
 # Start the application
 CMD ["node", "server.js"]
+
+LABEL traefik.enable="true" \
+    traefik.http.middlewares.gzip.compress="true" \
+    traefik.http.middlewares.redirect-to-https.redirectscheme.scheme="https" \
+    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.entrypoints="web" \
+    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.middlewares="redirect-to-https" \
+    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.rule="Host(\`isolatucasa.com\`)" \
+    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.service="app-service" \
+    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.entrypoints="websecure" \
+    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.middlewares="gzip" \
+    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.rule="Host(\`isolatucasa.com\`)" \
+    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.service="app-service" \
+    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.tls.certresolver="letsencrypt" \
+    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.tls="true" \
+    traefik.http.services.app-service.loadbalancer.server.port="3000"

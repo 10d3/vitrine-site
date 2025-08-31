@@ -1,13 +1,19 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
-import Image from "next/image"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import Image from "next/image";
 
 export default function NavBar() {
   return (
     <header className="flex h-16 w-full items-center justify-between bg-white px-4 shadow-sm dark:bg-gray-900 sm:px-6 lg:px-8">
       <Link href="/" className="flex items-center" prefetch={false}>
-        <Image className="w-auto h-8" src='/logo.png' width={1000} height={1000} alt='logo 4srent' />
+        <Image
+          className="w-auto h-8"
+          src="/logo.png"
+          width={1000}
+          height={1000}
+          alt="logo 4srent"
+        />
       </Link>
       <nav className="hidden space-x-4 sm:flex">
         <Link
@@ -46,7 +52,10 @@ export default function NavBar() {
           Blog
         </Link>
       </nav>
-      <Button size="sm" className="hidden sm:inline-flex bg-[#fe6b01] text-white hover:bg-[#fe6b01]/90">
+      <Button
+        size="sm"
+        className="hidden sm:inline-flex bg-[#fe6b01] text-white hover:bg-[#fe6b01]/90"
+      >
         Registrarse
       </Button>
       <Sheet>
@@ -100,17 +109,20 @@ export default function NavBar() {
                 Blog
               </Link>
             </nav>
-            <Button size="sm" className="mx-4 bg-custom-primary hover:bg-custom-button-secondary">
+            <Button
+              size="sm"
+              className="mx-4 bg-custom-primary hover:bg-custom-button-secondary"
+            >
               Registrarse
             </Button>
           </div>
         </SheetContent>
       </Sheet>
     </header>
-  )
+  );
 }
 
-function BriefcaseIcon(props:any) {
+function BriefcaseIcon(props: any) {
   return (
     <svg
       {...props}
@@ -127,11 +139,10 @@ function BriefcaseIcon(props:any) {
       <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
       <rect width="20" height="14" x="2" y="6" rx="2" />
     </svg>
-  )
+  );
 }
 
-
-function HomeIcon(props:any) {
+function HomeIcon(props: any) {
   return (
     <svg
       {...props}
@@ -148,11 +159,10 @@ function HomeIcon(props:any) {
       <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
       <polyline points="9 22 9 12 15 12 15 22" />
     </svg>
-  )
+  );
 }
 
-
-function MenuIcon(props:any) {
+function MenuIcon(props: any) {
   return (
     <svg
       {...props}
@@ -170,11 +180,10 @@ function MenuIcon(props:any) {
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
-  )
+  );
 }
 
-
-function PhoneIcon(props:any) {
+function PhoneIcon(props: any) {
   return (
     <svg
       {...props}
@@ -190,11 +199,10 @@ function PhoneIcon(props:any) {
     >
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
-  )
+  );
 }
 
-
-function WebcamIcon(props:any) {
+function WebcamIcon(props: any) {
   return (
     <svg
       {...props}
@@ -213,5 +221,5 @@ function WebcamIcon(props:any) {
       <path d="M7 22h10" />
       <path d="M12 22v-4" />
     </svg>
-  )
+  );
 }

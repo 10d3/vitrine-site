@@ -24,7 +24,7 @@ ENV PRISMA_SCHEMA_ENGINE_TYPE=binary
 ENV PRISMA_QUERY_ENGINE_TYPE=binary
 
 # Generate Prisma client
-RUN pnpm dlx prisma generate
+RUN pnpm prisma generate
 
 # Build the application
 RUN pnpm build

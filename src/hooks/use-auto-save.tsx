@@ -4,8 +4,8 @@ import { useSearchParams } from "next/navigation";
 // import { toast } from "sonner";
 import { saveToDB } from "@/lib/save-to-db";
 import useDebounce from "./use-auto-save-debounce";
-import { Blog } from "@/lib/generated/prisma";
 import { transformTitletoSlug } from "@/lib/utils";
+import { Blog } from "@prisma/client";
 
 export default function useAutoSave(blogData: Blog) {
   const searchParams = useSearchParams();

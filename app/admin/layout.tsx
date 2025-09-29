@@ -16,11 +16,10 @@ export default async function DashboardLayout({
     redirect("/login")
   }
 
-  console.log(session?.user)
   return (
     <SidebarProvider>
       <AppSidebar
-        user={session?.user as { name: string; email: string; avatar: string }}
+        user={session.user as { name: string; email: string; avatar: string }}
         collapsible="icon"
       />
       <main className="flex-1 w-full">
@@ -30,9 +29,9 @@ export default async function DashboardLayout({
             <Separator orientation="vertical" className="mr-2 h-4" />
             <BreadcrumbNav activeTenat={"admin"} />
           </div>
-          <div className="flex-1 flex justify-center px-4">
+          {/* <div className="flex-1 flex justify-center px-4">
             <div className="w-full">{children}</div>
-          </div>
+          </div> */}
         </div>
       </main>
     </SidebarProvider>

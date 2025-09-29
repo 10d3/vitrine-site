@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { blogs } from "@/lib/blog/blog";
+// import { blogs } from "@/lib/blog/blog";
 import { Metadata } from "next";
+import { findBlogs } from "@/lib/actions/BlogPostAction";
 
 export const metadata: Metadata = {
   title: "ISOLA Blog",
@@ -44,7 +45,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function page() {
+export default async function page() {
+  const blogs = await findBlogs()
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="bg-gray-950 text-white py-6 px-4 md:px-6">
@@ -61,7 +63,7 @@ export default function page() {
       <main className="flex-1">
         <div className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-6">
           <div className="col-span-2 grid gap-8">
-            {blogs.map((pos, i) => (
+            {blogs?.map((pos, i) => (
               <article
                 key={i}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
@@ -72,7 +74,7 @@ export default function page() {
                   prefetch={false}
                 >
                   <Image
-                    src={pos.image}
+                    src={pos.coverImage as string}
                     width={400}
                     height={300}
                     priority
@@ -90,13 +92,13 @@ export default function page() {
                       {pos.title}
                     </h2>
                   </Link>
-                  <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
-                    {pos.description}
-                  </p>
+                  {/* <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {pos.}
+                  </p> */}
                   <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                    <div>{pos.date}</div>
+                    {/* <div>{pos.updatedAt}</div> */}
                     <Separator orientation="vertical" className="h-4" />
-                    <div>{pos.tempsLecture}</div>
+                    {/* <div>{pos.tempsLecture}</div> */}
                   </div>
                 </div>
               </article>

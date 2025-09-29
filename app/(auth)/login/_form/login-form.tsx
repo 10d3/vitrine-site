@@ -9,9 +9,10 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { signIn } from "@/lib/auth/auth";
+import { signInWithCredentials, signInWithGoogle } from "@/lib/actions/sign";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
@@ -32,24 +33,18 @@ export function LoginForm({
     formState: { errors },
   } = useForm<Inputs>();
 
+  const router = useRouter();
+
   const onSubmit = async (data: Inputs) => {
     const email = data.email;
+    const password = data.password;
     setIsLoading(true);
     try {
-      await signIn("resend", {
-        email,
-        redirect: true,
-        callbackUrl: `/`,
-      });
+      await signInWithCredentials(email, password);
+      router.push("/admin");
     } catch (error) {
       console.error("Error signing in:", error);
     }
-    // finally {
-    //   setIsLoading(false);
-    //   router.push(
-    //     `/en/auth/verify-request?email=${encodeURIComponent(data.email)}`
-    //   );
-    // }
   };
 
   return (
@@ -92,6 +87,20 @@ export function LoginForm({
                 <p className="text-sm text-red-500">{errors.email.message}</p>
               )}
             </div>
+            <div className="grid gap-2">
+              <Label htmlFor="password">{`Password`}</Label>
+              <Input
+                id="password"
+                type="password"
+                placeholder={"*******"}
+                {...register("password", { required: "Password is required" })}
+              />
+              {errors.password && (
+                <p className="text-sm text-red-500">
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
             <Button type="submit" className="w-full" disabled={isLoading}>
               {/* {isLoading ? "test" : null} */}
               {isLoading ? "Chargement" : "Se connecter"}
@@ -102,7 +111,7 @@ export function LoginForm({
             <Button
               variant="outline"
               className="w-full hover:cursor-pointer"
-              onClick={() => signIn("google", { callbackUrl: `/` })}
+              onClick={() => signInWithGoogle()}
             >
               <FcGoogle className="mr-1" size={16} />
               Login with Google

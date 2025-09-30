@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import {BlurFade} from "@/components/ui/blur-fade";
 import CallToAction from "@/components/shared/CallToAction";
 import Hero from "@/components/shared/Hero";

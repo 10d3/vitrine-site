@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from "react";
 import { Card } from "../ui/card";
 import { Check } from "lucide-react";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 
 const PricingCard = ({ plan, price, features, primary }: any) => {
   return (

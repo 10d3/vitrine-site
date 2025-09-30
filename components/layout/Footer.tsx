@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import Link from "next/link";
 

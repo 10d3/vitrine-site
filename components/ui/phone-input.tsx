@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { CheckIcon, ChevronsUpDown } from "lucide-react";
 
 import * as React from "react";

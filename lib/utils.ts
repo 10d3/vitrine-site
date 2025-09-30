@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 

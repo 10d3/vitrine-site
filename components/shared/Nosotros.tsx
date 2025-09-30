@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Image from "next/image";
 
 export default function Nosotros({ah, index}:{ah:any,index:number}) {

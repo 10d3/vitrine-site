@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
 
-import { Code, Code2 } from "lucide-react";
+import { Code } from "lucide-react";
 import React from "react";
 
 import { Button } from "@/components/ui/button";

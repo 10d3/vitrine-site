@@ -3,7 +3,7 @@
 import { BoldIcon } from "lucide-react";
 import React from "react";
 
-import { Button, type ButtonProps } from "@/components/ui/button";
+import { Button, } from "@/components/ui/button";
 import {
 	Tooltip,
 	TooltipContent,
@@ -16,7 +16,7 @@ import type { StarterKitOptions } from "@tiptap/starter-kit";
 
 type StarterKitExtensions = Extension<StarterKitOptions, any>;
 
-const BoldToolbar = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const BoldToolbar = React.forwardRef<HTMLButtonElement, any>(
 	({ className, onClick, children, ...props }, ref) => {
 		const { editor } = useToolbar();
 		return (

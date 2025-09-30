@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export default function Service() {
     return (
         <section className="w-full py-12 md:py-24 lg:py-32">

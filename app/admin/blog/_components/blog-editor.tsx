@@ -8,17 +8,19 @@ import { useState, useRef, useEffect } from "react";
 import { Loader2, Save, AlertCircle } from "lucide-react";
 import { uploadThemes } from "@/lib/theme/upload-theme";
 import Image from "next/image";
-import { Blog } from "@prisma/client";
 import { UploadButton } from "@/lib/uploadthings/uploadthing";
+import { Blog } from "@/lib/generated/prisma";
 
 export default function BlogEditor({ blogData }: { blogData: Blog }) {
   const [blogDataS, setBlogDataS] = useState(blogData);
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [isEditingSeoTitle, setIsEditingSeoTitle] = useState(false);
   const [isEditingSeoDescription, setIsEditingSeoDescription] = useState(false);
+  const [isEditingDescription, setIsEditingDescription] = useState(false);
   const seoTitleInputRef = useRef<HTMLInputElement>(null);
   const seoDescriptionInputRef = useRef<HTMLTextAreaElement>(null); // Use textarea for description
   const titleInputRef = useRef<HTMLInputElement>(null);
+  const descriptionInputRef = useRef<HTMLTextAreaElement>(null);
 
   const { isSaving, hasUnsavedChanges, id } = useAutoSave(blogDataS);
   useUnloadingWarning(hasUnsavedChanges);
@@ -37,7 +39,11 @@ export default function BlogEditor({ blogData }: { blogData: Blog }) {
       seoDescriptionInputRef.current.focus();
       seoDescriptionInputRef.current.select();
     }
-  }, [isEditingTitle, isEditingSeoTitle, isEditingSeoDescription]);
+    if (isEditingDescription && descriptionInputRef.current) {
+      descriptionInputRef.current.focus();
+      descriptionInputRef.current.select();
+    }
+  }, [isEditingTitle, isEditingSeoTitle, isEditingSeoDescription, isEditingDescription]);
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTitle = e.target.value;
@@ -95,6 +101,28 @@ export default function BlogEditor({ blogData }: { blogData: Blog }) {
 
   const handleSeoDescriptionBlur = () => {
     setIsEditingSeoDescription(false);
+  };
+
+  const handleDescriptionChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const newDescription = e.target.value;
+    setBlogDataS((prev) => ({
+      ...prev,
+      description: newDescription,
+    }));
+  };
+
+  const handleDescriptionKeyDown = (
+    e: React.KeyboardEvent<HTMLTextAreaElement>
+  ) => {
+    if (e.key === "Enter" || e.key === "Escape") {
+      setIsEditingDescription(false);
+    }
+  };
+
+  const handleDescriptionBlur = () => {
+    setIsEditingDescription(false);
   };
 
   const handleContentChange = (content: string) => {
@@ -201,6 +229,34 @@ export default function BlogEditor({ blogData }: { blogData: Blog }) {
               />
             </div>
           </div>
+        </div>
+
+        <div className="mb-12">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Description
+          </label>
+          {isEditingDescription ? (
+            <textarea
+              ref={descriptionInputRef}
+              value={blogDataS.description || ""}
+              onChange={handleDescriptionChange}
+              onKeyDown={handleDescriptionKeyDown}
+              onBlur={handleDescriptionBlur}
+              rows={3}
+              className="flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+              placeholder="Enter Description..."
+            />
+          ) : (
+            <p
+              onClick={() => setIsEditingDescription(true)}
+              className="cursor-pointer text-sm text-muted-foreground transition-colors hover:text-primary"
+              title={blogDataS.description || "Click to edit description"}
+            >
+              {blogDataS.description || (
+                <span className="text-muted-foreground">No Description</span>
+              )}
+            </p>
+          )}
         </div>
 
         <div className="border-t border-border pt-6">

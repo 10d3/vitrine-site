@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/admin/",
       },
     ],
-    sitemap: ["https://4srent.es/sitemap.xml", 'https://4srent.es/blog/sitemap.xml'],
+    sitemap: ["https://isolatucasa.com/sitemap.xml", 'https://isolatucasa.com/blog/sitemap.xml'],
   };
 }

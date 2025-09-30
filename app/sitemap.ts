@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const VERCEL_URL = 'https://www.4srent.es'
+    const VERCEL_URL = 'https://isolatucasa.com'
   return [
     {
       url: `${VERCEL_URL}`,

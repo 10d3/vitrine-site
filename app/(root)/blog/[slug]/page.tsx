@@ -1,10 +1,7 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { findBlogBySlug } from "@/lib/actions/BlogPostAction";
-import { blogs } from "@/lib/blog/blog";
 import { Calendar, Eye, User } from "lucide-react";
 import { headers } from "next/headers";
 import Image from "next/image";
-import Link from "next/link";
 
 interface paramsProp {
   params: {
@@ -23,7 +20,7 @@ export async function generateMetadata({ params }: paramsProp) {
     title: blog?.title,
     openGraph: {
       title: blog?.title,
-      // description: `${blog?.description}`,
+      description: `${blog?.description}`,
       url: `isolatucasa.com/blog/${blog?.slug}`,
       siteName: "ISOLA",
       images: [

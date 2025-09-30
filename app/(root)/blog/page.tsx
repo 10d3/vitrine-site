@@ -46,17 +46,17 @@ export const metadata: Metadata = {
 };
 
 export default async function page() {
-  const blogs = await findBlogs()
+  const blogs = await findBlogs();
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="bg-gray-950 text-white py-6 px-4 md:px-6">
+      <header className=" py-6 px-4 md:px-6">
         <div className="container max-w-5xl mx-auto">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Bienvenido a nuestro blog inmobiliario
+          <h1 className="font-serif text-3xl font-nomal tracking-tight sm:text-4xl md:text-5xl">
+            Perspectivas inmobiliarias y tendencias del mercado
           </h1>
           <p className="mt-4 max-w-3xl text-gray-400 sm:text-lg md:text-xl">
-            Explora nuestros artículos más recientes sobre el mercado
-            inmobiliario, recomendaciones de expertos y tendencias del sector.
+            Explora artículos seleccionados sobre el mercado inmobiliario,
+            recomendaciones de expertos y las últimas tendencias del sector.
           </p>
         </div>
       </header>
@@ -92,9 +92,9 @@ export default async function page() {
                       {pos.title}
                     </h2>
                   </Link>
-                  {/* <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
-                    {pos.}
-                  </p> */}
+                  <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
+                    {pos.description}
+                  </p>
                   <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                     {/* <div>{pos.updatedAt}</div> */}
                     <Separator orientation="vertical" className="h-4" />

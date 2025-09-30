@@ -1,29 +1,19 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  async headers() {
-    return [
+  output:"standalone",
+  images:{
+    remotePatterns: [
       {
-        source: "/api/(.*)",
-        headers: [
-          {
-            key: "Access-Control-Allow-Origin",
-            value: "http://localhost:3000",
-          },
-          {
-            key: "Access-Control-Allow-Methods",
-            value: "GET,POST,PUT,DELETE,OPTIONS",
-          },
-          {
-            key: "Access-Control-Allow-Headers",
-            value: "X-Requested-With, Content-Type, Authorization",
-          },
-        ],
-      },
-    ];
-  },
+        protocol: "https",
+        hostname: "l2yvnapk4q.ufs.sh",
+        pathname: "**"
+      }
+    ]
+  }
 };
 
-module.exports = nextConfig;
+export default nextConfig;

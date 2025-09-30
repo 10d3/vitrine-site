@@ -27,7 +27,7 @@ export default async function DashboardLayout({
           <div className="flex items-center p-1 border-b bg-card">
             <SidebarTrigger />
             <Separator orientation="vertical" className="mr-2 h-4" />
-            {/* <BreadcrumbNav activeTenat={"admin"} /> */}
+            <BreadcrumbNav activeTenat={"admin"} />
           </div>
           <div className="flex-1 flex justify-center px-4">
             <div className="w-full">{children}</div>

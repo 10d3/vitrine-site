@@ -11,8 +11,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import {
   PlusCircle,
-  Calendar,
-  User,
   FileText,
   Edit3,
   TrendingUp,

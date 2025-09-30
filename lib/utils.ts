@@ -34,7 +34,7 @@ export function isValidUrl(url: string) {
 }
 
 export function duplicateContent(editor: any) {
-  const { view, state } = editor;
+  const { state } = editor;
   const { selection } = state;
   const { from, to } = selection;
 

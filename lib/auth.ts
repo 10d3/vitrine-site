@@ -11,5 +11,5 @@ export const auth = betterAuth({
     enabled: true,
   },
   plugins: [admin()],
-  trustedOrigins: ["http://localhost:3000"],
+  trustedOrigins: ["http://localhost:3000", "https://isolatucasa.com"],
 });

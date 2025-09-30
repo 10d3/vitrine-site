@@ -1,4 +1,4 @@
-import BlurFade from "@/components/magicui/blur-fade";
+import {BlurFade} from "@/components/ui/blur-fade";
 import CallToAction from "@/components/shared/CallToAction";
 import Hero from "@/components/shared/Hero";
 import Nosotros from "@/components/shared/Nosotros";

@@ -6,8 +6,10 @@ export function MinimalBlogTemplate({
   date,
   readingTime,
   category,
-  accentColor = "#1a1a1a",
-  bgColor = "#fafaf9",
+  accentColor = "#f97316",
+  bgColor = "#ffffff",
+  logo,
+  image,
 }: OGTemplateProps) {
   return (
     <div
@@ -15,134 +17,141 @@ export function MinimalBlogTemplate({
         height: "100%",
         width: "100%",
         display: "flex",
-        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
         backgroundColor: bgColor,
+        padding: "80px",
         fontFamily: "system-ui, -apple-system, sans-serif",
-        position: "relative",
       }}
     >
-      {/* Subtle accent line at top */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "8px",
-          background: `linear-gradient(90deg, ${accentColor} 0%, ${accentColor}99 100%)`,
-        }}
-      />
-
-      {/* Main content container */}
+      {/* Left Content Section */}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "80px",
-          height: "100%",
+          alignItems: "flex-start",
+          justifyContent: "center",
+          width: "55%",
+          gap: "30px",
         }}
       >
-        {/* Header with category */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-          {category && (
-            <div
-              style={{
-                display: "flex",
-                fontSize: "20px",
-                fontWeight: "600",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                color: accentColor,
-                opacity: 0.8,
-              }}
-            >
-              {category}
-            </div>
-          )}
-
-          {/* Title - Large, elegant serif */}
-          <h1
+        {/* Logo */}
+        {logo && (
+          <div
             style={{
-              fontSize: "72px",
-              fontWeight: "700",
-              lineHeight: 1.1,
-              color: accentColor,
-              margin: 0,
-              maxWidth: "90%",
-              letterSpacing: "-0.02em",
+              display: "flex",
+              alignItems: "center",
+              height: "60px",
             }}
           >
-            {title}
-          </h1>
-        </div>
+            <img
+              src={logo || "/placeholder.svg"}
+              alt="Logo"
+              style={{
+                height: "60px",
+                width: "auto",
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        )}
 
-        {/* Footer metadata */}
+        {/* Title */}
+        <h1
+          style={{
+            fontSize: 58,
+            fontWeight: "900",
+            color: "#000000",
+            lineHeight: 1.2,
+            margin: 0,
+            maxWidth: "100%",
+          }}
+        >
+          {title}
+        </h1>
+
+        {/* Date */}
+        {date && (
+          <div
+            style={{
+              fontSize: "28px",
+              color: "#000000",
+              opacity: 0.8,
+              margin: 0,
+            }}
+          >
+            {new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </div>
+        )}
+
+        {/* CTA Button */}
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            borderTop: `2px solid ${accentColor}20`,
-            paddingTop: "32px",
+            alignItems: "center",
+            backgroundColor: accentColor,
+            color: "#ffffff",
+            fontSize: 28,
+            fontWeight: "700",
+            padding: "20px 40px",
+            borderRadius: "8px",
+            marginTop: "10px",
           }}
         >
-          {/* Author and date */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            {author && (
-              <div
-                style={{
-                  fontSize: "28px",
-                  fontWeight: "600",
-                  color: accentColor,
-                }}
-              >
-                {author}
-              </div>
-            )}
-            {date && (
-              <div
-                style={{
-                  fontSize: "24px",
-                  color: accentColor,
-                  opacity: 0.6,
-                }}
-              >
-                {date}
-              </div>
-            )}
-          </div>
-
-          {/* Reading time badge */}
-          {readingTime && (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "12px",
-                fontSize: "22px",
-                color: accentColor,
-                opacity: 0.7,
-              }}
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke={accentColor}
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              {readingTime}
-            </div>
-          )}
+          Read Article
         </div>
       </div>
+
+      {/* Right Image Section */}
+      {image && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "40%",
+            height: "420px",
+            position: "relative",
+          }}
+        >
+          {/* Decorative Orange Rectangle */}
+          <div
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "-50px",
+              width: "200px",
+              height: "150px",
+              backgroundColor: accentColor,
+              zIndex: 1,
+            }}
+          />
+
+          {/* Image Container */}
+          <div
+            style={{
+              display: "flex",
+              position: "relative",
+              zIndex: 2,
+              borderRadius: "24px",
+              overflow: "hidden",
+              width: "100%",
+              height: "100%",
+              boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+            }}
+          >
+            <img
+              src={image || "/placeholder.svg"}
+              alt="Post cover"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

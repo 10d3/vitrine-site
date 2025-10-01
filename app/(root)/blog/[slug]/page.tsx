@@ -3,22 +3,29 @@ import { getBaseURL } from "@/lib/utils";
 import { Calendar, Eye, User } from "lucide-react";
 import { headers } from "next/headers";
 import Image from "next/image";
+import { base64url } from "zod";
 
 interface paramsProp {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
+
 export async function generateMetadata({ params }: paramsProp) {
   const headersList = await headers();
   const ip =
     headersList.get("x-forwarded-for") ||
     headersList.get("x-real-ip") ||
     "anonymous";
-  const blog = await findBlogBySlug(params.slug, ip);
-  // const baseUrl = headersList.get("host") || "isolatucasa.com";
-  const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(blog?.title || "")}&date=${blog?.createdAt || ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;
-  // const blog = blogs.find(blog => blog.slug === params.slug)
+
+  const { slug } = await params;
+  const blog = await findBlogBySlug(slug, ip);
+  // console.log(blog);
+
+  const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(blog?.title || "")}&logo=${encodeURIComponent("https://fhi5b89inu.ufs.sh/f/RPE5CBbg6eKjkfFs83icCP1fGOZSHyLix7snjqw3EzgJbN49")}&date=${blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString() : ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;
+
+  console.log(ogImageUrl)
+
   return {
     title: blog?.title,
     openGraph: {
@@ -28,12 +35,12 @@ export async function generateMetadata({ params }: paramsProp) {
       siteName: "ISOLA",
       images: [
         {
-          url: ogImageUrl, // Dynamic og route
+          url: ogImageUrl,
           width: 800,
           height: 600,
         },
         {
-          url: ogImageUrl, // Dynamic og route
+          url: ogImageUrl,
           width: 1800,
           height: 1600,
           alt: `image of ${blog?.title}`,
@@ -44,13 +51,16 @@ export async function generateMetadata({ params }: paramsProp) {
     },
   };
 }
+
 export default async function page({ params }: paramsProp) {
   const headersList = await headers();
   const ip =
     headersList.get("x-forwarded-for") ||
     headersList.get("x-real-ip") ||
     "anonymous";
-  const blog = await findBlogBySlug(params.slug, ip);
+
+  const { slug } = await params;
+  const blog = await findBlogBySlug(slug, ip);
 
   return (
     <article className="min-h-screen bg-background max-w-5xl mx-auto">

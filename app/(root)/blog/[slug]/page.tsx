@@ -1,4 +1,5 @@
 import { findBlogBySlug } from "@/lib/actions/BlogPostAction";
+import { getBaseURL } from "@/lib/utils";
 import { Calendar, Eye, User } from "lucide-react";
 import { headers } from "next/headers";
 import Image from "next/image";
@@ -15,6 +16,8 @@ export async function generateMetadata({ params }: paramsProp) {
     headersList.get("x-real-ip") ||
     "anonymous";
   const blog = await findBlogBySlug(params.slug, ip);
+  // const baseUrl = headersList.get("host") || "isolatucasa.com";
+  const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(blog?.title || "")}&date=${blog?.createdAt || ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;
   // const blog = blogs.find(blog => blog.slug === params.slug)
   return {
     title: blog?.title,
@@ -25,12 +28,12 @@ export async function generateMetadata({ params }: paramsProp) {
       siteName: "ISOLA",
       images: [
         {
-          url: `isolatucasa.com/${blog?.coverImage}`, // Dynamic og route
+          url: ogImageUrl, // Dynamic og route
           width: 800,
           height: 600,
         },
         {
-          url: `isolatucasa.com/${blog?.coverImage}`, // Dynamic og route
+          url: ogImageUrl, // Dynamic og route
           width: 1800,
           height: 1600,
           alt: `image of ${blog?.title}`,
@@ -49,7 +52,7 @@ export default async function page({ params }: paramsProp) {
     "anonymous";
   const blog = await findBlogBySlug(params.slug, ip);
 
-   return (
+  return (
     <article className="min-h-screen bg-background max-w-5xl mx-auto">
       <header className="border-b border-border/50">
         <div className="max-w-4xl mx-auto px-2 md:px-6 py-6 md:py-16 lg:py-24">

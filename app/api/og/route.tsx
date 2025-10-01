@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { templates } from "@/lib/og";
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";

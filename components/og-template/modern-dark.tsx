@@ -1,4 +1,4 @@
-import type { OGTemplateProps } from "./types"
+import { OGTemplateProps } from "@/lib/og";
 
 export function ModernDarkTemplate({
   title,

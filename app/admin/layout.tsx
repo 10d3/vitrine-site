@@ -5,6 +5,12 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Admin Dashboard',
+  description: 'Manage your website content',
+};
 
 export default async function DashboardLayout({
   children,

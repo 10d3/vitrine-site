@@ -19,11 +19,8 @@ export async function generateMetadata({ params }: paramsProp) {
 
   const { slug } = await params;
   const blog = await findBlogBySlugWithoutView(slug);
-  // console.log(blog);
 
   const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(blog?.title || "")}&logo=${encodeURIComponent("https://fhi5b89inu.ufs.sh/f/RPE5CBbg6eKjkfFs83icCP1fGOZSHyLix7snjqw3EzgJbN49")}&date=${blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString() : ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;
-
-  console.log(ogImageUrl)
 
   return {
     title: blog?.title,

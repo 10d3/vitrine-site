@@ -1,9 +1,8 @@
-import { findBlogBySlug } from "@/lib/actions/BlogPostAction";
+import { findBlogBySlug, findBlogBySlugWithoutView } from "@/lib/actions/BlogPostAction";
 import { getBaseURL } from "@/lib/utils";
 import { Calendar, Eye, User } from "lucide-react";
 import { headers } from "next/headers";
 import Image from "next/image";
-import { base64url } from "zod";
 
 interface paramsProp {
   params: Promise<{
@@ -19,7 +18,7 @@ export async function generateMetadata({ params }: paramsProp) {
     "anonymous";
 
   const { slug } = await params;
-  const blog = await findBlogBySlug(slug, ip);
+  const blog = await findBlogBySlugWithoutView(slug);
   // console.log(blog);
 
   const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(blog?.title || "")}&logo=${encodeURIComponent("https://fhi5b89inu.ufs.sh/f/RPE5CBbg6eKjkfFs83icCP1fGOZSHyLix7snjqw3EzgJbN49")}&date=${blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString() : ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;

@@ -11,12 +11,6 @@ interface paramsProp {
 }
 
 export async function generateMetadata({ params }: paramsProp) {
-  const headersList = await headers();
-  const ip =
-    headersList.get("x-forwarded-for") ||
-    headersList.get("x-real-ip") ||
-    "anonymous";
-
   const { slug } = await params;
   const blog = await findBlogBySlugWithoutView(slug);
 

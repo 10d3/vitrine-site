@@ -25,6 +25,7 @@ import {
 // import { FcGoogle } from "react-icons/fc"
 import { signUp } from "@/lib/auth-client";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const formSchema = z
   .object({
@@ -65,6 +66,12 @@ export function SignupForm({
       password: values.password,
       callbackURL: "/login"
     });
+
+    if(data) toast.success("Account created succesfully")
+
+    if (error) {
+      toast.error(error.message);
+    }
   }
 
   return (

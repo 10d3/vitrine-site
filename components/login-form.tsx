@@ -25,6 +25,7 @@ import {
 // import { FcGoogle } from "react-icons/fc";
 import { signIn } from "@/lib/auth-client";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -48,15 +49,18 @@ export function LoginForm({
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     const { data, error } = await signIn.email({
       email: values.email, // required
       password: values.password, // required
       rememberMe: true,
       callbackURL: "/admin",
     });
-    console.log(data);
-    console.log(error);
+
+    if(data) toast.success("Connexion succesfull")
+
+    if (error) {
+      toast.error(error.message);
+    }
   }
 
   return (

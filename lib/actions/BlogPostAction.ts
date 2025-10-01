@@ -86,7 +86,7 @@ export const publishBlog = async (id: string) => {
         published: true,
       },
     });
-    // revalidatePath("/admin/blog")
+    revalidatePath("/admin/blog")
   } catch (error) {
     console.error(error);
   }
@@ -100,7 +100,7 @@ export const draftBlog = async (id: string) => {
         published: false,
       },
     });
-    // revalidatePath("/admin/blog")
+    revalidatePath("/admin/blog")
   } catch (error) {
     console.error(error);
   }

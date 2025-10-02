@@ -19,7 +19,7 @@ export default function LoginPage() {
         >
           <Image
             className=" w-32 h-fit"
-            src={"/logo.svg"}
+            src={"/logo.png"}
             alt="logo"
             width={1000}
             height={1000}

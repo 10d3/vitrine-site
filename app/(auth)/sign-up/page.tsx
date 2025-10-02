@@ -16,7 +16,7 @@ export default function SignUpPage() {
         <Link href="/" className="flex items-center gap-2 self-center font-medium">
           <Image
             className=" w-32 h-fit"
-            src={"/logo.svg"}
+            src={"/logo.png"}
             alt="logo"
             width={1000}
             height={1000}

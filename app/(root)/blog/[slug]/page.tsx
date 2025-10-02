@@ -1,4 +1,7 @@
-import { findBlogBySlug, findBlogBySlugWithoutView } from "@/lib/actions/BlogPostAction";
+import {
+  findBlogBySlug,
+  findBlogBySlugWithoutView,
+} from "@/lib/actions/BlogPostAction";
 import { getBaseURL } from "@/lib/utils";
 import { Calendar, Eye, User } from "lucide-react";
 import { headers } from "next/headers";
@@ -15,6 +18,8 @@ export async function generateMetadata({ params }: paramsProp) {
   const blog = await findBlogBySlugWithoutView(slug);
 
   const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(blog?.title || "")}&logo=${encodeURIComponent("https://fhi5b89inu.ufs.sh/f/RPE5CBbg6eKjkfFs83icCP1fGOZSHyLix7snjqw3EzgJbN49")}&date=${blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString() : ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;
+
+  console.log(ogImageUrl);
 
   return {
     title: blog?.title,
@@ -55,7 +60,7 @@ export default async function page({ params }: paramsProp) {
   return (
     <article className="min-h-screen bg-background max-w-5xl mx-auto">
       <header className="border-b border-border/50">
-        <div className="max-w-4xl mx-auto px-2 md:px-6 py-6 md:py-16 lg:py-24">
+        <div className="max-w-4xl mx-auto px-2 md:px-6 py-6 md:py-8 lg:py-16">
           <div className="space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-foreground">
               {blog?.title}

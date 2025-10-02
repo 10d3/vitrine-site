@@ -21,8 +21,8 @@ export default function Footer() {
   ];
   return (
     <footer className="bg-gray-100 py-12 w-full dark:bg-gray-800">
-      <div className=" max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div className="flex flex-col gap-4 md:items-center w-full">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-4 items-center w-full">
           <h3 className="font-semibold">Contact</h3>
           <div className="grid gap-2 text-sm">
             <div className="flex items-center gap-2">
@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 md:items-center">
+        <div className="flex flex-col gap-4 items-center">
           <h3 className="font-semibold">Follow Us</h3>
           <div className="flex gap-4">
             <Link href="#" aria-label="Facebook" prefetch={false}>
@@ -53,7 +53,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-4 md:items-center">
+        <div className="flex flex-col gap-4 items-center">
           <h3 className="font-semibold">Legal</h3>
           <div className="grid gap-2 text-sm">
             {legals.map((legal, i) => (
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="container max-w-7xl mt-8 px-4 md:px-6 text-center text-sm text-gray-500 dark:text-gray-400">
+      <div className="flex justify-center items-center w-full mt-8 px-4 md:px-6 text-center text-sm text-gray-500 dark:text-gray-400">
         &copy; 2024 ISOLA. All rights reserved.
       </div>
     </footer>

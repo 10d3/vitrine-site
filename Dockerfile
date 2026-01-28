@@ -5,7 +5,8 @@ FROM node:alpine AS builder
 RUN apk add --no-cache curl openssl libc6-compat
 
 # Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN npm install -g pnpm
 
 WORKDIR /app
 

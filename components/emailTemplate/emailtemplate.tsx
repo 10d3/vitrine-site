@@ -1,18 +1,4 @@
-import {
-  Body,
-  Button,
-  Container,
-  Column,
-  Head,
-  Heading,
-  Html,
-  Img,
-  Preview,
-  Row,
-  Section,
-  Text,
-  Tailwind,
-} from "@react-email/components";
+import type * as React from "react";
 
 interface EmailTemplateProps {
   email: string;
@@ -30,72 +16,78 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   number,
   codePostal,
 }) => (
-  <Html>
-    <Head>
-      <Preview>Asunto: Nuevo Interesado en Contacto</Preview>
-      <Tailwind>
-        <Body>
-          <Container>
-            <Section className="w-full flex flex-column justify-center items-center">
-              <Img width={100} height={10} src="https://isolatucasa.com/logo.png" />
-            </Section>
-            <Section style={content}>
-              <Heading
-                as="h1"
-                style={{
-                  fontSize: 32,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
-                Asunto: Nuevo Interesado en Contacto Estimado equipo de
-                isola.es,
-              </Heading>
-              <Heading as="h2">
-                Tienen un nuevo interesado que desea ponerse en contacto con
-                ustedes.
-              </Heading>
-              <Text style={{ fontSize: 13 }}>Nombre : {name}</Text>
-              <Text style={{ fontSize: 13 }}>
-                Correo electrónico : <a href={`mailto:${email}`}>{email}</a>
-              </Text>
-              <Text style={{ fontSize: 13 }}>
-                Tel : <a href={`tel:${number}`}>{number}</a>
-              </Text>
-              <Text>
-                <a href={`https://api.whatsapp.com/send?phone=${number}`}>
-                  Clicker ici pour ecrire {name} sur WhatsApp
-                </a>
-              </Text>
-              <Heading as="h3">
-                Por favor, pónganse en contacto con él cuando les sea más
-                conveniente.
-              </Heading>
-              <Heading as="h3">Gracias.</Heading>
-            </Section>
-            <Section style={containerImageFooter}>
-              <Img
-                style={image}
-                width={100}
-                height={10}
-                src="https://isolatucasa.com/logo.png"
-              />
-            </Section>
+  <html>
+    <body style={main}>
+      <div style={container}>
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+          <img width="100" height="auto" src="https://isolatucasa.com/logo.png" alt="Isola Logo" style={{ maxWidth: '100%' }} />
+        </div>
 
-            <Text className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]">
-              © 2023 | ISOLA Inc., Valencia, España, | www.isolatucasa.com
-            </Text>
-          </Container>
-        </Body>
-      </Tailwind>
-    </Head>
-  </Html>
+        <div style={content}>
+          <h1
+            style={{
+              fontSize: "32px",
+              fontWeight: "bold",
+              textAlign: "center",
+              margin: "20px 0",
+            }}
+          >
+            Asunto: Nuevo Interesado en Contacto Estimado equipo de
+            isola.es,
+          </h1>
+          <h2>
+            Tienen un nuevo interesado que desea ponerse en contacto con
+            ustedes.
+          </h2>
+          <p style={{ fontSize: "13px" }}>Nombre : {name}</p>
+          <p style={{ fontSize: "13px" }}>
+            Correo electrónico : <a href={`mailto:${email}`}>{email}</a>
+          </p>
+          <p style={{ fontSize: "13px" }}>
+            Tel : <a href={`tel:${number}`}>{number}</a>
+          </p>
+          <p>
+            <a href={`https://api.whatsapp.com/send?phone=${number}`}>
+              Clicker ici pour ecrire {name} sur WhatsApp
+            </a>
+          </p>
+          <h3>
+            Por favor, pónganse en contacto con él cuando les sea más
+            conveniente.
+          </h3>
+          <h3>Gracias.</h3>
+        </div>
+
+        <div style={containerImageFooter}>
+          <img
+            style={image}
+            width="100"
+            height="auto"
+            src="https://isolatucasa.com/logo.png"
+            alt="Isola Footer Logo"
+          />
+        </div>
+
+        <p style={{ textAlign: "center", fontSize: "0.8rem", color: "rgba(0,0,0, 0.7)" }}>
+          © 2023 | ISOLA Inc., Valencia, España, | www.isolatucasa.com
+        </p>
+      </div>
+    </body>
+  </html>
 );
 
 const main = {
   backgroundColor: "#fff",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+  margin: 0,
+  padding: 0
+};
+
+const container = {
+  maxWidth: "600px",
+  margin: "0 auto",
+  padding: "20px",
 };
 
 const paragraph = {
@@ -126,6 +118,7 @@ const content = {
   border: "1px solid rgb(0,0,0, 0.1)",
   borderRadius: "3px",
   overflow: "hidden",
+  padding: "20px"
 };
 
 const image = {
@@ -139,3 +132,5 @@ const boxInfos = {
 const containerImageFooter = {
   padding: "45px 0 0 0",
 };
+
+export default EmailTemplate;

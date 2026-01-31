@@ -1,21 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import {
-  Body,
-  Button,
-  Container,
-  Column,
-  Head,
-  Heading,
-  Html,
-  Img,
-  Preview,
-  Row,
-  Section,
-  Text,
-  Tailwind,
-} from "@react-email/components";
+import type * as React from "react";
 
 interface EmailTemplateProps {
   email?: string;
@@ -32,47 +18,75 @@ export const customerEmailTemplate = ({
   email,
   number,
   codePostal,
-} : EmailTemplateProps) => (
-  <Html>
-    <Head>
-      <Preview>Gracias por contactarnos.</Preview>
-      <Tailwind>
-        <Body>
-          <Container>
-            <Section className="w-full flex flex-column justify-center items-center">
-              <Img src={`https://isolatucasa.com/logo.png`} />
-            </Section>
-            <Section>
-              <Heading as="h1">Gracias por contactarnos.</Heading>
-              <Heading as="h2">
-                Hemos recibido sus datos y nos pondremos en contacto con usted
-                en breve.
-              </Heading>
-              <Heading as="h3">Equipo de ISOLA</Heading>
-            </Section>
-            <Section>
-              <Img src="https://isolatucasa.com/logo.png" />
-            </Section>
-            <Text className="text-center text-[0.8rem] text-[rgb(0,0,0, 0.7)]">
-              © 2023 | ISOLA Inc., Valencia, España, | www.isolatucasa.com
-            </Text>
-          </Container>
-        </Body>
-      </Tailwind>
-    </Head>
-  </Html>
+}: EmailTemplateProps) => (
+  <html>
+    <body style={main}>
+      <div style={container}>
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+          <img width="100" height="auto" src="https://isolatucasa.com/logo.png" alt="Isola Logo" style={{ maxWidth: '100%' }} />
+        </div>
+
+        <div style={content}>
+          <h1 style={{ fontSize: "32px", fontWeight: "bold", textAlign: "center", margin: "20px 0" }}>
+            Gracias por contactarnos.
+          </h1>
+          <h2 style={{ fontSize: "24px", textAlign: "center", margin: "10px 0" }}>
+            Hemos recibido sus datos y nos pondremos en contacto con usted en breve.
+          </h2>
+          <h3 style={{ fontSize: "20px", textAlign: "center", margin: "10px 0" }}>
+            Equipo de ISOLA
+          </h3>
+        </div>
+
+        <div style={containerImageFooter}>
+          <img
+            style={image}
+            width="100"
+            height="auto"
+            src="https://isolatucasa.com/logo.png"
+            alt="Isola Footer Logo"
+          />
+        </div>
+
+        <p style={{ textAlign: "center", fontSize: "0.8rem", color: "rgba(0,0,0, 0.7)" }}>
+          © 2023 | ISOLA Inc., Valencia, España, | www.isolatucasa.com
+        </p>
+      </div>
+    </body>
+  </html>
 );
 
+// Styles
+const main = {
+  backgroundColor: "#fff",
+  fontFamily:
+    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+  margin: 0,
+  padding: 0
+};
+
+const container = {
+  maxWidth: "600px",
+  margin: "0 auto",
+  padding: "20px",
+};
+
+const content = {
+  // border: "1px solid rgb(0,0,0, 0.1)", // Not strictly present in original but often good for containment, keeping minimal as per original visual intent likely
+  padding: "20px"
+};
+
+const containerImageFooter = {
+  padding: "45px 0 0 0",
+};
+
+const image = {
+  maxWidth: "100%",
+};
+
 customerEmailTemplate.PreviewProps = {
-  username: "alanturing",
-  userImage: `localhost:3000/logo.png`,
-  invitedByUsername: "Alan",
-  invitedByEmail: "alan.turing@example.com",
-  teamName: "Enigma",
-  teamImage: `${baseUrl}/static/vercel-team.png`,
-  inviteLink: "https://vercel.com/teams/invite/foo",
-  inviteFromIp: "204.13.186.218",
-  inviteFromLocation: "São Paulo, Brazil",
+  name: "Alan Turing",
+  email: "alan.turing@example.com",
 } as EmailTemplateProps;
 
 export default customerEmailTemplate;

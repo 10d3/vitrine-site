@@ -1,82 +1,48 @@
-# Build stage
-FROM node:alpine AS builder
+# syntax=docker/dockerfile:1
 
-# Install system dependencies including OpenSSL
+# Base stage
+FROM node:20-alpine AS base
 RUN apk add --no-cache curl openssl libc6-compat
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Install pnpm
-# RUN corepack enable && corepack prepare pnpm@latest --activate
-RUN npm install -g pnpm
-
+# Dependencies stage
+FROM base AS deps
 WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+# --ignore-scripts blocks all malicious postinstall scripts
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
-# Copy package files
-COPY package.json ./
-
-# Install ALL dependencies (including devDependencies)
-RUN pnpm install
-# RUN pnpm add ai @ai-sdk/react @ai-sdk/openai
-RUN pnpm add sharp
-
-# Copy source code
-COPY . .
-
-# Set Prisma environment variables
+# Builder stage
+FROM base AS builder
+WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+COPY --from=deps /app/node_modules ./node_modules
+COPY prisma ./prisma/
 ENV PRISMA_SCHEMA_ENGINE_TYPE=binary
 ENV PRISMA_QUERY_ENGINE_TYPE=binary
-
-# Generate Prisma client
+# Only explicitly trusted scripts run here
 RUN pnpm prisma generate
-
-# Build the application
+RUN pnpm add sharp --ignore-scripts
+COPY . .
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm build
 
-# Production stage
-FROM node:alpine AS runner
-
-# Install runtime dependencies including OpenSSL
+# Runner stage
+FROM node:20-alpine AS runner
 RUN apk add --no-cache curl openssl libc6-compat
-
 WORKDIR /app
-
-# Set environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
-
-# Copy built application from builder stage
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-
-# Create non-root user for security
+ENV NEXT_TELEMETRY_DISABLED=1
+# Create non-root user
 RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
-
-# Change ownership of the app directory
-RUN chown -R nextjs:nodejs /app
+# Copy only what's needed to run
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
-
-# Healthcheck
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=60s --timeout=10s --start-period=30s --retries=3 \
     CMD curl -f http://localhost:3000/api/health || exit 1
-
-# Expose port
 EXPOSE 3000
-
-# Start the application
 CMD ["node", "server.js"]
-
-LABEL traefik.enable="true" \
-    traefik.http.middlewares.gzip.compress="true" \
-    traefik.http.middlewares.redirect-to-https.redirectscheme.scheme="https" \
-    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.entrypoints="web" \
-    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.middlewares="redirect-to-https" \
-    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.rule="Host(\`isolatucasa.com\`)" \
-    traefik.http.routers.http-0-eo808g84o488soo8s4s8c08g.service="app-service" \
-    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.entrypoints="websecure" \
-    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.middlewares="gzip" \
-    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.rule="Host(\`isolatucasa.com\`)" \
-    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.service="app-service" \
-    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.tls.certresolver="letsencrypt" \
-    traefik.http.routers.https-0-eo808g84o488soo8s4s8c08g.tls="true" \
-    traefik.http.services.app-service.loadbalancer.server.port="3000"

@@ -15,7 +15,7 @@ interface valuesProps {
     consent?: boolean
 }
 
-const Email = "4srent.es@gmail.com"
+const Email = "isolatucasa@gmail.com"
 export const sendEmail = async (values: valuesProps) => {
     // console.log(values)
     try {

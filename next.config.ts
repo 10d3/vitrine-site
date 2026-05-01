@@ -4,8 +4,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output:"standalone",
-  images:{
+  output: "standalone",
+  images: {
+    unoptimized: false,
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",

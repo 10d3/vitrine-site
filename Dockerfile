@@ -29,7 +29,10 @@ RUN pnpm build
 
 # Runner stage
 FROM node:20-alpine AS runner
-RUN apk add --no-cache curl openssl libc6-compat
+RUN apk add --no-cache curl openssl libc6-compat \
+    && rm -rf /var/cache/apk/*   # reduce image size
+# Set read-only root filesystem (if possible at runtime)
+# Use --read-only flag when running container, with /tmp mounted as tmpfs
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000

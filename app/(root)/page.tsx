@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import {BlurFade} from "@/components/ui/blur-fade";
+import { BlurFade } from "@/components/ui/blur-fade";
 import CallToAction from "@/components/shared/CallToAction";
 import Hero from "@/components/shared/Hero";
-import Nosotros from "@/components/shared/Nosotros";
 import Preguntas from "@/components/shared/Preguntas";
 import Proceso from "@/components/shared/Proceso";
-import Services from "@/components/shared/Service";
+// import Services from "@/components/shared/Service";
 import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
+import { ServicesGrid } from "@/components/shared/service-grid";
+import { NosotrosSection } from "@/components/shared/Nosotros";
 
 export const metadata: Metadata = {
   title: "Bienvenido a ISOLA - Gestión Integral de Propiedades",
@@ -88,20 +89,9 @@ export default function Home() {
         <Proceso />
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
-        <Services />
+        <ServicesGrid />
       </BlurFade>
-      {aboutHelp.map((ah: any, i: number) => (
-        <BlurFade
-          key={i}
-          // delay={
-          //   (i + 1) % 2 === 0 ? BLUR_FADE_DELAY * 60 : BLUR_FADE_DELAY * 45
-          // }
-          delay={BLUR_FADE_DELAY * 10}
-          inView
-        >
-          <Nosotros ah={ah} index={i + 1} />
-        </BlurFade>
-      ))}
+      <NosotrosSection items={aboutHelp} />
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Testimonials />{" "}
       </BlurFade>

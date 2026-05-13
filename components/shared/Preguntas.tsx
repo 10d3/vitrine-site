@@ -50,25 +50,25 @@ export default function Preguntas() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Preguntas Frecuentes</h2>
-            <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <h2 className="text-3xl font-light tracking-tight sm:text-4xl md:text-5xl">Preguntas Frecuentes</h2>
+            <p className="max-w-225 text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Aquí encontrarás las respuestas a las preguntas más comunes sobre nuestra empresa y nuestros servicios.
             </p>
           </div>
         </div>
         <div className="mx-auto max-w-4xl space-y-6 py-12">
-        {faqs.map((faq, i) => (<Accordion key={i} type="single" collapsible>
+          {faqs.map((faq, i) => (<Accordion key={i} type="single" collapsible>
             <AccordionItem value={`question${i + 1}`}>
-              <AccordionTrigger className="flex items-center justify-between text-lg md:text-2xl font-medium">
+              <AccordionTrigger className="flex items-center justify-between transition-colors text-lg md:text-xl font-medium">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent>
-                <div className="text-[1rem]">
-                  {faq.answer}
-                </div>
+              <AccordionContent className="text-muted-foreground leading-relaxed">
+                {/* <div className="text-[1rem]"> */}
+                {faq.answer}
+                {/* </div> */}
               </AccordionContent>
             </AccordionItem>
-            </Accordion>
+          </Accordion>
           ))}
         </div>
       </div>

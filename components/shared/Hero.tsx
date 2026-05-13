@@ -36,7 +36,7 @@ export default function Hero() {
             </h1> */}
             <BlurFadeText
               delay={BLUR_FADE_DELAY * 4}
-              className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl"
+              className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
               yOffset={8}
               text={`Gestionamos tu propiedad, garantizamos tu ingreso`}
             />
@@ -47,7 +47,7 @@ export default function Hero() {
             </p> */}
             <BlurFadeText
               delay={BLUR_FADE_DELAY * 8}
-              className="max-w-[600px] md:text-xl"
+              className="max-w-150 md:text-xl"
               yOffset={8}
               text={`En ISOLA, nos encargamos de todo para que disfrutes de ingresos
               seguros y tranquilidad. Alquilada o no, tu propiedad siempre está

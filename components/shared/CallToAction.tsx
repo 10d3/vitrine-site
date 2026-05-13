@@ -37,10 +37,10 @@ export default function CallToAction() {
     <section className="w-[96%] md:w-full rounded-sm mb-12 py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
         <div className="space-y-3">
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          <h2 className="text-3xl font-light tracking-tight md:text-4xl/tight">
             Únete a Nuestro Newsletter
           </h2>
-          <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          <p className="mx-auto max-w-150 text-muted-foreground leading-relaxed">
             Mantente al día con las últimas tendencias y consejos en gestión de
             propiedades. ¡Suscríbete a nuestro newsletter y recibe información
             exclusiva directamente en tu correo!

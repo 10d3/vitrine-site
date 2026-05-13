@@ -1,59 +1,59 @@
-import {Clock, FileText, Phone, ScanSearch } from "lucide-react"
+import { Clock, FileText, Phone, ScanSearch } from "lucide-react"
 
 
 export default function Proceso() {
-    const Procesos = [
-        {
-            id: 1,
-            icon: <ScanSearch size={20} className=" text-gray-500 dark:text-gray-400" />,
-            image: '/process1.jpg',
-            title: "Evaluación Inicial",
-            description: "Realizamos una evaluación exhaustiva de tu propiedad para determinar el mejor enfoque de gestión."
-        },
-        {
-            id: 2,
-            icon: <FileText size={20} className=" text-gray-500 dark:text-gray-400" />,
-            image: '/process2.jpg',
-            title: "Configuración de Alquiler",
-            description: "Nos encargamos de todos los aspectos legales y logísticos para preparar tu propiedad para el alquiler."
-        },
-        {
-            id: 3,
-            icon: <Phone size={20} className=" text-gray-500 dark:text-gray-400" />,
-            image: '/process3.jpg',
-            title: "Gestión Continua",
-            description: "Nos ocupamos de todo, desde la selección de inquilinos hasta la resolución de problemas, para que tú te enfoques en otras cosas."
-        },
-        {
-            id: 4,
-            icon: <Clock size={20} className=" text-gray-500 dark:text-gray-400" />,
-            image: '/process4.jpg',
-            title: "Pago Garantizado",
-            description: "Recibe tus pagos de alquiler a tiempo, incluso si el inquilino se retrasa, con nuestra garantía de pago."
-        }
-    ]
-    return (
-        <section className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container w-[90%] md:w-full px-4 md:px-6">
-                <div className="max-w-3xl mx-auto space-y-6 text-center">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nuestro Proceso</h2>
-                    <p className=" md:text-xl dark:text-gray-400">
-                        Descubre cómo trabajamos para brindar una experiencia sin preocupaciones a los propietarios de bienes
-                        raíces.
-                    </p>
-                </div>
-                <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4">
-                   {Procesos.map((proceso)=>( <div key={proceso.id} className="space-y-4">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800">
-                            {proceso.icon}
-                        </div>
-                        <h3 className="text-lg font-semibold">{proceso.title}</h3>
-                        <p className=" dark:text-gray-400">
-                            {proceso.description}
-                        </p>
-                    </div>))}
-                </div>
+  const Procesos = [
+    {
+      id: 1,
+      icon: <ScanSearch size={20} className=" text-gray-500 dark:text-gray-400" />,
+      image: '/process1.jpg',
+      title: "Evaluación Inicial",
+      description: "Realizamos una evaluación exhaustiva de tu propiedad para determinar el mejor enfoque de gestión."
+    },
+    {
+      id: 2,
+      icon: <FileText size={20} className=" text-gray-500 dark:text-gray-400" />,
+      image: '/process2.jpg',
+      title: "Configuración de Alquiler",
+      description: "Nos encargamos de todos los aspectos legales y logísticos para preparar tu propiedad para el alquiler."
+    },
+    {
+      id: 3,
+      icon: <Phone size={20} className=" text-gray-500 dark:text-gray-400" />,
+      image: '/process3.jpg',
+      title: "Gestión Continua",
+      description: "Nos ocupamos de todo, desde la selección de inquilinos hasta la resolución de problemas, para que tú te enfoques en otras cosas."
+    },
+    {
+      id: 4,
+      icon: <Clock size={20} className=" text-gray-500 dark:text-gray-400" />,
+      image: '/process4.jpg',
+      title: "Pago Garantizado",
+      description: "Recibe tus pagos de alquiler a tiempo, incluso si el inquilino se retrasa, con nuestra garantía de pago."
+    }
+  ]
+  return (
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container w-[90%] md:w-full px-4 md:px-6">
+        <div className="max-w-3xl mx-auto space-y-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-light tracking-tighter sm:text-4xl">Nuestro Proceso</h2>
+          <p className=" dark:text-gray-400 text-muted-foreground leading-relaxed">
+            Descubre cómo trabajamos para brindar una experiencia sin preocupaciones a los propietarios de bienes
+            raíces.
+          </p>
+        </div>
+        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4">
+          {Procesos.map((proceso) => (<div key={proceso.id} className="space-y-4">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800">
+              {proceso.icon}
             </div>
-        </section>
-    )
+            <h3 className="text-xl font-medium transition-colors">{proceso.title}</h3>
+            <p className=" text-muted-foreground leading-relaxed dark:text-gray-400">
+              {proceso.description}
+            </p>
+          </div>))}
+        </div>
+      </div>
+    </section>
+  )
 }

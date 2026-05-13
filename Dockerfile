@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Base stage
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 RUN apk add --no-cache curl openssl libc6-compat
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
@@ -28,7 +28,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm build
 
 # Runner stage
-FROM node:20-alpine AS runner
+FROM node:22-alpine AS runner
 RUN apk add --no-cache curl openssl libc6-compat \
     && rm -rf /var/cache/apk/*   # reduce image size
 # Set read-only root filesystem (if possible at runtime)

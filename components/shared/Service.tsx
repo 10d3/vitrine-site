@@ -1,101 +1,123 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from "react";
-import { Card } from "../ui/card";
-import { Check } from "lucide-react";
-// import { Button } from "../ui/button";
+"use client"
 
-const PricingCard = ({ plan, price, features, primary }: any) => {
+import { Card, CardContent } from "@/components/ui/card"
+import { Check } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+const plans = [
+  {
+    number: "01",
+    plan: "Gestión Básico",
+    description:
+      "El Plan Básico está diseñado para propietarios que buscan una gestión eficaz y confiable de sus propiedades.",
+    features: [
+      "Check-in y Check-out: Coordinación y supervisión de la entrada y salida de los inquilinos.",
+      "Limpieza: Servicio de limpieza regular y profunda de la vivienda.",
+      "Mantenimiento: Inspección y reparación de pequeños desperfectos.",
+    ],
+    featured: false,
+  },
+  {
+    number: "02",
+    plan: "Gestión Plus",
+    description:
+      "El Plan Plus está diseñado para propietarios que buscan un equilibrio entre gestión segura y servicios adicionales.",
+    features: [
+      "Todos los servicios del Plan Gestión Básico",
+      "Atención al Cliente: Soporte y asistencia a los inquilinos durante su estancia.",
+      "Gestión de Inquilinos: Selección, evaluación y gestión de contratos de alquiler.",
+      "Gestión de Cobros y Pagos: Administración de los pagos de alquiler y otros cobros.",
+      "Control de Facturas de Suministros: Supervisión y pago de facturas de agua, luz, gas, etc.",
+      "Control y Gestión de Gastos: Monitoreo y optimización de los gastos operativos.",
+      "Atención a Siniestros: Gestión de incidencias y siniestros, incluyendo seguros.",
+    ],
+    featured: true,
+  },
+  {
+    number: "03",
+    plan: "Gestión Premium",
+    description:
+      "El Plan Premium ofrece una gestión completa y proactiva de tu propiedad, asegurando la optimización continua.",
+    features: [
+      "Todos los servicios del Plan Gestión Básico y del Plan Gestión Plus",
+      "Alquiler de Propiedad: Nos encargamos de alquilar tu propiedad, incluyendo marketing y promoción.",
+      "Mantenimiento Integral: Gestión completa del mantenimiento, reparaciones y remodelaciones.",
+      "Servicio VIP y Atención Personalizada: Atención exclusiva y personalizada para propietarios e inquilinos.",
+    ],
+    featured: false,
+  },
+]
+
+export function Services() {
   return (
-    <Card
-      className={`w-full bg-white rounded-lg p-8 ${
-        primary ? "border-4 border-custom-button-secondary shadow-2xl" : ""
-      }`}
-    >
-      <div className="text-center">
-        <h2 className="text-2xl font-bold text-custom-button-secondary">
-          {plan}
-        </h2>
-        {/* <p className="mt-2 text-justify text-gray-900">{price}</p> */}
-      </div>
-      <ul className="mt-6 space-y-4">
-        {features.map((feature: any, index: any) => (
-          <li key={index} className="flex flex-row gap-2 items-center">
-            <div className="w-5 h-5 flex justify-center items-center">
-              <Check className="text-custom-button-secondary" size={20} />
-            </div>
-            <span className="text-gray-700">{feature}</span>
-          </li>
-        ))}
-      </ul>
-      {/* <div className="mt-6">
-                <Button className="w-full py-2 px-4  text-white rounded-md bg-custom-primary hover:bg-custom-button-secondary">Click here to get started!</Button>
-            </div> */}
-    </Card>
-  );
-};
+    <section className="py-24 md:py-32">
+      <div className="container mx-auto px-6">
+        <div className="max-w-full mb-16 flex flex-col text-center">
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-4">
+            Servicios de
+            <br />
+            <span className="font-medium">Gestión Integral</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Ofrecemos una variedad de planes para satisfacer las necesidades de
+            nuestros clientes.
+          </p>
+        </div>
 
-const Services = () => {
-  const plans = [
-    {
-      plan: "Gestión Básico",
-      price:
-        'El Plan Básico "Gestión Básico" está diseñado para propietarios que buscan una gestión eficaz y confiable de sus propiedades',
-      features: [
-        "Check-in y Check-out: Coordinación y supervisión de la entrada y salida de los inquilinos.",
-        "Limpieza: Servicio de limpieza regular y profunda de la vivienda.",
-        "Mantenimiento: Inspección y reparación de pequeños desperfectos.",
-      ],
-      primary: false,
-    },
-    {
-      plan: "Gestión Plus",
-      price:
-        'El Plan "Gestión Plus" está diseñado para propietarios que buscan un equilibrio entre una gestión segura y servicios adicionales para optimizar la rentabilidad y el mantenimiento de su propiedad',
-      features: [
-        "Todos los servicios del Plan Gestión Básico",
-        "Atención al Cliente: Soporte y asistencia a los inquilinos durante su estancia.",
-        "Gestión de Inquilinos: Selección, evaluación y gestión de contratos de alquiler.",
-        "Gestión de Cobros y Pagos: Administración de los pagos de alquiler y otros cobros.",
-        "Control de Facturas de Suministros: Supervisión y pago de facturas de agua, luz, gas, etc.",
-        "Control y Gestión de Gastos: Monitoreo y optimización de los gastos operativos.",
-        "Atención a Siniestros: Gestión de incidencias y siniestros, incluyendo seguros.",
-      ],
-      primary: true,
-    },
-    {
-      plan: "Gestión Premium",
-      price:
-        'El Plan Premium "Gestión Premium" ofrece una gestión completa y proactiva de tu propiedad, asegurando no solo un ingreso mensual garantizado, sino también la optimización continua de su rentabilidad',
-      features: [
-        "Todos los servicios del Plan Gestión Básico y del Plan Gestión Plus",
-        "Alquiler de Propiedad: Nos encargamos de alquilar tu propiedad, incluyendo marketing y promoción.",
-        "Mantenimiento Integral: Gestión completa del mantenimiento, reparaciones y remodelaciones.",
-        "Servicio VIP y Atención Personalizada: Atención exclusiva y personalizada para propietarios e inquilinos.",
-      ],
-      primary: false,
-    },
-  ];
+        <div className="grid md:grid-cols-3 gap-6 items-stretch">
+          {plans.map((plan) => (
+            <Card
+              key={plan.number}
+              className={cn(
+                "group relative overflow-hidden transition-all duration-300 hover:shadow-lg border-border/50 flex flex-col h-full",
+                plan.featured && "ring-2 ring-primary shadow-xl"
+              )}
+            >
+              <CardContent className="p-8 flex flex-col h-full">
+                {/* Header with number and badge */}
+                <div className="flex items-start justify-between mb-6">
+                  <span className="text-5xl font-light text-muted-foreground/30">
+                    {plan.number}
+                  </span>
+                  {plan.featured && (
+                    <span className="px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-full">
+                      Popular
+                    </span>
+                  )}
+                </div>
 
-  return (
-    <section className="w-full py-12 md:mb-12 bg-gray-100 rounded-sm">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-custom-button-secondary">
-          Servicios de Gestión Integral
-        </h2>
-        <p className="mx-auto max-w-[700px] text-custom-button-secondary md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-          Ofrecemos una variedad de planes para satisfacer las necesidades de
-          nuestros clientes.
-        </p>
-      </div>
-      <div className="flex justify-center p-8 flex-col md:flex-row w-full gap-4 md:gap-0">
-        {plans.map((plan, index) => (
-          <PricingCard key={index} {...plan} />
-        ))}
+                {/* Plan name */}
+                <h3 className="text-xl font-medium mb-3 group-hover:text-primary transition-colors">
+                  {plan.plan}
+                </h3>
+
+                {/* Description */}
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {plan.description}
+                </p>
+
+                {/* Features list - grows to fill available space */}
+                <ul className="space-y-3 flex-grow">
+                  {plan.features.map((feature, index) => (
+                    <li key={index} className="flex gap-3 items-start">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
+                          <Check className="w-3 h-3 text-primary" />
+                        </div>
+                      </div>
+                      <span className="text-sm text-muted-foreground leading-relaxed">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Services;

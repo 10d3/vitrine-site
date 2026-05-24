@@ -1,14 +1,12 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   FileText,
   ClipboardList,
   Building2,
   Home,
   Scale,
-  ArrowRight,
   Key,
   Sparkles,
   Crown
@@ -51,27 +49,27 @@ const services = [
     icon: Scale,
     featured: false,
   },
-  {
-    number: "06",
-    title: "Gestión Básico",
-    description: "Servicio esencial de check-in/check-out, limpieza profesional y mantenimiento básico de tu propiedad.",
-    icon: Key,
-    featured: false,
-  },
-  {
-    number: "07",
-    title: "Gestión Plus",
-    description: "Gestión completa incluyendo atención al cliente, gestión de inquilinos, cobros, facturas de suministros y control de gastos.",
-    icon: Sparkles,
-    featured: true,
-  },
-  {
-    number: "08",
-    title: "Gestión Premium",
-    description: "Servicio VIP completo: alquiler y comercialización, mantenimiento integral y atención personalizada exclusiva.",
-    icon: Crown,
-    featured: false,
-  },
+  // {
+  //   number: "06",
+  //   title: "Gestión Básico",
+  //   description: "Servicio esencial de check-in/check-out, limpieza profesional y mantenimiento básico de tu propiedad.",
+  //   icon: Key,
+  //   featured: false,
+  // },
+  // {
+  //   number: "07",
+  //   title: "Gestión Plus",
+  //   description: "Gestión completa incluyendo atención al cliente, gestión de inquilinos, cobros, facturas de suministros y control de gastos.",
+  //   icon: Sparkles,
+  //   featured: true,
+  // },
+  // {
+  //   number: "08",
+  //   title: "Gestión Premium",
+  //   description: "Servicio VIP completo: alquiler y comercialización, mantenimiento integral y atención personalizada exclusiva.",
+  //   icon: Crown,
+  //   featured: false,
+  // },
 ]
 
 export function ServicesGrid() {

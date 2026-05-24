@@ -11,6 +11,7 @@ import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
 import { ServicesGrid } from "@/components/shared/service-grid";
 import { NosotrosSection } from "@/components/shared/Nosotros";
+import { Services } from "@/components/shared/Service";
 
 export const metadata: Metadata = {
   title: "Bienvenido a ISOLA - Gestión Integral de Propiedades",
@@ -87,6 +88,9 @@ export default function Home() {
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Proceso />
+      </BlurFade>
+      <BlurFade delay={BLUR_FADE_DELAY * 10}>
+        <Services />
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <ServicesGrid />

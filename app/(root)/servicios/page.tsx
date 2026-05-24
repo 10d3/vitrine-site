@@ -1,6 +1,5 @@
-import Service from "@/components/shared/Service";
+import Service from "@/components/shared/service2";
 import { Metadata } from "next";
-import React from "react";
 
 export const metadata: Metadata = {
   title:

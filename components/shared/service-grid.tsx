@@ -7,9 +7,6 @@ import {
   Building2,
   Home,
   Scale,
-  Key,
-  Sparkles,
-  Crown
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 

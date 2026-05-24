@@ -1,5 +1,6 @@
-import Service from "@/components/shared/service2";
 import { Metadata } from "next";
+import Service from "@/components/shared/service2";
+
 
 export const metadata: Metadata = {
   title:

@@ -69,16 +69,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <div className="p-5 rounded-xl bg-gray-50/50 dark:bg-gray-900/30 border border-gray-200/60 dark:border-gray-800/80">
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-light">
-              <span className="font-semibold text-gray-700 dark:text-gray-300 block mb-1.5">FDA Disclaimer</span>
-              These statements have not been evaluated by the Food and Drug Administration (FDA). Vitanou products are not intended to diagnose, treat, cure, or prevent any disease. The information provided by Vitanou is for educational and wellness purposes only and should not be considered medical advice. Always consult your healthcare provider before using any dietary supplement, especially if you are pregnant, nursing, taking medication, or have a medical condition. Individual results may vary.
-            </p>
-          </div>
-        </div>
-      </div>
       <div className="flex justify-center items-center w-full mt-8 px-4 md:px-6 text-center text-sm text-gray-500 dark:text-gray-400">
         &copy; 2024 ISOLA. All rights reserved.
       </div>

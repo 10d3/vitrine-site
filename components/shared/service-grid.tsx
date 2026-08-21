@@ -13,8 +13,9 @@ import { cn } from "@/lib/utils"
 const services = [
   {
     number: "01",
-    title: "Registro NRUA",
-    description: "Gestión completa del registro en el Número de Registro Único de Alojamientos turísticos. Te guiamos en todo el proceso.",
+    title: "Registro de Turismo de la Comunitat Valenciana",
+    description:
+      "Tramitamos el NRU (Número de Registro) de tu vivienda de uso turístico ante la Generalitat Valenciana. Te guiamos en todo el proceso para cumplir la normativa vigente.",
     icon: FileText,
     featured: true,
   },

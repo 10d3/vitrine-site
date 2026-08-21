@@ -3,39 +3,32 @@ import { Metadata } from 'next';
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Testimonios de Clientes - Experiencias y Opiniones sobre Nuestros Servicios Inmobiliarios",
+    title: "Opiniones de Propietarios — Gestión de Alquileres en Valencia",
     description:
-      "Lee los testimonios de nuestros clientes satisfechos que han comprado, vendido o alquilado propiedades con nosotros. Descubre sus experiencias, opiniones y valoraciones sobre nuestros servicios inmobiliarios. Conoce cómo hemos ayudado a otros a encontrar la casa de sus sueños o a vender su propiedad con éxito",
+      "Descubre las opiniones de propietarios que confían su vivienda a ISOLA en Valencia: alquiler garantizado, gestión sin preocupaciones y tranquilidad real.",
+    keywords: [
+      "opiniones ISOLA Valencia",
+      "testimonios gestión de alquileres",
+      "reseñas empresa gestión de propiedades Valencia",
+      "opiniones alquiler garantizado",
+    ],
+    alternates: {
+      canonical: "/testimonios",
+    },
     openGraph: {
-      title: "Testimonios de Clientes - Experiencias y Opiniones sobre Nuestros Servicios Inmobiliarios",
+      title: "Opiniones de Propietarios — ISOLA Valencia",
       description:
-        "Lee los testimonios de nuestros clientes satisfechos que han comprado, vendido o alquilado propiedades con nosotros. Descubre sus experiencias, opiniones y valoraciones sobre nuestros servicios inmobiliarios. Conoce cómo hemos ayudado a otros a encontrar la casa de sus sueños o a vender su propiedad con éxito",
-      tags: [
-        "testimonios de clientes",
-        "experiencias de clientes",
-        "reseñas inmobiliarias",
-        "opiniones de clientes",
-        "comentarios de compradores",
-        "satisfacción del cliente",
-        "historias de éxito",
-        "feedback inmobiliario",
-        "valoraciones de clientes",
-        "experiencias de compra de casa",
-        "recomendaciones de clientes",
-        "testimonios de vendedores",
-        "experiencias de alquiler"
-      ],
+        "Lo que dicen los propietarios que confían su vivienda a ISOLA en Valencia.",
+      url: "/testimonios",
+      siteName: "ISOLA",
+      locale: "es_ES",
+      type: "website",
       images: [
         {
-          url: `https://utfs.io/f/597d0520-95fb-4630-ac1e-65bc18b289c0-gmfrrw.jpg`, // Dynamic og route
-          width: 800,
-          height: 600,
-        },
-        {
-          url: `https://utfs.io/f/597d0520-95fb-4630-ac1e-65bc18b289c0-gmfrrw.jpg`, // Dynamic og route
-          width: 1800,
-          height: 1600,
-          alt: `image of ISOLA`,
+          url: `https://utfs.io/f/597d0520-95fb-4630-ac1e-65bc18b289c0-gmfrrw.jpg`,
+          width: 1200,
+          height: 630,
+          alt: "Testimonios de propietarios de ISOLA en Valencia",
         },
       ],
     },

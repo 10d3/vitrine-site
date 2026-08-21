@@ -8,64 +8,57 @@ import { Metadata } from "next";
 import { findBlogs } from "@/lib/actions/BlogPostAction";
 
 export const metadata: Metadata = {
-  title: "ISOLA Blog",
+  title: "Blog para Propietarios — Alquiler y VUT en Valencia",
   description:
-    "Descubre las últimas tendencias del mercado inmobiliario, consejos para comprar y vender propiedades, guías para inversores y trucos para encontrar la casa o apartamento de tus sueños. Mantente informado sobre bienes raíces comerciales y residenciales con artículos y análisis de expertos",
+    "Guías prácticas para propietarios en Valencia: registro de turismo de la Comunitat Valenciana, SES Hospedajes, alquiler de larga duración vs turístico y normativa 2026.",
+  keywords: [
+    "blog gestión de alquileres Valencia",
+    "guía propietarios Valencia",
+    "normativa alquiler turístico Comunitat Valenciana",
+    "registro turismo Comunitat Valenciana guía",
+    "alquiler garantizado consejos",
+  ],
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
-    title: "ISOLA Blog",
+    title: "Blog para Propietarios — Alquiler y VUT en Valencia | ISOLA",
     description:
-      "Descubre las últimas tendencias del mercado inmobiliario, consejos para comprar y vender propiedades, guías para inversores y trucos para encontrar la casa o apartamento de tus sueños. Mantente informado sobre bienes raíces comerciales y residenciales con artículos y análisis de expertos",
-    tags: [
-      "inmobiliaria",
-      "venta de casas",
-      "compra de propiedades",
-      "alquiler de apartamentos",
-      "mercado inmobiliario",
-      "consejos inmobiliarios",
-      "inversión inmobiliaria",
-      "agencias inmobiliarias",
-      "bienes raíces",
-      "tendencias inmobiliarias",
-      "inmobiliaria comercial",
-      "nuevas propiedades",
-      "mejores ciudades para comprar",
-      "inmobiliaria en línea",
-    ],
+      "Guías y actualidad sobre gestión de alquileres y viviendas turísticas en Valencia.",
+    url: "/blog",
+    siteName: "ISOLA",
+    locale: "es_ES",
+    type: "website",
     images: [
       {
-        url: `https://utfs.io/f/c06cf746-d96c-44db-960c-6e0f68575272-jlo1c4.jpg`, // Dynamic og route
-        width: 800,
-        height: 600,
-      },
-      {
-        url: `https://utfs.io/f/c06cf746-d96c-44db-960c-6e0f68575272-jlo1c4.jpg`, // Dynamic og route
-        width: 1800,
-        height: 1600,
-        alt: `image of ISOLA`,
+        url: `https://utfs.io/f/c06cf746-d96c-44db-960c-6e0f68575272-jlo1c4.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Blog de ISOLA sobre gestión de alquileres en Valencia",
       },
     ],
   },
 };
 
 export default async function page() {
-  const blogs = await findBlogs();
+  const blogs = (await findBlogs())?.filter((b) => b.published) ?? [];
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className=" py-6 px-4 md:px-6">
         <div className="container max-w-5xl mx-auto">
           <h1 className="font-serif text-3xl font-nomal tracking-tight sm:text-4xl md:text-5xl">
-            Perspectivas inmobiliarias y tendencias del mercado
+            Guías para propietarios en Valencia
           </h1>
           <p className="mt-4 max-w-3xl text-gray-400 sm:text-lg md:text-xl">
-            Explora artículos seleccionados sobre el mercado inmobiliario,
-            recomendaciones de expertos y las últimas tendencias del sector.
+            Artículos sobre gestión de alquileres, viviendas turísticas (VUT) y
+            normativa en la Comunitat Valenciana.
           </p>
         </div>
       </header>
       <main className="flex-1">
         <div className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-6">
           <div className="col-span-2 grid gap-8">
-            {blogs?.map((pos, i) => (
+            {blogs.map((pos, i) => (
               <article
                 key={i}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
@@ -80,7 +73,7 @@ export default async function page() {
                     width={400}
                     height={300}
                     priority
-                    alt="Blog post image"
+                    alt={pos.title}
                     className="aspect-video object-cover rounded-lg transition-all group-hover:scale-105"
                   />
                 </Link>

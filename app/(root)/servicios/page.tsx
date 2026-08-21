@@ -1,52 +1,35 @@
 import { Metadata } from "next";
 import Service from "@/components/shared/service2";
 
-
 export const metadata: Metadata = {
-  title:
-    "Servicios Inmobiliarios - Compra, Venta, Alquiler y Gestión de Propiedades",
+  title: "Servicios de Gestión de Alquileres en Valencia",
   description:
-    "Descubre los servicios inmobiliarios que ofrecemos, desde la compra y venta de propiedades hasta el alquiler y la gestión integral. Asesoramiento profesional para todas tus necesidades en bienes raíces.",
+    "Gestión integral de alquileres en Valencia: registro turístico (NRU), SES Hospedajes, administración de propiedades y gestión Airbnb. Descubre todos los servicios de ISOLA.",
   keywords: [
-    "servicios inmobiliarios",
-    "compra de propiedades",
-    "venta de propiedades",
-    "alquiler de propiedades",
-    "gestión de propiedades",
-    "asesoramiento inmobiliario",
-    "valoración de propiedades",
-    "marketing inmobiliario",
-    "consultoría inmobiliaria",
-    "servicio integral",
+    "servicios gestión de alquileres Valencia",
+    "gestión de propiedades Valencia",
+    "registro de turismo Comunitat Valenciana",
+    "gestión SES Hospedajes",
+    "gestión Airbnb Valencia",
+    "administración de fincas Valencia",
   ],
+  alternates: {
+    canonical: "/servicios",
+  },
   openGraph: {
-    title:
-      "Servicios Inmobiliarios - Compra, Venta, Alquiler y Gestión de Propiedades",
+    title: "Servicios de Gestión de Alquileres en Valencia | ISOLA",
     description:
-      "Descubre los servicios inmobiliarios que ofrecemos, desde la compra y venta de propiedades hasta el alquiler y la gestión integral. Asesoramiento profesional para todas tus necesidades en bienes raíces.",
-    tags: [
-      "servicios inmobiliarios",
-      "venta de propiedades",
-      "compra de propiedades",
-      "alquiler de propiedades",
-      "gestión de propiedades",
-      "asesoramiento inmobiliario",
-      "valoración de propiedades",
-      "marketing inmobiliario",
-      "servicio al cliente",
-      "consultoría inmobiliaria",
-    ],
+      "Registro turístico NRU, SES Hospedajes, administración de propiedades y gestión de apartamentos turísticos en Valencia.",
+    url: "/servicios",
+    siteName: "ISOLA",
+    locale: "es_ES",
+    type: "website",
     images: [
       {
-        url: `https://utfs.io/f/2b830903-cdfc-4886-ae06-5aec83196528-gmfrrx.jpg`, // Dynamic og route
-        width: 800,
-        height: 600,
-      },
-      {
-        url: `https://utfs.io/f/2b830903-cdfc-4886-ae06-5aec83196528-gmfrrx.jpg`, // Dynamic og route
-        width: 1800,
-        height: 1600,
-        alt: `image of ISOLA`,
+        url: `https://utfs.io/f/2b830903-cdfc-4886-ae06-5aec83196528-gmfrrx.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Servicios de gestión de alquileres de ISOLA en Valencia",
       },
     ],
   },

@@ -27,11 +27,18 @@ export default function NavBar() {
           Inicio
         </Link>
         <Link
-          href="/servicios"
+          href="/gestion-alquiler"
           className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
           prefetch={false}
         >
-          Servicios
+          Gestión de Alquiler
+        </Link>
+        <Link
+          href="/gestion-turistica"
+          className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
+          prefetch={false}
+        >
+          Gestión Turística
         </Link>
         <Link
           href="/testimonios"
@@ -40,13 +47,6 @@ export default function NavBar() {
         >
           Testimonios
         </Link>
-        {/* <Link
-          href="/contacto"
-          className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
-          prefetch={false}
-        >
-          Contacto
-        </Link> */}
         <Link
           href="/blog"
           className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
@@ -80,11 +80,27 @@ export default function NavBar() {
                 Inicio
               </Link>
               <Link
-                href="/services"
+                href="/gestion-alquiler"
                 className="flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
                 prefetch={false}
               >
                 <BriefcaseIcon className="h-5 w-5" />
+                Gestión de Alquiler
+              </Link>
+              <Link
+                href="/gestion-turistica"
+                className="flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                prefetch={false}
+              >
+                <KeyIcon className="h-5 w-5" />
+                Gestión Turística
+              </Link>
+              <Link
+                href="/servicios"
+                className="flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                prefetch={false}
+              >
+                <WebcamIcon className="h-5 w-5" />
                 Servicios
               </Link>
               <Link
@@ -92,23 +108,15 @@ export default function NavBar() {
                 className="flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
                 prefetch={false}
               >
-                <WebcamIcon className="h-5 w-5" />
+                <PhoneIcon className="h-5 w-5" />
                 Testimonios
               </Link>
-              {/* <Link
-                href="/contact"
-                className="flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-                prefetch={false}
-              >
-                <PhoneIcon className="h-5 w-5" />
-                Contacto
-              </Link> */}
               <Link
                 href="/blog"
                 className="flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
                 prefetch={false}
               >
-                <PhoneIcon className="h-5 w-5" />
+                <BookIcon className="h-5 w-5" />
                 Blog
               </Link>
             </nav>
@@ -223,6 +231,44 @@ function WebcamIcon(props: any) {
       <circle cx="12" cy="10" r="3" />
       <path d="M7 22h10" />
       <path d="M12 22v-4" />
+    </svg>
+  );
+}
+
+function KeyIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4" />
+    </svg>
+  );
+}
+
+function BookIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
     </svg>
   );
 }

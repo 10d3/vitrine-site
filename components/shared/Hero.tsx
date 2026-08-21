@@ -57,7 +57,10 @@ export default function Hero() {
                     </div> */}
         </div>
         <BlurFade delay={BLUR_FADE_DELAY * 8}>
-          <div className="md:min-w-[30rem] max-w-[32rem] bg-gray-100 dark:bg-gray-800 rounded-xl p-6 md:p-8 lg:p-10 space-y-4">
+          <div
+            id="contacto"
+            className="md:min-w-[30rem] max-w-[32rem] bg-gray-100 dark:bg-gray-800 rounded-xl p-6 md:p-8 lg:p-10 space-y-4 scroll-mt-24"
+          >
             <h2 className="text-2xl font-bold">
               Ponte en contacto con nosotros
             </h2>

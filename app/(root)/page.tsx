@@ -9,6 +9,7 @@ import Proceso from "@/components/shared/Proceso";
 // import Services from "@/components/shared/Service";
 import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
+import Link from "next/link";
 import { ServicesGrid } from "@/components/shared/service-grid";
 import { NosotrosSection } from "@/components/shared/Nosotros";
 import { Services } from "@/components/shared/Service";
@@ -82,6 +83,34 @@ export default function Home() {
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <ServicesGrid />
       </BlurFade>
+      <section className="w-full py-12 md:py-16">
+        <div className="container px-4 md:px-6 grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+          <Link
+            href="/gestion-alquiler"
+            className="group rounded-xl border border-border/50 p-8 transition-all hover:shadow-lg"
+          >
+            <h2 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+              Gestión de alquiler de larga duración
+            </h2>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Alquiler garantizado, selección de inquilinos y mantenimiento de
+              tu vivienda en Valencia.
+            </p>
+          </Link>
+          <Link
+            href="/gestion-turistica"
+            className="group rounded-xl border border-border/50 p-8 transition-all hover:shadow-lg"
+          >
+            <h2 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+              Gestión turística (VUT)
+            </h2>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Registro de turismo CV, SES Hospedajes y gestión en Airbnb y
+              Booking.
+            </p>
+          </Link>
+        </div>
+      </section>
       <NosotrosSection items={aboutHelp} />
       <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
         <Testimonials />{" "}

@@ -6,9 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: "/admin/",
+        disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: ["https://isolatucasa.com/sitemap.xml", 'https://isolatucasa.com/blog/sitemap.xml'],
+    sitemap: ["https://isolatucasa.com/sitemap.xml"],
   };
 }

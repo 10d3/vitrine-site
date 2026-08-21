@@ -15,7 +15,7 @@ export default function NavBar() {
           src="/logo.png"
           width={1000}
           height={1000}
-          alt="logo 4srent"
+          alt="ISOLA — gestión integral de propiedades en Valencia"
         />
       </Link>
       <nav className="hidden space-x-4 sm:flex">

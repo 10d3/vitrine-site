@@ -12,7 +12,7 @@ export default function Hero() {
         <Image
           priority
           src="/vitrine1.jpg"
-          alt="bg"
+          alt="Apartamento gestionado por ISOLA en Valencia"
           height={1000}
           width={1000}
           className="h-full w-auto md:w-full"
@@ -22,7 +22,7 @@ export default function Hero() {
         <Image
           priority
           src="/bg.jpg"
-          alt="bg"
+          alt="Gestión de alquiler de propiedades en Valencia — ISOLA"
           height={1000}
           width={1000}
           className="h-full w-auto md:w-full"
@@ -31,11 +31,9 @@ export default function Hero() {
       <div className="flex flex-col md:flex-row justify-around items-center gap-8 px-4 md:px-24 relative z-10">
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2 text-white">
-            {/* <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Gestionamos tu propiedad, garantizamos tu ingreso
-            </h1> */}
             <BlurFadeText
               delay={BLUR_FADE_DELAY * 4}
+              as="h1"
               className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
               yOffset={8}
               text={`Gestionamos tu propiedad, garantizamos tu ingreso`}
@@ -47,11 +45,10 @@ export default function Hero() {
             </p> */}
             <BlurFadeText
               delay={BLUR_FADE_DELAY * 8}
+              as="p"
               className="max-w-150 md:text-xl"
               yOffset={8}
-              text={`En ISOLA, nos encargamos de todo para que disfrutes de ingresos
-              seguros y tranquilidad. Alquilada o no, tu propiedad siempre está
-              en buenas manos.`}
+              text={`Gestión integral de alquileres en Valencia: alquiler garantizado, viviendas turísticas y tranquilidad para el propietario. Alquilada o no, tu propiedad está en buenas manos.`}
             />
           </div>
           {/* <div className="flex flex-row items-start sm:items-center gap-4">

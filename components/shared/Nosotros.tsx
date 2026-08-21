@@ -8,6 +8,7 @@ interface NosotrosItem {
   title: string
   description: string
   image: string
+  alt?: string
 }
 
 interface NosotrosProps {
@@ -45,7 +46,7 @@ export function Nosotros({ item, index }: NosotrosProps) {
               <Image
                 src={item.image}
                 fill
-                alt={item.title}
+                alt={item.alt ?? item.title}
                 className="object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
@@ -69,9 +70,9 @@ export function NosotrosSection({ items }: NosotrosSectionProps) {
           {/* <span className="text-sm font-medium tracking-widest text-primary uppercase"> */}
           {/*   Sobre Nosotros */}
           {/* </span> */}
-          <h1 className="mt-4 text-4xl font-light tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
+          <h2 className="mt-4 text-4xl font-light tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
             Quiénes Somos
-          </h1>
+          </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
             Conoce nuestra historia, valores y el equipo detrás de nuestros servicios profesionales de gestión turística.
           </p>

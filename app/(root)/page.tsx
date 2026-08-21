@@ -14,51 +14,36 @@ import { NosotrosSection } from "@/components/shared/Nosotros";
 import { Services } from "@/components/shared/Service";
 
 export const metadata: Metadata = {
-  title: "Bienvenido a ISOLA - Gestión Integral de Propiedades",
+  title: {
+    absolute: "Gestión Integral de Alquileres en Valencia | ISOLA",
+  },
   description:
-    "Descubre cómo ISOLA facilita el alquiler y la gestión de tu propiedad con un enfoque personalizado. Nos encargamos de todo para que disfrutes de los beneficios sin preocupaciones. ¡Contáctanos para más información!",
+    "Alquiler garantizado y gestión integral de propiedades en Valencia. ISOLA se encarga de todo: inquilinos, contratos, mantenimiento y viviendas turísticas (VUT). Pide tu consulta gratuita.",
   keywords: [
-    "inmobiliaria",
-    "compra de casas",
-    "venta de casas",
-    "alquiler de propiedades",
-    "propiedades en venta",
-    "propiedades en alquiler",
-    "búsqueda de propiedades",
-    "asesoramiento inmobiliario",
-    "mercado inmobiliario",
-    "mejores ofertas inmobiliarias",
+    "gestión integral de propiedades Valencia",
+    "empresa de gestión de alquileres Valencia",
+    "alquiler garantizado Valencia",
+    "gestión de alquiler de pisos Valencia",
+    "gestión Airbnb Valencia",
+    "vivienda de uso turístico Valencia",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Bienvenido a ISOLA - Gestión Integral de Propiedades",
+    title: "Gestión Integral de Alquileres en Valencia | ISOLA",
     description:
-      "Descubre cómo ISOLA facilita el alquiler y la gestión de tu propiedad con un enfoque personalizado. Nos encargamos de todo para que disfrutes de los beneficios sin preocupaciones. ¡Contáctanos para más información!",
-    tags: [
-      "inicio",
-      "página principal",
-      "búsqueda de propiedades",
-      "compra de casas",
-      "venta de casas",
-      "alquiler de propiedades",
-      "inmobiliaria en línea",
-      "propiedades en venta",
-      "propiedades en alquiler",
-      "inversiones inmobiliarias",
-      "asesoramiento inmobiliario",
-      "mejores ofertas inmobiliarias",
-    ],
+      "Alquiler garantizado y gestión integral de propiedades en Valencia. Sin preocupaciones para el propietario.",
+    url: "/",
+    siteName: "ISOLA",
+    locale: "es_ES",
+    type: "website",
     images: [
       {
-        url: `https://utfs.io/f/ecd60567-ed61-4f74-aca5-9f590cc35b5c-qt9zcy.jpg`, // Dynamic og route
-        width: 800,
-        height: 600,
-      },
-      {
-        url: `https://utfs.io/f/ecd60567-ed61-4f74-aca5-9f590cc35b5c-qt9zcy.jpg`, // Dynamic og route
-        width: 1800,
-        height: 1600,
-        alt: `image of ISOLA`,
-
+        url: `https://utfs.io/f/ecd60567-ed61-4f74-aca5-9f590cc35b5c-qt9zcy.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "ISOLA — gestión de alquileres en Valencia",
       },
     ],
   },

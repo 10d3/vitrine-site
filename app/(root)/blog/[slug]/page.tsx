@@ -3,9 +3,12 @@ import {
   findBlogBySlugWithoutView,
 } from "@/lib/actions/BlogPostAction";
 import { getBaseURL } from "@/lib/utils";
+import { JsonLd } from "@/lib/seo/JsonLd";
 import { Calendar, Eye, User } from "lucide-react";
+import { Metadata } from "next";
 import { headers } from "next/headers";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 interface paramsProp {
   params: Promise<{
@@ -13,36 +16,41 @@ interface paramsProp {
   }>;
 }
 
-export async function generateMetadata({ params }: paramsProp) {
+export async function generateMetadata({
+  params,
+}: paramsProp): Promise<Metadata> {
   const { slug } = await params;
   const blog = await findBlogBySlugWithoutView(slug);
+  if (!blog) return {};
 
-  const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(blog?.title || "")}&logo=${encodeURIComponent("https://fhi5b89inu.ufs.sh/f/RPE5CBbg6eKjkfFs83icCP1fGOZSHyLix7snjqw3EzgJbN49")}&date=${blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString() : ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;
+  const title = blog.seoTitle || blog.title;
+  const description = blog.seoDescription || blog.description || "";
 
-  console.log(ogImageUrl);
+  const ogImageUrl = `${getBaseURL()}/api/og?template=minimal-blog&title=${encodeURIComponent(title)}&logo=${encodeURIComponent("https://fhi5b89inu.ufs.sh/f/RPE5CBbg6eKjkfFs83icCP1fGOZSHyLix7snjqw3EzgJbN49")}&date=${blog?.createdAt ? new Date(blog.createdAt).toLocaleDateString() : ""}&image=${encodeURIComponent(blog?.coverImage || "")}&bgColor=#a8d5d8`;
 
   return {
-    title: blog?.title,
+    title,
+    description,
+    alternates: {
+      canonical: `/blog/${blog.slug}`,
+    },
     openGraph: {
-      title: blog?.title,
-      description: `${blog?.description}`,
-      url: `isolatucasa.com/blog/${blog?.slug}`,
+      title,
+      description,
+      url: `/blog/${blog.slug}`,
       siteName: "ISOLA",
+      locale: "es_ES",
+      type: "article",
+      publishedTime: blog.createdAt?.toISOString(),
+      modifiedTime: blog.updatedAt?.toISOString(),
       images: [
         {
           url: ogImageUrl,
-          width: 800,
-          height: 600,
-        },
-        {
-          url: ogImageUrl,
-          width: 1800,
-          height: 1600,
-          alt: `image of ${blog?.title}`,
+          width: 1200,
+          height: 630,
+          alt: title,
         },
       ],
-      locale: "es_SP",
-      type: "website",
     },
   };
 }
@@ -57,25 +65,43 @@ export default async function page({ params }: paramsProp) {
   const { slug } = await params;
   const blog = await findBlogBySlug(slug, ip);
 
+  if (!blog) {
+    notFound();
+  }
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: blog.title,
+    description: blog.seoDescription || blog.description || undefined,
+    image: blog.coverImage ? [blog.coverImage] : undefined,
+    datePublished: blog.createdAt?.toISOString(),
+    dateModified: blog.updatedAt?.toISOString(),
+    author: { "@type": "Organization", name: "ISOLA" },
+    publisher: { "@type": "Organization", name: "ISOLA" },
+    mainEntityOfPage: `https://isolatucasa.com/blog/${blog.slug}`,
+  };
+
   return (
     <article className="min-h-screen bg-background max-w-5xl mx-auto">
+      <JsonLd data={articleSchema} />
       <header className="border-b border-border/50">
         <div className="max-w-4xl mx-auto px-2 md:px-6 py-6 md:py-8 lg:py-16">
           <div className="space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-foreground">
-              {blog?.title}
+              {blog.title}
             </h1>
 
             <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <User className="w-4 h-4" />
-                <span>admin</span>
+                <span>ISOLA</span>
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time>
+                <time dateTime={blog.createdAt?.toISOString()}>
                   {blog?.createdAt
-                    ? new Date(blog.createdAt).toLocaleDateString("en-US", {
+                    ? new Date(blog.createdAt).toLocaleDateString("es-ES", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
@@ -85,7 +111,7 @@ export default async function page({ params }: paramsProp) {
               </div>
               <div className="flex items-center gap-2">
                 <Eye className="w-4 h-4" />
-                <span>{blog?.views} views</span>
+                <span>{blog?.views} lecturas</span>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export const fsindBlog = async (id: string | undefined) => {
 
 export const findBlogs = async () => {
   try {
-    const blogs = prisma.blog.findMany({
+    const blogs = await prisma.blog.findMany({
       orderBy: {
         createdAt: "desc",
       },
@@ -27,6 +27,7 @@ export const findBlogs = async () => {
     return blogs;
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 

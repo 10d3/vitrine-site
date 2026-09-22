@@ -11,5 +11,5 @@ export default function PublishButton({ id, published }: { id: string, published
       await publishBlog(id);
     }
   };
-  return <Button className="cursor-pointer" onClick={handleAction}>{`${published ? "Draft" : "Publish"} Blog`}</Button>;
+  return <Button className="cursor-pointer" onClick={handleAction}>{published ? "Pasar a Borrador" : "Publicar"}</Button>;
 }

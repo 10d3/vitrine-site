@@ -21,7 +21,7 @@ import { PiArticleNyTimesDuotone } from "react-icons/pi";
 const sidebarData = {
   navMain: [
     {
-      title: "Dashboard",
+      title: "Panel de Control",
       url: "/admin",
       icon: LayoutDashboard,
     },

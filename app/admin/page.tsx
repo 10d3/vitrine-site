@@ -30,10 +30,10 @@ export default async function BlogAdminPage() {
         <div className="flex flex-col gap-4 mb-16 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
             <h1 className="font-serif text-6xl tracking-tight text-foreground leading-tight">
-              Blog Management
+              Gestión del Blog
             </h1>
             <p className="text-lg text-muted-foreground">
-              Create and manage your content with precision
+              Crea y gestiona tu contenido con precisión
             </p>
           </div>
           <Link href="/admin/blog/editor">
@@ -42,7 +42,7 @@ export default async function BlogAdminPage() {
               className="gap-2 px-8 py-6 rounded-full font-medium shadow-sm hover:shadow-md transition-all"
             >
               <PlusCircle className="h-5 w-5" />
-              New Article
+              Nuevo Artículo
             </Button>
           </Link>
         </div>
@@ -60,7 +60,7 @@ export default async function BlogAdminPage() {
                   </div>
                 </div>
                 <p className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
-                  Total Articles
+                  Total de Artículos
                 </p>
               </div>
             </CardContent>
@@ -78,7 +78,7 @@ export default async function BlogAdminPage() {
                   </div>
                 </div>
                 <p className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
-                  Published
+                  Publicado
                 </p>
               </div>
             </CardContent>
@@ -96,7 +96,7 @@ export default async function BlogAdminPage() {
                   </div>
                 </div>
                 <p className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
-                  Drafts
+                  Borradores
                 </p>
               </div>
             </CardContent>
@@ -108,17 +108,17 @@ export default async function BlogAdminPage() {
             <div className="flex items-center justify-between">
               <div className="space-y-2">
                 <CardTitle className="font-serif text-3xl tracking-tight">
-                  Content Library
+                  Biblioteca de Contenido
                 </CardTitle>
                 <CardDescription className="text-base text-muted-foreground">
-                  Manage and organize your articles
+                  Gestiona y organiza tus artículos
                 </CardDescription>
               </div>
               <Badge
                 variant="secondary"
                 className="px-4 py-2 text-sm font-medium rounded-full bg-muted"
               >
-                {blogs?.length || 0} articles
+                {blogs?.length || 0} artículos
               </Badge>
             </div>
           </CardHeader>
@@ -129,11 +129,11 @@ export default async function BlogAdminPage() {
                   <FileText className="h-20 w-20 text-muted-foreground/40" />
                 </div>
                 <h3 className="font-serif text-3xl mb-4 text-foreground">
-                  No articles yet
+                  Aún no hay artículos
                 </h3>
                 <p className="text-muted-foreground mb-10 max-w-md leading-relaxed text-lg">
-                  Start creating compelling content that engages your audience
-                  and builds your brand.
+                  Empieza a crear contenido atractivo que conecte con tu audiencia
+                  y construya tu marca.
                 </p>
                 <Link href="/admin/blog/editor">
                   <Button
@@ -141,7 +141,7 @@ export default async function BlogAdminPage() {
                     className="gap-2 px-10 py-6 rounded-full shadow-sm"
                   >
                     <PlusCircle className="h-5 w-5" />
-                    Create First Article
+                    Crear el Primer Artículo
                   </Button>
                 </Link>
               </div>
@@ -188,7 +188,7 @@ export default async function BlogAdminPage() {
                               variant="outline"
                               className="text-xs font-medium px-3 py-1 rounded-full border-green-300 text-green-800 bg-green-50 dark:border-green-800 dark:text-green-300 dark:bg-green-950"
                             >
-                              Published
+                              Publicado
                             </Badge>
                           ) : (
                             <Badge

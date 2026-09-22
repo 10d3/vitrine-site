@@ -8,8 +8,8 @@ import { redirect } from "next/navigation";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard',
-  description: 'Manage your website content',
+  title: 'Panel de Control',
+  description: 'Gestiona el contenido de tu sitio web',
 };
 
 export default async function DashboardLayout({

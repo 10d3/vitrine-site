@@ -20,7 +20,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { forgetPassword } from "@/lib/auth-client";
+import { requestPasswordReset } from "@/lib/auth-client";
 import Link from "next/link";
 import { toast } from "sonner";
 import { useState } from "react";
@@ -45,7 +45,7 @@ export function ForgotPasswordForm({
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const { data, error } = await forgetPassword({
+    const { data, error } = await requestPasswordReset({
       email: values.email,
       redirectTo: "/reset-password",
     });

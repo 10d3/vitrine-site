@@ -27,7 +27,7 @@ const sidebarData = {
     },
     {
       title: "Blog",
-      url:"/admin/blog",
+      url:"/admin/blog/editor",
       icon: PiArticleNyTimesDuotone
     }
   ],

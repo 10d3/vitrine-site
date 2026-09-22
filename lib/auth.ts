@@ -24,4 +24,5 @@ export const auth = betterAuth({
   plugins: [admin()],
   baseURL: getBaseURL(),
   trustedOrigins: ["https://isolatucasa.com", "http://0.0.0.0:3000", "http://localhost:3000"],
+  secret: process.env.BETTER_AUTH_SECRET || "fallback_secret",
 });

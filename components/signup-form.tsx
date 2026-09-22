@@ -26,6 +26,7 @@ import {
 import { signUp } from "@/lib/auth-client";
 import Link from "next/link";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const formSchema = z
   .object({
@@ -51,6 +52,8 @@ export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const router = useRouter();
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -64,10 +67,12 @@ export function SignupForm({
       name: values.name,
       email: values.email,
       password: values.password,
-      callbackURL: "/login"
     });
 
-    if(data) toast.success("Account created succesfully")
+    if(data) {
+      toast.success("Account created successfully");
+      router.push("/login");
+    }
 
     if (error) {
       toast.error(error.message);
@@ -80,7 +85,7 @@ export function SignupForm({
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Create an account</CardTitle>
           <CardDescription>
-            Sign up with your Apple or Google account
+            Enter your details below to create your account
           </CardDescription>
         </CardHeader>
         <CardContent>

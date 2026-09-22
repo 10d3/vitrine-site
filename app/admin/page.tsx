@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { findBlogs } from "@/lib/actions/BlogPostAction";
 import PublishButton from "./blog/_components/publish-button";
+import DeleteButton from "./blog/_components/delete-button";
 import Image from "next/image";
 
 export default async function BlogAdminPage() {
@@ -46,7 +47,7 @@ export default async function BlogAdminPage() {
           </Link>
         </div>
 
-        <div className="grid gap-6 mb-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 mb-16 sm:grid-cols-2 lg:grid-cols-3">
           <Card className="border border-border bg-card hover:shadow-md transition-shadow">
             <CardContent className="p-8">
               <div className="space-y-3">
@@ -78,26 +79,6 @@ export default async function BlogAdminPage() {
                 </div>
                 <p className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
                   Published
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-border bg-card hover:shadow-md transition-shadow">
-            <CardContent className="p-8">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <p className="text-5xl font-light text-foreground tracking-tight">
-                    {blogs
-                      ?.reduce((total, blog) => total + blog.views, 0)
-                      .toLocaleString() || 0}
-                  </p>
-                  <div className="p-3 rounded-full bg-blue-500/10">
-                    <Eye className="h-6 w-6 text-blue-700 dark:text-blue-400" />
-                  </div>
-                </div>
-                <p className="text-xs font-medium text-muted-foreground tracking-widest uppercase">
-                  Total Views
                 </p>
               </div>
             </CardContent>
@@ -171,19 +152,22 @@ export default async function BlogAdminPage() {
                     key={blog.slug}
                     className="h-full transition-all duration-300 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm overflow-hidden relative"
                   >
-                    <CardHeader className="">
-                      <CardTitle className="font-serif text-2xl line-clamp-2 group-hover:text-primary transition-colors leading-tight">
-                        <Link
-                          key={blog.id}
-                          href={`/admin/blog/editor?blogId=${blog.id}`}
-                          className="group"
-                        >
-                          {blog.title}
-                        </Link>
-                      </CardTitle>
-                      <CardDescription className="text-sm text-muted-foreground font-mono">
-                        /{blog.slug}
-                      </CardDescription>
+                    <CardHeader className="flex flex-row items-start justify-between space-y-0 gap-2 pb-4">
+                      <div className="space-y-1.5 overflow-hidden">
+                        <CardTitle className="font-serif text-2xl line-clamp-2 group-hover:text-primary transition-colors leading-tight">
+                          <Link
+                            key={blog.id}
+                            href={`/admin/blog/editor?blogId=${blog.id}`}
+                            className="group"
+                          >
+                            {blog.title}
+                          </Link>
+                        </CardTitle>
+                        <CardDescription className="text-sm text-muted-foreground font-mono">
+                          /{blog.slug}
+                        </CardDescription>
+                      </div>
+                      <DeleteButton id={blog.id} />
                     </CardHeader>
 
                     {blog.coverImage && (

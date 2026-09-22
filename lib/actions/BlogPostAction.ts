@@ -118,3 +118,20 @@ export const draftBlog = async (id: string) => {
     console.error(error);
   }
 };
+
+export const deleteBlog = async (id: string) => {
+  try {
+    // Delete associated BlogViews first due to foreign key constraints
+    await prisma.blogView.deleteMany({
+      where: { blogId: id },
+    });
+    
+    await prisma.blog.delete({
+      where: { id },
+    });
+    revalidatePath("/admin");
+    revalidatePath("/admin/blog");
+  } catch (error) {
+    console.error(error);
+  }
+};

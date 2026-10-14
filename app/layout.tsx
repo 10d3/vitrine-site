@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | ISOLA",
   },
   description:
-    "ISOLA gestiona tu propiedad en Valencia: alquiler garantizado, selección de inquilinos, mantenimiento y gestión de viviendas turísticas (VUT). Sin preocupaciones para el propietario.",
+    "ISOLA gestiona tu piso en Valencia: media estancia, alquiler por habitaciones y viviendas turísticas (VUT). Inquilinos, contratos, limpiezas y mantenimiento. Sin permanencia.",
   alternates: {
     canonical: "/",
   },

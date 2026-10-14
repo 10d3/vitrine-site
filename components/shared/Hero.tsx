@@ -36,7 +36,7 @@ export default function Hero() {
               as="h1"
               className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
               yOffset={8}
-              text={`Gestionamos tu propiedad, garantizamos tu ingreso`}
+              text={`Tu piso cuidado y alquilado, sin que tengas que estar encima`}
             />
             {/* <p className="max-w-[600px] md:text-xl">
               En ISOLA, nos encargamos de todo para que disfrutes de ingresos
@@ -48,7 +48,7 @@ export default function Hero() {
               as="p"
               className="max-w-150 md:text-xl"
               yOffset={8}
-              text={`Gestión integral de alquileres en Valencia: alquiler garantizado, viviendas turísticas y tranquilidad para el propietario. Alquilada o no, tu propiedad está en buenas manos.`}
+              text={`Gestión de alquileres en Valencia: media estancia, habitaciones y pisos turísticos. Nos ocupamos de inquilinos, contratos, limpiezas, llaves e incidencias. Sin permanencia.`}
             />
           </div>
           {/* <div className="flex flex-row items-start sm:items-center gap-4">

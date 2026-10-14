@@ -2,7 +2,6 @@ import CallToAction from "@/components/shared/CallToAction";
 import Hero from "@/components/shared/Hero";
 import Preguntas from "@/components/shared/Preguntas";
 import Proceso from "@/components/shared/Proceso";
-import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
 import Link from "next/link";
 import { ServicesGrid } from "@/components/shared/service-grid";
@@ -15,11 +14,12 @@ export const metadata: Metadata = {
     absolute: "Gestión Integral de Alquileres en Valencia | ISOLA",
   },
   description:
-    "Alquiler garantizado y gestión integral de propiedades en Valencia. ISOLA se encarga de todo: inquilinos, contratos, mantenimiento y viviendas turísticas (VUT). Pide tu consulta gratuita.",
+    "Gestión de alquileres en Valencia: media estancia, habitaciones y viviendas turísticas (VUT). ISOLA se encarga de inquilinos, contratos, limpiezas y mantenimiento. Sin permanencia. Pide tu estudio gratuito.",
   keywords: [
     "gestión integral de propiedades Valencia",
     "empresa de gestión de alquileres Valencia",
-    "alquiler garantizado Valencia",
+    "gestión media estancia Valencia",
+    "gestión alquiler por habitaciones Valencia",
     "gestión de alquiler de pisos Valencia",
     "gestión Airbnb Valencia",
     "vivienda de uso turístico Valencia",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gestión Integral de Alquileres en Valencia | ISOLA",
     description:
-      "Alquiler garantizado y gestión integral de propiedades en Valencia. Sin preocupaciones para el propietario.",
+      "Gestión de alquileres en Valencia: media estancia, habitaciones y pisos turísticos. Sin permanencia.",
     url: "/",
     siteName: "ISOLA",
     locale: "es_ES",
@@ -53,14 +53,14 @@ export default function Home() {
       image: "/vitrine5.jpg",
       alt: "Equipo de gestión de propiedades de ISOLA en Valencia",
       description:
-        "En ISOLA, somos expertos en la gestión de propiedades, dedicados a ofrecer a los propietarios una solución completa y sin preocupaciones. Nuestro compromiso es gestionar tu propiedad de manera profesional, asegurándote un ingreso mensual fijo y manteniendo tu inmueble en óptimas condiciones. Con años de experiencia en el sector y un enfoque personalizado, nos aseguramos de maximizar la rentabilidad de tu propiedad mientras tú disfrutas de la tranquilidad que mereces.",
+        "ISOLA es una empresa de gestión y puesta a punto de viviendas con sede en Valencia. Llevamos 6 años en el sector y tenemos oficina abierta en Calle Editor Manuel Aguilar 13, junto al Mercado Central, y equipo propio de limpieza. Trabajamos para propietarios que quieren rentabilizar su piso sin dedicarle tiempo, y para inmobiliarias que necesitan a alguien de confianza para la parte operativa.",
     },
     {
       title: "¿Cómo podemos ayudarte?",
       image: "/image9.jpg",
       alt: "Propietario recibiendo gestión integral de su alquiler en Valencia",
       description:
-        "En ISOLA, te ofrecemos una gestión integral para alquilar tu propiedad sin preocupaciones. Evaluamos tu inmueble, lo preparamos para destacar en el mercado, y diseñamos estrategias de marketing efectivas. Seleccionamos cuidadosamente a los inquilinos adecuados y gestionamos toda la parte administrativa y contractual. Además, nos encargamos del mantenimiento y las reparaciones necesarias para mantener tu propiedad en las mejores condiciones. Con nosotros, tu inversión está en buenas manos, garantizando tranquilidad y rentabilidad.",
+        "En ISOLA, te ofrecemos una gestión integral para alquilar tu propiedad sin preocupaciones. Evaluamos tu inmueble, lo preparamos para destacar en el mercado, y diseñamos estrategias de marketing efectivas. Seleccionamos cuidadosamente a los inquilinos adecuados y gestionamos toda la parte administrativa y contractual. Además, si hay una avería buscamos y coordinamos la solución, y cada mes recibes un resumen claro de lo que ha ingresado tu piso. Sin permanencia: seguimos juntos porque las cosas funcionan.",
     },
   ];
 
@@ -84,15 +84,15 @@ export default function Home() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-mono text-primary font-medium tracking-wider uppercase">
-                  Larga Estancia
+                  Media Estancia
                 </span>
                 <ArrowRight className="size-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
               </div>
               <h2 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors text-foreground">
-                Gestión de alquiler de larga duración
+                Media estancia y habitaciones
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                Alquiler garantizado, selección rigurosa de inquilinos solventes y mantenimiento técnico continuo de tu vivienda en Valencia.
+                Alquileres de 1 a 11 meses en Airbnb y Booking, o habitación por habitación. Legal sin licencia turística y sin permanencia.
               </p>
             </div>
           </Link>
@@ -120,7 +120,6 @@ export default function Home() {
       </section>
 
       <NosotrosSection items={aboutHelp} />
-      <Testimonials />
       <Preguntas />
       <CallToAction />
     </main>

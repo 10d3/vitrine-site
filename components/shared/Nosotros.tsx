@@ -20,9 +20,9 @@ const cardHighlights = [
     tag: "Gestión Profesional",
     icon: ShieldCheck,
     points: [
-      "Ingresos garantizados mes a mes",
+      "6 años gestionando viviendas en Valencia",
       "Selección exhaustiva de inquilinos",
-      "Contratos legales y blindaje jurídico",
+      "Contratos de temporada y sin permanencia",
     ],
   },
   {
@@ -31,8 +31,8 @@ const cardHighlights = [
     icon: Sparkles,
     points: [
       "Preparación y marketing del inmueble",
-      "Mantenimiento técnico y reparaciones",
-      "Atención y supervisión continua 24/7",
+      "Gestión de averías y limpiezas con equipo propio",
+      "Oficina abierta junto al Mercado Central",
     ],
   },
 ];
@@ -117,7 +117,7 @@ export function NosotrosSection({ items }: NosotrosSectionProps) {
     <SectionWrapper id="sobre-nosotros">
       <SectionHeader
         eyebrow="SOBRE ISOLA"
-        title={<InViewReveal text="Expertos en Alquiler Seguro y Gestión Inmobiliaria" />}
+        title={<InViewReveal text="Un equipo local, con oficina en el centro" />}
         description={
           <ScrollRevealText
             className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"

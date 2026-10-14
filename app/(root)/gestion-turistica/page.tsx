@@ -12,7 +12,6 @@ import {
   CalendarCheck,
   Camera,
   Check,
-  ClipboardList,
   FileCheck,
   FileText,
   Home,
@@ -36,7 +35,7 @@ import ServiceHero from "@/components/shared/ServiceHero";
 export const metadata: Metadata = {
   title: "Gestión de Viviendas Turísticas (VUT) en Valencia",
   description:
-    "Gestión de apartamentos turísticos en Valencia: registro de turismo de la Comunitat Valenciana (NRU), SES Hospedajes, Airbnb y Booking. Legaliza y rentabiliza tu vivienda.",
+    "Gestión de apartamentos turísticos en Valencia: registro de turismo de la Comunitat Valenciana, SES Hospedajes, Airbnb y Booking. Legaliza y rentabiliza tu vivienda.",
   keywords: [
     "gestión Airbnb Valencia",
     "vivienda de uso turístico Valencia",
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gestión de Viviendas Turísticas (VUT) en Valencia | ISOLA",
     description:
-      "Legalización (NRU, SES Hospedajes) y gestión completa de tu apartamento turístico en Valencia: Airbnb, Booking y más.",
+      "Legalización (registro de turismo, SES Hospedajes) y gestión completa de tu apartamento turístico en Valencia: Airbnb, Booking y más.",
     url: "/gestion-turistica",
     siteName: "ISOLA",
     locale: "es_ES",
@@ -70,7 +69,7 @@ const servicios: Item[] = [
   {
     title: "Registro de Turismo de la Comunitat Valenciana",
     description:
-      "Tramitamos el NRU (Número de Registro) de tu vivienda de uso turístico ante la Generalitat Valenciana.",
+      "Tramitamos la inscripción de tu vivienda de uso turístico en el Registro de Turismo de la Comunitat Valenciana.",
     icon: FileText,
   },
   {
@@ -103,7 +102,7 @@ const pasos: Item[] = [
   {
     title: "Legalizamos y registramos",
     description:
-      "Tramitamos el NRU ante la Generalitat Valenciana, el alta en el registro estatal de arrendamientos de corta duración y la puesta en marcha de SES Hospedajes.",
+      "Tramitamos la inscripción en el Registro de Turismo de la Comunitat Valenciana y la puesta en marcha de SES Hospedajes.",
     icon: FileCheck,
   },
   {
@@ -115,23 +114,17 @@ const pasos: Item[] = [
   {
     title: "Operamos cada día",
     description:
-      "Reservas, entradas y salidas, limpieza, incidencias, atención al huésped y obligaciones legales. Tú solo ves los ingresos y los informes.",
+      "Reservas, entradas y salidas, limpieza, incidencias, atención al huésped y obligaciones legales. Cada mes te pasamos un resumen claro de ingresos y gastos.",
     icon: CalendarCheck,
   },
 ];
 
 const requisitos: Item[] = [
   {
-    title: "Registro autonómico (NRU)",
+    title: "Registro de Turismo de la Comunitat Valenciana",
     description:
       "La vivienda debe estar inscrita en el Registro de Turismo de la Comunitat Valenciana antes de anunciarse como alojamiento turístico.",
     icon: FileText,
-  },
-  {
-    title: "Registro estatal de arrendamientos de corta duración",
-    description:
-      "Desde 2025 los alquileres turísticos y de temporada necesitan su número de registro para poder anunciarse en las plataformas.",
-    icon: ClipboardList,
   },
   {
     title: "SES Hospedajes",
@@ -168,17 +161,17 @@ const comparativa = [
     cta: "Quiero alquilar como VUT",
   },
   {
-    tag: "Ingreso estable",
-    title: "Alquiler de larga duración",
+    tag: "Sin licencia turística",
+    title: "Media estancia y habitaciones",
     description:
-      "Renta mensual estable y mucha menos rotación. Con nuestro plan garantizado cobras todos los meses.",
+      "Alquileres de 1 a 11 meses o por habitaciones, con contrato de temporada. Legal sin licencia turística y con menos rotación.",
     points: [
-      "Renta mensual fija garantizada",
-      "Contrato LAU, fianzas y cobros gestionados",
-      "Mantenimiento e incidencias incluidos",
+      "Contratos de temporada, fianzas y cobros gestionados",
+      "Limpiezas pagadas por el inquilino",
+      "Desde el 15 % + IVA, sin permanencia",
     ],
     href: "/gestion-alquiler",
-    cta: "Ver gestión de larga duración",
+    cta: "Ver media estancia y habitaciones",
   },
 ];
 
@@ -186,7 +179,7 @@ const faqs = [
   {
     question: "¿Cuánto cuesta la gestión de una vivienda turística en Valencia?",
     answer:
-      "Depende del punto en el que esté tu vivienda y del plan que elijas: no es lo mismo solo legalizar y registrar que encargarnos también de la operación diaria. La primera consulta es gratuita y te damos una propuesta cerrada con lo que incluye cada opción.",
+      "La gestión completa cuesta entre el 15 % y el 20 % + IVA de lo cobrado, según la rotación y el estado del piso, y la limpieza entre estancias la paga el huésped. Si solo necesitas la legalización y el registro, te hacemos un presupuesto aparte. La primera consulta es gratuita.",
   },
   {
     question: "¿Puedo alquilar mi vivienda como turística solo unos meses al año?",
@@ -196,12 +189,12 @@ const faqs = [
   {
     question: "¿Qué pasa si la comunidad de propietarios prohíbe el uso turístico?",
     answer:
-      "Antes de empezar revisamos los estatutos de la comunidad y la normativa municipal. Si el uso turístico no es viable, te lo decimos con claridad y valoramos juntos la opción de alquiler de larga duración.",
+      "Antes de empezar revisamos los estatutos de la comunidad y la normativa municipal. Si el uso turístico no es viable, te lo decimos con claridad y valoramos juntos la media estancia o el alquiler por habitaciones, que no necesitan licencia turística.",
   },
   {
     question: "¿Cómo obtengo el registro de turismo de la Comunitat Valenciana?",
     answer:
-      "Para alquilar tu vivienda como turística en la Comunitat Valenciana necesitas obtener el NRU (Número de Registro) de turismo presentando la declaración responsable ante la Generalitat Valenciana. En ISOLA tramitamos todo el proceso por ti.",
+      "Para alquilar tu vivienda como turística en la Comunitat Valenciana necesitas inscribirla en el Registro de Turismo de la Comunitat Valenciana presentando la declaración responsable ante la Generalitat. En ISOLA tramitamos todo el proceso por ti.",
   },
   {
     question: "¿Qué es el SES Hospedajes?",
@@ -269,7 +262,7 @@ export default function GestionTuristicaPage() {
       <ServiceHero
         eyebrow="VIVIENDAS DE USO TURÍSTICO"
         title="Gestión de viviendas turísticas (VUT) en Valencia"
-        description="Legaliza y rentabiliza tu vivienda turística en Valencia: registro de turismo de la Comunitat Valenciana (NRU), SES Hospedajes y gestión completa en Airbnb, Booking y otras plataformas."
+        description="Legaliza y rentabiliza tu vivienda turística en Valencia: registro de turismo de la Comunitat Valenciana, SES Hospedajes y gestión completa en Airbnb, Booking y otras plataformas."
         image="/image7.jpg"
         alt="Vivienda de uso turístico con terraza y vistas al mar"
       />
@@ -346,7 +339,7 @@ export default function GestionTuristicaPage() {
       <SectionWrapper id="comparativa">
         <SectionHeader
           eyebrow="ELIGE TU MODELO"
-          title={<InViewReveal text="¿VUT o alquiler de larga duración?" />}
+          title={<InViewReveal text="¿Turístico o media estancia?" />}
           description={
             <ScrollRevealText
               className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
@@ -445,14 +438,14 @@ export default function GestionTuristicaPage() {
             ))}
           </Accordion>
           <p className="pt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            ¿Prefieres el alquiler tradicional? Conoce nuestra{" "}
+            ¿Tu piso no tiene licencia turística? Conoce nuestra{" "}
             <Link
               href="/gestion-alquiler"
               className="font-medium text-primary underline-offset-4 hover:underline"
             >
-              gestión de alquiler de larga duración
-            </Link>{" "}
-            con ingreso garantizado.
+              gestión de media estancia y por habitaciones
+            </Link>
+            , legal sin licencia turística.
           </p>
         </div>
       </SectionWrapper>

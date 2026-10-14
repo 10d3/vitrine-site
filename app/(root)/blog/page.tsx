@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     "guía propietarios Valencia",
     "normativa alquiler turístico Comunitat Valenciana",
     "registro turismo Comunitat Valenciana guía",
-    "alquiler garantizado consejos",
   ],
   alternates: {
     canonical: "/blog",

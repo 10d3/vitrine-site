@@ -20,7 +20,7 @@ export default function Proceso() {
       icon: <FileText className="size-6 text-primary" />,
       title: "Configuración de Alquiler",
       description:
-        "Nos encargamos de todos los aspectos legales, contratos y logísticos para preparar tu propiedad para el alquiler seguro.",
+        "Nos encargamos de todos los aspectos legales, contratos y logísticos para preparar tu propiedad para el alquiler.",
     },
     {
       id: 3,
@@ -32,9 +32,9 @@ export default function Proceso() {
     {
       id: 4,
       icon: <Clock className="size-6 text-primary" />,
-      title: "Pago Garantizado",
+      title: "Tú cobras",
       description:
-        "Recibe tus pagos de alquiler puntualmente cada mes, pase lo que pase, con nuestra garantía de tranquilidad absoluta.",
+        "Recibes tu parte cada mes con un resumen claro de lo que ha ingresado tu piso y de los gastos.",
     },
   ];
 

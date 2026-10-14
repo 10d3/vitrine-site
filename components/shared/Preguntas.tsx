@@ -17,47 +17,42 @@ export const faqs = [
   {
     question: "¿Qué es ISOLA y cómo funciona?",
     answer:
-      "ISOLA es una empresa de gestión de propiedades que se encarga de alquilar y mantener tu vivienda. Garantizamos un ingreso mensual fijo, independientemente de si la propiedad está alquilada o no. Nos ocupamos de todo, desde la selección de inquilinos hasta el mantenimiento regular y la gestión de emergencias.",
+      "ISOLA es una empresa de gestión y puesta a punto de viviendas en Valencia, con 6 años en el sector. Nos ocupamos de todo lo que pasa entre que el piso queda libre y el dinero llega a tu cuenta: anuncios, inquilinos, contratos, cobros, limpiezas, llaves e incidencias. Tú recibes tu parte cada mes con un resumen claro.",
   },
   {
-    question: "¿Qué tipos de propiedades gestionan?",
+    question: "¿Qué tipos de alquiler gestionáis?",
     answer:
-      "Gestionamos una amplia variedad de propiedades residenciales en Valencia, incluyendo apartamentos, casas y unidades multifamiliares tanto para larga estancia como uso turístico.",
+      "Media estancia y temporada (de 1 a 11 meses, en Airbnb y Booking), alquiler por habitaciones con contrato de temporada, y alquiler turístico para pisos con licencia en vigor. También hacemos limpieza y operativa para inmobiliarias y propietarios que ya tienen quien alquile.",
   },
   {
-    question: "¿Cómo garantizan el pago mensual si la propiedad no está alquilada?",
+    question: "¿Cuánto cuesta la gestión?",
     answer:
-      "En ISOLA, ofrecemos un ingreso mensual fijo garantizado a los propietarios. Este modelo nos permite asegurarte un pago constante mientras nosotros nos encargamos de alquilar la propiedad y maximizar su rentabilidad.",
+      "Media estancia y habitaciones: desde el 15 % + IVA sobre lo cobrado. Alquiler turístico: entre el 15 % y el 20 % + IVA, según rotación y estado del piso. El precio final lo cerramos después de ver el piso. Como extra opcional, el Pack Tranquilidad (control y pago de suministros, siniestros e informe de gastos) cuesta 29 € + IVA al mes.",
   },
   {
-    question: "¿Qué servicios están incluidos en cada plan?",
+    question: "¿Tengo que pagar las limpiezas?",
     answer:
-      'Ofrecemos tres planes de gestión: "Gestión Básico", "Gestión Plus" y "Gestión Premium". Cada plan incluye servicios específicos adaptados a diferentes necesidades de propietarios y tipos de alquiler.',
+      "No. En media estancia y turístico la limpieza la paga el huésped en el precio de la reserva. En habitaciones, la cuota de entrada que paga el inquilino (200 € + IVA) incluye la limpieza de zonas comunes cada 15 días y la de su habitación al irse.",
   },
   {
-    question: "¿Qué sucede en caso de una emergencia en la propiedad?",
+    question: "¿Hay permanencia?",
     answer:
-      "Dependiendo del plan que elijas, ofrecemos gestión de emergencias durante el horario laboral o 24/7. Nos encargamos de resolver cualquier problema de manera rápida y eficiente para asegurar la tranquilidad de los inquilinos y mantener la propiedad en óptimas condiciones.",
+      "No. Nuestro contrato no te ata: seguimos juntos porque las cosas funcionan, no por una cláusula.",
   },
   {
-    question: "¿Cómo me mantendrán informado sobre mi propiedad?",
+    question: "¿Qué pasa si hay una avería en el piso?",
     answer:
-      "Proporcionamos informes periódicos sobre el estado de tu propiedad y las gestiones realizadas. Los propietarios del Plan Premium reciben informes detallados mensuales y reuniones trimestrales para discutir mejoras y estrategias.",
+      "Nos avisan a nosotros, no a ti. Buscamos y coordinamos la solución: si es algo pequeño lo resolvemos nosotros y, si hace falta un profesional, quedamos con él y comprobamos el trabajo. El coste de reparaciones y materiales corre a cargo del propietario.",
   },
   {
-    question: "¿Cuál es el costo de sus servicios?",
+    question: "¿Cómo me mantendréis informado?",
     answer:
-      "Nuestros costos varían según el plan que elijas. Te invitamos a contactarnos para una consulta gratuita donde podemos discutir tus necesidades y ofrecerte una cotización personalizada y transparente.",
+      "Tienes una persona de referencia que conoce tu piso y te contesta directamente. Cada mes recibes un resumen de lo que ha ingresado tu piso y de los gastos.",
   },
   {
-    question: "¿Qué tipo de mantenimiento realizan?",
+    question: "¿Cómo puedo empezar con ISOLA?",
     answer:
-      "Nos encargamos de todo el mantenimiento regular y preventivo de la propiedad, incluyendo reparaciones básicas, renovaciones menores y mejoras estéticas según el plan seleccionado.",
-  },
-  {
-    question: "¿Cómo puedo comenzar con ISOLA?",
-    answer:
-      "¡Es muy sencillo! Ponte en contacto con nosotros a través de nuestro formulario de contacto, correo electrónico o WhatsApp. Programaremos una consulta gratuita para evaluar tu propiedad y discutir tus necesidades.",
+      "Escríbenos por el formulario, por WhatsApp o por correo. Vemos tu piso y te preparamos un estudio gratuito y sin compromiso de cuánto podría darte.",
   },
 ];
 
@@ -122,7 +117,7 @@ export default function Preguntas() {
             <ScrollRevealText
               className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
               text={[
-                "Aquí encontrarás las respuestas a las dudas más habituales sobre la gestión integral de alquileres, ingresos garantizados y viviendas turísticas en Valencia.",
+                "Aquí encontrarás las respuestas a las dudas más habituales sobre la gestión de alquileres, tarifas, limpiezas y viviendas turísticas en Valencia.",
               ]}
             />
           }

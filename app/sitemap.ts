@@ -12,7 +12,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/preguntas-frecuentes`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/sobre-nosotros`, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${BASE}/testimonios`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE}/politica-de-privacidad`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${BASE}/politica-de-cookies`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${BASE}/terminos-de-uso`, changeFrequency: "yearly", priority: 0.2 },

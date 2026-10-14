@@ -11,13 +11,14 @@ const localBusinessSchema = {
   "@id": "https://isolatucasa.com/#business",
   name: "ISOLA — Gestión Integral de Propiedades",
   url: "https://isolatucasa.com",
-  // TODO: confirmar número real con el cliente antes de desplegar
-  telephone: "+34642815465",
+  telephone: "+34614231373",
   email: "info@isolatucasa.com",
   image: "https://isolatucasa.com/vitrine1.jpg",
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Calle Editor Manuel Aguilar 13",
+    postalCode: "46001",
     addressLocality: "Valencia",
     addressRegion: "Comunitat Valenciana",
     addressCountry: "ES",

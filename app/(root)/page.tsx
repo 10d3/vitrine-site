@@ -1,18 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import { BlurFade } from "@/components/ui/blur-fade";
 import CallToAction from "@/components/shared/CallToAction";
 import Hero from "@/components/shared/Hero";
 import Preguntas from "@/components/shared/Preguntas";
 import Proceso from "@/components/shared/Proceso";
-// import Services from "@/components/shared/Service";
 import Testimonials from "@/components/shared/Testimonials";
 import { Metadata } from "next";
 import Link from "next/link";
 import { ServicesGrid } from "@/components/shared/service-grid";
 import { NosotrosSection } from "@/components/shared/Nosotros";
 import { Services } from "@/components/shared/Service";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
@@ -49,7 +45,7 @@ export const metadata: Metadata = {
     ],
   },
 };
-const BLUR_FADE_DELAY = 0.04;
+
 export default function Home() {
   const aboutHelp = [
     {
@@ -58,7 +54,6 @@ export default function Home() {
       alt: "Equipo de gestión de propiedades de ISOLA en Valencia",
       description:
         "En ISOLA, somos expertos en la gestión de propiedades, dedicados a ofrecer a los propietarios una solución completa y sin preocupaciones. Nuestro compromiso es gestionar tu propiedad de manera profesional, asegurándote un ingreso mensual fijo y manteniendo tu inmueble en óptimas condiciones. Con años de experiencia en el sector y un enfoque personalizado, nos aseguramos de maximizar la rentabilidad de tu propiedad mientras tú disfrutas de la tranquilidad que mereces.",
-
     },
     {
       title: "¿Cómo podemos ayudarte?",
@@ -66,69 +61,68 @@ export default function Home() {
       alt: "Propietario recibiendo gestión integral de su alquiler en Valencia",
       description:
         "En ISOLA, te ofrecemos una gestión integral para alquilar tu propiedad sin preocupaciones. Evaluamos tu inmueble, lo preparamos para destacar en el mercado, y diseñamos estrategias de marketing efectivas. Seleccionamos cuidadosamente a los inquilinos adecuados y gestionamos toda la parte administrativa y contractual. Además, nos encargamos del mantenimiento y las reparaciones necesarias para mantener tu propiedad en las mejores condiciones. Con nosotros, tu inversión está en buenas manos, garantizando tranquilidad y rentabilidad.",
-
     },
   ];
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between w-full">
-      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
-        <Hero />
-      </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
-        <Proceso />
-      </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 10}>
-        <Services />
-      </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
-        <ServicesGrid />
-      </BlurFade>
-      <section className="w-full py-12 md:py-16">
-        <div className="container px-4 md:px-6 grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+      {/* Kept unchanged as requested */}
+      <Hero />
+
+      {/* Animated Landing Sections with Nexora Style */}
+      <Proceso />
+      <Services />
+      <ServicesGrid />
+
+      {/* Featured Service Navigation Cards */}
+      <section className="w-full py-8 md:py-12">
+        <div className="container px-4 md:px-8 grid gap-6 md:grid-cols-2 max-w-6xl mx-auto">
           <Link
             href="/gestion-alquiler"
-            className="group rounded-xl border border-border/50 p-8 transition-all hover:shadow-lg"
+            className="group rounded-2xl border border-border/50 bg-foreground/[0.02] p-8 transition-all duration-300 hover:bg-foreground/[0.05] hover:border-primary/40 hover:shadow-lg flex flex-col justify-between"
           >
-            <h2 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-              Gestión de alquiler de larga duración
-            </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Alquiler garantizado, selección de inquilinos y mantenimiento de
-              tu vivienda en Valencia.
-            </p>
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs font-mono text-primary font-medium tracking-wider uppercase">
+                  Larga Estancia
+                </span>
+                <ArrowRight className="size-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
+              </div>
+              <h2 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors text-foreground">
+                Gestión de alquiler de larga duración
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                Alquiler garantizado, selección rigurosa de inquilinos solventes y mantenimiento técnico continuo de tu vivienda en Valencia.
+              </p>
+            </div>
           </Link>
+
           <Link
             href="/gestion-turistica"
-            className="group rounded-xl border border-border/50 p-8 transition-all hover:shadow-lg"
+            className="group rounded-2xl border border-border/50 bg-foreground/[0.02] p-8 transition-all duration-300 hover:bg-foreground/[0.05] hover:border-primary/40 hover:shadow-lg flex flex-col justify-between"
           >
-            <h2 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-              Gestión turística (VUT)
-            </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Registro de turismo CV, SES Hospedajes y gestión en Airbnb y
-              Booking.
-            </p>
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs font-mono text-primary font-medium tracking-wider uppercase">
+                  Vivienda Turística
+                </span>
+                <ArrowRight className="size-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
+              </div>
+              <h2 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors text-foreground">
+                Gestión turística (VUT)
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                Registro de turismo de la Comunitat Valenciana, integración SES Hospedajes y gestión profesional en Airbnb y Booking.
+              </p>
+            </div>
           </Link>
         </div>
       </section>
+
       <NosotrosSection items={aboutHelp} />
-      <BlurFade delay={BLUR_FADE_DELAY * 10} inView>
-        <Testimonials />{" "}
-      </BlurFade>
-      <BlurFade
-        className="w-[96%] md:w-full"
-        delay={BLUR_FADE_DELAY * 10}
-        inView
-      >
-        <Preguntas />
-      </BlurFade>
-      <BlurFade
-        className="w-[96%] md:w-full"
-        delay={BLUR_FADE_DELAY * 10}
-        inView
-      >
-        <CallToAction />
-      </BlurFade>
+      <Testimonials />
+      <Preguntas />
+      <CallToAction />
     </main>
   );
 }

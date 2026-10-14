@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import NavBAr from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import { JsonLd } from "@/lib/seo/JsonLd";
+import { SmoothScroll } from "@/components/shared/landing/smooth-scroll";
 // import { Analytics } from "@vercel/analytics/react";
 
 const localBusinessSchema = {
@@ -27,12 +28,12 @@ const localBusinessSchema = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <>
+    <SmoothScroll>
       {/* <Analytics /> */}
       <JsonLd data={localBusinessSchema} />
       <NavBAr />
-      <div className=" md:px-24 text-custom-button-secondary">{children}</div>
+      <div className="md:px-24 text-custom-button-secondary">{children}</div>
       <Footer />
-    </>
+    </SmoothScroll>
   );
 }

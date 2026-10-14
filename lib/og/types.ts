@@ -12,6 +12,7 @@ export interface OGTemplateProps {
   logo?: string
   accentColor?: string
   bgColor?: string
+  price?: string
 }
 
 export type OGTemplate = (props: OGTemplateProps) => JSX.Element

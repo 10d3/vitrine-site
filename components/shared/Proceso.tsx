@@ -1,59 +1,92 @@
-import { Clock, FileText, Phone, ScanSearch } from "lucide-react"
+"use client";
 
+import { motion } from "motion/react";
+import { Clock, FileText, Phone, ScanSearch } from "lucide-react";
+import { SectionWrapper, SectionHeader } from "./landing/section-wrapper";
+import InViewReveal from "./landing/in-view-reveal";
+import ScrollRevealText from "./landing/scroll-reveal-text";
 
 export default function Proceso() {
   const Procesos = [
     {
       id: 1,
-      icon: <ScanSearch size={20} className=" text-gray-500 dark:text-gray-400" />,
-      image: '/process1.jpg',
+      icon: <ScanSearch className="size-6 text-primary" />,
       title: "Evaluación Inicial",
-      description: "Realizamos una evaluación exhaustiva de tu propiedad para determinar el mejor enfoque de gestión."
+      description:
+        "Realizamos una evaluación exhaustiva de tu propiedad para determinar el mejor enfoque de gestión y optimizar su rentabilidad.",
     },
     {
       id: 2,
-      icon: <FileText size={20} className=" text-gray-500 dark:text-gray-400" />,
-      image: '/process2.jpg',
+      icon: <FileText className="size-6 text-primary" />,
       title: "Configuración de Alquiler",
-      description: "Nos encargamos de todos los aspectos legales y logísticos para preparar tu propiedad para el alquiler."
+      description:
+        "Nos encargamos de todos los aspectos legales, contratos y logísticos para preparar tu propiedad para el alquiler seguro.",
     },
     {
       id: 3,
-      icon: <Phone size={20} className=" text-gray-500 dark:text-gray-400" />,
-      image: '/process3.jpg',
+      icon: <Phone className="size-6 text-primary" />,
       title: "Gestión Continua",
-      description: "Nos ocupamos de todo, desde la selección de inquilinos hasta la resolución de problemas, para que tú te enfoques en otras cosas."
+      description:
+        "Nos ocupamos de todo, desde la selección rigurosa de inquilinos hasta la resolución ágil de incidencias y mantenimiento.",
     },
     {
       id: 4,
-      icon: <Clock size={20} className=" text-gray-500 dark:text-gray-400" />,
-      image: '/process4.jpg',
+      icon: <Clock className="size-6 text-primary" />,
       title: "Pago Garantizado",
-      description: "Recibe tus pagos de alquiler a tiempo, incluso si el inquilino se retrasa, con nuestra garantía de pago."
-    }
-  ]
+      description:
+        "Recibe tus pagos de alquiler puntualmente cada mes, pase lo que pase, con nuestra garantía de tranquilidad absoluta.",
+    },
+  ];
+
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container w-[90%] md:w-full px-4 md:px-6">
-        <div className="max-w-3xl mx-auto space-y-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tighter sm:text-4xl">Nuestro Proceso</h2>
-          <p className=" dark:text-gray-400 text-muted-foreground leading-relaxed">
-            Descubre cómo trabajamos para brindar una experiencia sin preocupaciones a los propietarios de bienes
-            raíces.
-          </p>
-        </div>
-        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4">
-          {Procesos.map((proceso) => (<div key={proceso.id} className="space-y-4">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800">
-              {proceso.icon}
+    <SectionWrapper id="proceso">
+      <SectionHeader
+        eyebrow="CÓMO TRABAJAMOS"
+        title={<InViewReveal text="Nuestro Proceso Simple y Transparente" />}
+        description={
+          <ScrollRevealText
+            className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
+            text={[
+              "Descubre cómo trabajamos para brindar una experiencia sin preocupaciones a los propietarios de bienes raíces en Valencia.",
+            ]}
+          />
+        }
+        align="center"
+      />
+
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {Procesos.map((proceso, index) => (
+          <motion.div
+            key={proceso.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: "easeOut",
+            }}
+            className="group relative flex flex-col justify-between rounded-2xl border border-border/50 bg-foreground/[0.02] p-6 transition-all duration-300 hover:bg-foreground/[0.05] hover:border-primary/30 hover:shadow-md"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-center size-12 rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                  {proceso.icon}
+                </div>
+                <span className="text-2xl font-light text-muted-foreground/30 font-mono">
+                  0{proceso.id}
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                {proceso.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {proceso.description}
+              </p>
             </div>
-            <h3 className="text-xl font-medium transition-colors">{proceso.title}</h3>
-            <p className=" text-muted-foreground leading-relaxed dark:text-gray-400">
-              {proceso.description}
-            </p>
-          </div>))}
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  )
+    </SectionWrapper>
+  );
 }

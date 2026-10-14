@@ -1,94 +1,144 @@
-import Image from "next/image"
-import { BlurFade } from "../ui/blur-fade"
+"use client";
 
-// Define your preferred base delay (in seconds)
-const BLUR_FADE_DELAY = 0.05
+import Image from "next/image";
+import { SectionWrapper, SectionHeader } from "./landing/section-wrapper";
+import InViewReveal from "./landing/in-view-reveal";
+import ScrollRevealText from "./landing/scroll-reveal-text";
+import { StackedCardsContainer, StackedCard } from "./landing/stacked-cards";
+import { ShieldCheck, Sparkles, Building, CheckCircle2 } from "lucide-react";
 
-interface NosotrosItem {
-  title: string
-  description: string
-  image: string
-  alt?: string
+export interface NosotrosItem {
+  title: string;
+  description: string;
+  image: string;
+  alt?: string;
 }
+
+const cardHighlights = [
+  {
+    badge: "01 · Compromiso & Confianza",
+    tag: "Gestión Profesional",
+    icon: ShieldCheck,
+    points: [
+      "Ingresos garantizados mes a mes",
+      "Selección exhaustiva de inquilinos",
+      "Contratos legales y blindaje jurídico",
+    ],
+  },
+  {
+    badge: "02 · Solución 360° Integral",
+    tag: "Tranquilidad Total",
+    icon: Sparkles,
+    points: [
+      "Preparación y marketing del inmueble",
+      "Mantenimiento técnico y reparaciones",
+      "Atención y supervisión continua 24/7",
+    ],
+  },
+];
 
 interface NosotrosProps {
-  item: NosotrosItem
-  index: number
+  item: NosotrosItem;
+  index: number;
+  total: number;
 }
 
-export function Nosotros({ item, index }: NosotrosProps) {
-  const isReversed = index % 2 !== 0
+export function Nosotros({ item, index, total }: NosotrosProps) {
+  const highlight = cardHighlights[index] ?? cardHighlights[0];
+  const Icon = highlight.icon;
 
   return (
-    <section className="py-24 md:py-32">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div
-          className={`flex flex-col gap-12 md:gap-20 lg:gap-28 ${isReversed ? "md:flex-row-reverse" : "md:flex-row"
-            } items-center`}
-        >
-          {/* Text Content */}
-          <div className="w-full md:w-1/2 space-y-6">
-            <span className="text-sm font-medium tracking-widest text-muted-foreground uppercase">
-              0{index + 1}
-            </span>
-            <h2 className="text-3xl font-light tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
+    <StackedCard
+      index={index}
+      total={total}
+      minScale={0.92}
+      maxDim={0.25}
+      cardClassName="rounded-3xl border border-border/70 bg-card overflow-hidden"
+    >
+      <div className="grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1.25fr)] items-stretch min-h-120 sm:min-h-135 lg:min-h-145">
+        {/* Left: Content Details */}
+        <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-12 space-y-6">
+          <div className="space-y-5">
+            {/* <div className="flex items-center justify-between gap-4"> */}
+            {/*   <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-mono font-medium text-primary"> */}
+            {/*     <Icon className="size-3.5" /> */}
+            {/*     <span>{highlight.badge}</span> */}
+            {/*   </div> */}
+            {/*   <span className="font-mono text-xs font-semibold text-muted-foreground/60"> */}
+            {/*     0{index + 1} / 0{total} */}
+            {/*   </span> */}
+            {/* </div> */}
+
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-foreground text-balance">
               {item.title}
-            </h2>
-            <div className="w-16 h-px bg-primary" />
-            <p className="text-muted-foreground text-base leading-relaxed lg:text-lg lg:leading-8 max-w-xl">
+            </h3>
+
+            <div className="w-12 h-1 bg-primary rounded-full" />
+
+            <p className="text-muted-foreground text-sm sm:text-base lg:text-lg leading-relaxed">
               {item.description}
             </p>
           </div>
 
-          {/* Image */}
-          <div className="w-full md:w-1/2">
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-muted">
-              <Image
-                src={item.image}
-                fill
-                alt={item.alt ?? item.title}
-                className="object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-          </div>
+          {/* Feature bullets matching Nexora feature card narrative */}
+          {/* <div className="pt-2 border-t border-border/40"> */}
+          {/*   <ul className="grid sm:grid-cols-2 gap-2.5"> */}
+          {/*     {highlight.points.map((point, pIdx) => ( */}
+          {/*       <li key={pIdx} className="flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground"> */}
+          {/*         <CheckCircle2 className="size-4 text-primary shrink-0" /> */}
+          {/*         <span>{point}</span> */}
+          {/*       </li> */}
+          {/*     ))} */}
+          {/*   </ul> */}
+          {/* </div> */}
+        </div>
+
+        {/* Right: Full-height showcase image */}
+        <div className="relative w-full aspect-16/10 sm:aspect-16/9 lg:aspect-auto lg:h-full lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-border/50 bg-muted/30">
+          <Image
+            src={item.image}
+            alt={item.alt ?? item.title}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="size-full object-cover object-center transition-transform duration-700 ease-out hover:scale-105"
+          />
         </div>
       </div>
-    </section>
-  )
+    </StackedCard>
+  );
 }
 
 interface NosotrosSectionProps {
-  items: NosotrosItem[]
+  items: NosotrosItem[];
 }
 
 export function NosotrosSection({ items }: NosotrosSectionProps) {
   return (
-    <div className="w-full bg-background">
-      {/* Section Header */}
-      <div className="container flex flex-col text-center w-full mx-auto px-6 md:px-12 lg:px-20 pt-24 md:pt-32">
-        <div className="max-w-full">
-          {/* <span className="text-sm font-medium tracking-widest text-primary uppercase"> */}
-          {/*   Sobre Nosotros */}
-          {/* </span> */}
-          <h2 className="mt-4 text-4xl font-light tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
-            Quiénes Somos
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Conoce nuestra historia, valores y el equipo detrás de nuestros servicios profesionales de gestión turística.
-          </p>
-        </div>
-      </div>
+    <SectionWrapper id="sobre-nosotros">
+      <SectionHeader
+        eyebrow="SOBRE ISOLA"
+        title={<InViewReveal text="Expertos en Alquiler Seguro y Gestión Inmobiliaria" />}
+        description={
+          <ScrollRevealText
+            className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
+            text={[
+              "Conoce nuestra historia, valores y el equipo detrás de nuestros servicios profesionales de gestión residencial y turística en Valencia.",
+            ]}
+          />
+        }
+        align="center"
+      />
 
-      {/* Content Sections with BlurFade transitions */}
-      {items.map((item, index) => (
-        <BlurFade
-          key={index}
-          delay={BLUR_FADE_DELAY * (index + 1) * 5} // increases delay for each item – adjust multiplier as desired
-          inView
-        >
-          <Nosotros item={item} index={index} />
-        </BlurFade>
-      ))}
-    </div>
-  )
+      <StackedCardsContainer className="mt-8">
+        {items.map((item, index) => (
+          <Nosotros
+            key={index}
+            item={item}
+            index={index}
+            total={items.length}
+          />
+        ))}
+      </StackedCardsContainer>
+    </SectionWrapper>
+  );
 }

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Servicios de Gestión de Alquileres en Valencia | ISOLA",
     description:
-      "Registro turístico NRU, SES Hospedajes, administración de propiedades y gestión de apartamentos turísticos en Valencia.",
+      "Registro de turismo de la Comunitat Valenciana, SES Hospedajes, administración de propiedades y gestión de apartamentos turísticos en Valencia.",
     url: "/servicios",
     siteName: "ISOLA",
     locale: "es_ES",

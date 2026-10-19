@@ -6,8 +6,26 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  BarChart3,
+  CheckCircle2,
+  FileSignature,
+  HandCoins,
+  ScanSearch,
+  UserCheck,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 import { JsonLd } from "@/lib/seo/JsonLd";
+import {
+  SectionHeader,
+  SectionWrapper,
+} from "@/components/shared/landing/section-wrapper";
+import InViewReveal from "@/components/shared/landing/in-view-reveal";
+import ScrollRevealText from "@/components/shared/landing/scroll-reveal-text";
+import RollingText from "@/components/shared/landing/rolling-text";
+import Reveal from "@/components/shared/landing/reveal";
 
 export const metadata: Metadata = {
   title: "Gestión de Alquiler de Larga Duración en Valencia",
@@ -34,34 +52,69 @@ export const metadata: Metadata = {
   },
 };
 
-const beneficios = [
-  "Ingreso mensual fijo garantizado, alquilada o no la propiedad",
-  "Selección y verificación rigurosa de inquilinos",
-  "Gestión de contratos, cobros y facturación",
-  "Mantenimiento preventivo y gestión de incidencias",
-  "Informes periódicos sobre el estado de tu propiedad",
+type Item = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const beneficios: Item[] = [
+  {
+    title: "Ingreso mensual garantizado",
+    description:
+      "Cobras tu renta cada mes, esté alquilada la vivienda o no. El riesgo de impago lo asumimos nosotros.",
+    icon: HandCoins,
+  },
+  {
+    title: "Selección rigurosa de inquilinos",
+    description:
+      "Verificamos solvencia, nóminas y referencias antes de firmar. Un buen inquilino vale más que una renta alta.",
+    icon: UserCheck,
+  },
+  {
+    title: "Contratos, cobros y facturación",
+    description:
+      "Contrato conforme a la LAU, fianzas depositadas y cobro mensual sin que tengas que perseguir recibos.",
+    icon: FileSignature,
+  },
+  {
+    title: "Mantenimiento e incidencias",
+    description:
+      "Revisiones preventivas, reparaciones y coordinación de profesionales para mantener la vivienda en condiciones.",
+    icon: Wrench,
+  },
+  {
+    title: "Informes periódicos",
+    description:
+      "Sabes en todo momento cómo está tu propiedad y qué gestiones se han realizado, sin tener que preguntar.",
+    icon: BarChart3,
+  },
 ];
 
-const pasos = [
+const pasos: Item[] = [
   {
     title: "Valoración y propuesta",
     description:
       "Visitamos la vivienda, revisamos su documentación y estado, y te proponemos una renta realista y un plan de gestión cerrado.",
+    icon: ScanSearch,
   },
   {
     title: "Selección del inquilino",
     description:
       "Comprobamos solvencia, nóminas y referencias, y preparamos el contrato y las fianzas legales antes de entregar las llaves.",
+    icon: UserCheck,
   },
   {
     title: "Contrato y cobros",
     description:
       "Altas de suministros, seguro, cobro mensual y liquidación. Tú recibes tu ingreso sin perseguir recibos ni llamadas.",
+    icon: FileSignature,
   },
   {
     title: "Mantenimiento e informes",
     description:
       "Gestionamos incidencias y revisiones, coordinamos profesionales y te enviamos informes periódicos del estado de tu propiedad.",
+    icon: Wrench,
   },
 ];
 
@@ -127,120 +180,236 @@ const faqSchema = {
   })),
 };
 
+function FeatureCard({ item, index }: { item: Item; index: number }) {
+  const Icon = item.icon;
+  return (
+    <Reveal delay={index * 0.08} className="h-full">
+      <div className="group relative flex h-full flex-col rounded-2xl border border-border/50 bg-foreground/[0.02] p-6 transition-all duration-300 hover:border-primary/30 hover:bg-foreground/[0.05] hover:shadow-lg md:p-8">
+        <div className="mb-6 flex items-center justify-between">
+          <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+            <Icon className="size-6 text-primary" />
+          </div>
+          <span className="font-mono text-2xl font-light text-muted-foreground/30">
+            0{index + 1}
+          </span>
+        </div>
+        <h3 className="mb-2 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+          {item.title}
+        </h3>
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          {item.description}
+        </p>
+      </div>
+    </Reveal>
+  );
+}
+
 export default function GestionAlquilerPage() {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen w-full">
       <JsonLd data={faqSchema} />
-      <section className="py-16 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-balance">
-            Gestión de alquiler de larga duración en Valencia
-          </h1>
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Alquila tu vivienda sin preocupaciones: ISOLA garantiza tu ingreso
-            mensual fijo y se encarga de todo el proceso, desde la selección de
-            inquilinos hasta el mantenimiento de tu propiedad.
-          </p>
 
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-            {beneficios.map((b, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-primary" />
-                <span className="text-muted-foreground">{b}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-16">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              Cómo trabajamos tu alquiler de larga duración
-            </h2>
-            <ol className="mt-8 grid gap-6 sm:grid-cols-2">
-              {pasos.map((p, i) => (
-                <li key={i} className="flex gap-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fe6b01] text-sm font-semibold text-white">
-                    {i + 1}
-                  </span>
-                  <div>
-                    <h3 className="font-semibold mb-1">{p.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {p.description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+      {/* Hero */}
+      <SectionWrapper className="pt-16 pb-0 md:pt-28">
+        <SectionHeader
+          as="h1"
+          eyebrow="LARGA ESTANCIA"
+          title={
+            <InViewReveal text="Gestión de alquiler de larga duración en Valencia" />
+          }
+          description={
+            <ScrollRevealText
+              className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
+              text={[
+                "Alquila tu vivienda sin preocupaciones: ISOLA garantiza tu ingreso mensual fijo y se encarga de todo el proceso, desde la selección de inquilinos hasta el mantenimiento de tu propiedad.",
+              ]}
+            />
+          }
+          align="left"
+          className="mb-8"
+        >
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" className="h-12 rounded-xl px-8">
+              <Link href="/#contacto">
+                <RollingText text="Solicita tu consulta gratuita" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-xl px-8"
+            >
+              <Link href="/servicios">
+                <RollingText text="Ver todos los servicios" />
+              </Link>
+            </Button>
           </div>
+        </SectionHeader>
+      </SectionWrapper>
 
-          <div className="mt-16">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              Qué revisamos antes de alquilar tu vivienda
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Un contrato mal preparado se paga durante años. Antes de publicar
-              el anuncio comprobamos:
-            </p>
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {revision.map((r, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-primary" />
-                  <span className="text-muted-foreground">{r}</span>
+      {/* Qué incluye */}
+      <SectionWrapper id="incluye">
+        <SectionHeader
+          eyebrow="QUÉ INCLUYE"
+          title={<InViewReveal text="Tu vivienda, gestionada de principio a fin" />}
+          description={
+            <ScrollRevealText
+              className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
+              text={[
+                "Un único interlocutor para todo lo que necesita tu propiedad. Sin llamadas del inquilino, sin recibos pendientes, sin sorpresas.",
+              ]}
+            />
+          }
+          align="center"
+        />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {beneficios.map((item, i) => (
+            <FeatureCard key={item.title} item={item} index={i} />
+          ))}
+        </div>
+      </SectionWrapper>
+
+      {/* Proceso */}
+      <SectionWrapper id="proceso">
+        <SectionHeader
+          eyebrow="CÓMO TRABAJAMOS"
+          title={
+            <InViewReveal text="De la primera visita al cobro mensual" />
+          }
+          description={
+            <ScrollRevealText
+              className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
+              text={[
+                "Sabes qué va a pasar en cada momento y cuánto vas a cobrar. Sin letra pequeña.",
+              ]}
+            />
+          }
+          align="center"
+        />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {pasos.map((item, i) => (
+            <FeatureCard key={item.title} item={item} index={i} />
+          ))}
+        </div>
+      </SectionWrapper>
+
+      {/* Revisión previa */}
+      <SectionWrapper id="revision">
+        <SectionHeader
+          eyebrow="ANTES DE EMPEZAR"
+          title={
+            <InViewReveal text="Qué revisamos antes de alquilar tu vivienda" />
+          }
+          description={
+            <ScrollRevealText
+              className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
+              text={[
+                "Un contrato mal preparado se paga durante años. Antes de publicar el anuncio comprobamos que todo esté en regla.",
+              ]}
+            />
+          }
+          align="center"
+        />
+        <Reveal>
+          <div className="rounded-3xl border border-border/60 bg-card p-6 sm:p-8 md:p-10">
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {revision.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
+                  <span className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {item}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
+        </Reveal>
+      </SectionWrapper>
 
-          <p className="mt-10 text-sm text-muted-foreground">
-            Gestionamos viviendas en Valencia capital —Ruzafa, El Carmen,
-            Eixample, Cabanyal, Malvarrosa, Benimaclet— y en municipios del
-            área metropolitana.
-          </p>
-
-          <div className="mt-12 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/#contacto"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-[#fe6b01] px-8 text-sm font-medium text-white hover:bg-[#fe6b01]/90"
-            >
-              Solicita tu consulta gratuita
-            </Link>
-            <Link
-              href="/servicios"
-              className="inline-flex h-11 items-center justify-center rounded-md border border-border px-8 text-sm font-medium hover:bg-muted"
-            >
-              Ver todos los servicios
-            </Link>
-          </div>
+      {/* FAQ */}
+      <SectionWrapper
+        id="faq"
+        className="grid grid-cols-1 items-start gap-8 md:grid-cols-12 lg:gap-16"
+      >
+        <div className="w-full md:col-span-5 lg:col-span-4">
+          <SectionHeader
+            eyebrow="FAQ"
+            title={<InViewReveal text="Preguntas frecuentes sobre la gestión de alquiler" />}
+            description={
+              <ScrollRevealText
+                className="text-base sm:text-lg text-pretty leading-relaxed text-muted-foreground"
+                text={[
+                  "Contratos, impagos, fianzas y mantenimiento: lo que más nos preguntan los propietarios antes de confiarnos su vivienda.",
+                ]}
+              />
+            }
+            align="left"
+            className="mb-0"
+          />
         </div>
-      </section>
-
-      <section className="py-12 md:py-24 bg-gray-100 dark:bg-gray-800 mb-12">
-        <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-light tracking-tight text-center">
-            Preguntas frecuentes sobre la gestión de alquiler
-          </h2>
-          <div className="mx-auto max-w-3xl space-y-4 py-10">
+        <div className="flex w-full flex-col gap-6 md:col-span-7 lg:col-span-8">
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, i) => (
-              <Accordion key={i} type="single" collapsible>
-                <AccordionItem value={`item-${i}`}>
-                  <AccordionTrigger className="text-left text-base md:text-lg font-medium">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className="overflow-hidden rounded-2xl border-none bg-foreground/5 transition-colors hover:bg-foreground/[0.07]"
+              >
+                <AccordionTrigger className="p-5 text-left text-lg font-medium tracking-tight hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-8">
+          </Accordion>
+          <p className="pt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
             ¿Tienes una vivienda turística? Descubre también nuestra{" "}
-            <Link href="/gestion-turistica" className="underline font-medium">
+            <Link
+              href="/gestion-turistica"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
               gestión de viviendas turísticas (VUT)
             </Link>{" "}
             en Valencia.
           </p>
         </div>
-      </section>
-    </div>
+      </SectionWrapper>
+
+      {/* CTA */}
+      <SectionWrapper>
+        <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card p-8 text-center shadow-xl shadow-zinc-950/5 sm:p-12 md:p-16">
+          <div className="pointer-events-none absolute inset-0 rounded-3xl bg-foreground/[0.02]" />
+          <div className="relative z-10">
+            <SectionHeader
+              eyebrow="EMPIEZA HOY"
+              title={<InViewReveal text="¿Hablamos de tu vivienda?" />}
+              description={
+                <ScrollRevealText
+                  className="text-base sm:text-lg text-pretty leading-relaxed text-muted-foreground"
+                  text={[
+                    "Te damos una valoración realista, te explicamos qué incluye el plan y decides con calma. La primera consulta es gratuita.",
+                  ]}
+                />
+              }
+              align="center"
+              className="mb-8"
+            />
+            <Button asChild size="lg" className="h-12 rounded-xl px-8">
+              <Link href="/#contacto">
+                <RollingText text="Solicita tu consulta gratuita" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <div className="pb-12 text-center text-sm text-muted-foreground">
+        Gestionamos viviendas en Valencia capital —Ruzafa, El Carmen, Eixample,
+        Cabanyal, Malvarrosa, Benimaclet— y en municipios del área metropolitana.
+      </div>
+    </main>
   );
 }

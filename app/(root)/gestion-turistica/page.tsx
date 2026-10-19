@@ -31,6 +31,7 @@ import InViewReveal from "@/components/shared/landing/in-view-reveal";
 import ScrollRevealText from "@/components/shared/landing/scroll-reveal-text";
 import RollingText from "@/components/shared/landing/rolling-text";
 import Reveal from "@/components/shared/landing/reveal";
+import ServiceHero from "@/components/shared/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Gestión de Viviendas Turísticas (VUT) en Valencia",
@@ -267,43 +268,13 @@ export default function GestionTuristicaPage() {
       <JsonLd data={faqSchema} />
 
       {/* Hero */}
-      <SectionWrapper className="pt-16 pb-0 md:pt-28">
-        <SectionHeader
-          as="h1"
-          eyebrow="VIVIENDAS DE USO TURÍSTICO"
-          title={
-            <InViewReveal text="Gestión de viviendas turísticas (VUT) en Valencia" />
-          }
-          description={
-            <ScrollRevealText
-              className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
-              text={[
-                "Legaliza y rentabiliza tu vivienda turística en Valencia: registro de turismo de la Comunitat Valenciana (NRU), SES Hospedajes y gestión completa en Airbnb, Booking y otras plataformas.",
-              ]}
-            />
-          }
-          align="left"
-          className="mb-8"
-        >
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-xl px-8">
-              <Link href="/#contacto">
-                <RollingText text="Solicita tu consulta gratuita" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="h-12 rounded-xl px-8"
-            >
-              <Link href="/servicios">
-                <RollingText text="Ver todos los servicios" />
-              </Link>
-            </Button>
-          </div>
-        </SectionHeader>
-      </SectionWrapper>
+      <ServiceHero
+        eyebrow="VIVIENDAS DE USO TURÍSTICO"
+        title="Gestión de viviendas turísticas (VUT) en Valencia"
+        description="Legaliza y rentabiliza tu vivienda turística en Valencia: registro de turismo de la Comunitat Valenciana (NRU), SES Hospedajes y gestión completa en Airbnb, Booking y otras plataformas."
+        image="/image7.jpg"
+        alt="Vivienda de uso turístico con terraza y vistas al mar"
+      />
 
       {/* Servicios incluidos */}
       <SectionWrapper id="servicios">

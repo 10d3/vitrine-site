@@ -26,6 +26,7 @@ import InViewReveal from "@/components/shared/landing/in-view-reveal";
 import ScrollRevealText from "@/components/shared/landing/scroll-reveal-text";
 import RollingText from "@/components/shared/landing/rolling-text";
 import Reveal from "@/components/shared/landing/reveal";
+import ServiceHero from "@/components/shared/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Gestión de Alquiler de Larga Duración en Valencia",
@@ -210,43 +211,13 @@ export default function GestionAlquilerPage() {
       <JsonLd data={faqSchema} />
 
       {/* Hero */}
-      <SectionWrapper className="pt-16 pb-0 md:pt-28">
-        <SectionHeader
-          as="h1"
-          eyebrow="LARGA ESTANCIA"
-          title={
-            <InViewReveal text="Gestión de alquiler de larga duración en Valencia" />
-          }
-          description={
-            <ScrollRevealText
-              className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
-              text={[
-                "Alquila tu vivienda sin preocupaciones: ISOLA garantiza tu ingreso mensual fijo y se encarga de todo el proceso, desde la selección de inquilinos hasta el mantenimiento de tu propiedad.",
-              ]}
-            />
-          }
-          align="left"
-          className="mb-8"
-        >
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-xl px-8">
-              <Link href="/#contacto">
-                <RollingText text="Solicita tu consulta gratuita" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="h-12 rounded-xl px-8"
-            >
-              <Link href="/servicios">
-                <RollingText text="Ver todos los servicios" />
-              </Link>
-            </Button>
-          </div>
-        </SectionHeader>
-      </SectionWrapper>
+      <ServiceHero
+        eyebrow="LARGA ESTANCIA"
+        title="Gestión de alquiler de larga duración en Valencia"
+        description="Alquila tu vivienda sin preocupaciones: ISOLA garantiza tu ingreso mensual fijo y se encarga de todo el proceso, desde la selección de inquilinos hasta el mantenimiento de tu propiedad."
+        image="/vitrine3.jpg"
+        alt="Vivienda luminosa gestionada por ISOLA en Valencia"
+      />
 
       {/* Qué incluye */}
       <SectionWrapper id="incluye">

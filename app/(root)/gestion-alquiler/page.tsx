@@ -42,7 +42,59 @@ const beneficios = [
   "Informes periódicos sobre el estado de tu propiedad",
 ];
 
+const pasos = [
+  {
+    title: "Valoración y propuesta",
+    description:
+      "Visitamos la vivienda, revisamos su documentación y estado, y te proponemos una renta realista y un plan de gestión cerrado.",
+  },
+  {
+    title: "Selección del inquilino",
+    description:
+      "Comprobamos solvencia, nóminas y referencias, y preparamos el contrato y las fianzas legales antes de entregar las llaves.",
+  },
+  {
+    title: "Contrato y cobros",
+    description:
+      "Altas de suministros, seguro, cobro mensual y liquidación. Tú recibes tu ingreso sin perseguir recibos ni llamadas.",
+  },
+  {
+    title: "Mantenimiento e informes",
+    description:
+      "Gestionamos incidencias y revisiones, coordinamos profesionales y te enviamos informes periódicos del estado de tu propiedad.",
+  },
+];
+
+const revision = [
+  "Titularidad y nota simple",
+  "Certificado energético y cédula de habitabilidad",
+  "Seguro de hogar y estatutos de la comunidad",
+  "ITE o informe de evaluación del edificio, si procede",
+  "Estado de suministros, equipamiento y mobiliario",
+  "Rentas y cargas pendientes del inmueble",
+];
+
 const faqs = [
+  {
+    question: "¿Cuánto dura un contrato de alquiler de vivienda?",
+    answer:
+      "Con la Ley de Arrendamientos Urbanos, el contrato se prorroga hasta cinco años si el propietario es una persona física y hasta siete si es una sociedad, salvo que el inquilino decida no continuar. Nosotros redactamos y gestionamos el contrato para que todo quede claro desde el primer día.",
+  },
+  {
+    question: "¿Cómo se actualiza la renta cada año?",
+    answer:
+      "La actualización anual se aplica conforme al índice legal vigente para arrendamientos de vivienda. Nos encargamos de calcularla y comunicarla en plazo, sin que tengas que revisar normativa.",
+  },
+  {
+    question: "¿Puedo vender la vivienda si está alquilada?",
+    answer:
+      "Sí. El comprador asume el contrato en los términos legales, así que la venta no obliga a echar al inquilino. Te acompañamos en la coordinación con la otra parte y con la notaría.",
+  },
+  {
+    question: "¿Qué pasa con la fianza del inquilino?",
+    answer:
+      "La fianza legal equivale a una mensualidad y debe depositarse en el organismo autonómico correspondiente. La gestionamos íntegramente, incluida su devolución al finalizar el contrato.",
+  },
   {
     question: "¿Qué pasa si mi inquilino no paga?",
     answer:
@@ -98,6 +150,51 @@ export default function GestionAlquilerPage() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-16">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Cómo trabajamos tu alquiler de larga duración
+            </h2>
+            <ol className="mt-8 grid gap-6 sm:grid-cols-2">
+              {pasos.map((p, i) => (
+                <li key={i} className="flex gap-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fe6b01] text-sm font-semibold text-white">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold mb-1">{p.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Qué revisamos antes de alquilar tu vivienda
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Un contrato mal preparado se paga durante años. Antes de publicar
+              el anuncio comprobamos:
+            </p>
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+              {revision.map((r, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 mt-0.5 shrink-0 text-primary" />
+                  <span className="text-muted-foreground">{r}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="mt-10 text-sm text-muted-foreground">
+            Gestionamos viviendas en Valencia capital —Ruzafa, El Carmen,
+            Eixample, Cabanyal, Malvarrosa, Benimaclet— y en municipios del
+            área metropolitana.
+          </p>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <Link

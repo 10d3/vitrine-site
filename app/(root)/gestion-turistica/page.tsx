@@ -59,7 +59,73 @@ const servicios = [
   },
 ];
 
+const pasos = [
+  {
+    title: "Estudiamos la vivienda",
+    description:
+      "Revisamos ubicación, características y normativa municipal aplicable antes de que inviertas un euro. Si la vivienda no es viable como turística, te lo decimos y buscamos la mejor alternativa.",
+  },
+  {
+    title: "Legalizamos y registramos",
+    description:
+      "Tramitamos el NRU ante la Generalitat Valenciana, el alta en el registro estatal de arrendamientos de corta duración y la puesta en marcha de SES Hospedajes.",
+  },
+  {
+    title: "Preparamos y publicamos",
+    description:
+      "Equipamiento, fotografía, textos y precios competitivos. Publicamos tu vivienda en Airbnb, Booking y otros canales, cuidando la ficha para que convierta.",
+  },
+  {
+    title: "Operamos cada día",
+    description:
+      "Reservas, entradas y salidas, limpieza, incidencias, atención al huésped y obligaciones legales. Tú solo ves los ingresos y los informes.",
+  },
+];
+
+const requisitos = [
+  {
+    title: "Registro autonómico (NRU)",
+    description:
+      "La vivienda debe estar inscrita en el Registro de Turismo de la Comunitat Valenciana antes de anunciarse como alojamiento turístico.",
+  },
+  {
+    title: "Registro estatal de arrendamientos de corta duración",
+    description:
+      "Desde 2025 los alquileres turísticos y de temporada necesitan su número de registro para poder anunciarse en las plataformas.",
+  },
+  {
+    title: "SES Hospedajes",
+    description:
+      "Comunicación de los datos de los viajeros al Ministerio del Interior, obligatoria para los alojamientos turísticos.",
+  },
+  {
+    title: "Normativa municipal y de comunidad",
+    description:
+      "Compatibilidad urbanística, ordenanzas municipales y estatutos de la comunidad de propietarios: lo comprobamos antes de empezar.",
+  },
+  {
+    title: "Seguro y habitabilidad",
+    description:
+      "Póliza adecuada al uso turístico y cédula de habitabilidad cuando proceda, para operar con cobertura y sin sorpresas.",
+  },
+];
+
 const faqs = [
+  {
+    question: "¿Cuánto cuesta la gestión de una vivienda turística en Valencia?",
+    answer:
+      "Depende del punto en el que esté tu vivienda y del plan que elijas: no es lo mismo solo legalizar y registrar que encargarnos también de la operación diaria. La primera consulta es gratuita y te damos una propuesta cerrada con lo que incluye cada opción.",
+  },
+  {
+    question: "¿Puedo alquilar mi vivienda como turística solo unos meses al año?",
+    answer:
+      "Sí. Puedes anunciarla por temporadas siempre que la vivienda esté registrada y cumpla las obligaciones mientras esté en alquiler. Ajustamos la operativa a los meses en los que quieras rentabilizarla.",
+  },
+  {
+    question: "¿Qué pasa si la comunidad de propietarios prohíbe el uso turístico?",
+    answer:
+      "Antes de empezar revisamos los estatutos de la comunidad y la normativa municipal. Si el uso turístico no es viable, te lo decimos con claridad y valoramos juntos la opción de alquiler de larga duración.",
+  },
   {
     question: "¿Cómo obtengo el registro de turismo de la Comunitat Valenciana?",
     answer:
@@ -123,6 +189,85 @@ export default function GestionTuristicaPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-16">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Cómo funciona: de tu vivienda a alquiler turístico
+            </h2>
+            <ol className="mt-8 grid gap-6 sm:grid-cols-2">
+              {pasos.map((p, i) => (
+                <li key={i} className="flex gap-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fe6b01] text-sm font-semibold text-white">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold mb-1">{p.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Qué necesitas para alquilar como VUT en Valencia
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Es fácil perderse entre registros y obligaciones. Estos son los
+              puntos que revisamos siempre antes de publicar una vivienda:
+            </p>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {requisitos.map((r, i) => (
+                <div key={i} className="rounded-xl border border-border/50 p-5">
+                  <h3 className="font-semibold mb-2">{r.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {r.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16 rounded-xl border border-border/50 bg-card p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              ¿VUT o alquiler de larga duración?
+            </h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <div>
+                <h3 className="font-semibold mb-2">Alquiler turístico (VUT)</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Más ingreso por noche, pero también más gestión: registro
+                  turístico, limpieza entre huéspedes, entradas y salidas y
+                  atención continua. Encaja si tu vivienda está en una zona con
+                  demanda de viajeros.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">Larga duración</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Renta mensual estable, contrato de arrendamiento y mucha menos
+                  rotación. Con nuestro plan de alquiler garantizado cobras todos
+                  los meses aunque la vivienda esté vacía.
+                </p>
+              </div>
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground">
+              ¿No lo tienes claro? Compara con nuestra{" "}
+              <Link href="/gestion-alquiler" className="underline font-medium">
+                gestión de alquiler de larga duración
+              </Link>{" "}
+              o pide una consulta y te decimos qué encaja mejor.
+            </p>
+          </div>
+
+          <p className="mt-10 text-sm text-muted-foreground">
+            Trabajamos en Valencia capital —Ruzafa, El Carmen, Eixample,
+            Cabanyal, Malvarrosa, Benimaclet— y en municipios del área
+            metropolitana.
+          </p>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <Link

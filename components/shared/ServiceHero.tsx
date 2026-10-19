@@ -20,7 +20,8 @@ export default function ServiceHero({
 }) {
   return (
     <section className="relative md:-mx-24 md:w-[calc(100%+12rem)]">
-      <div className="relative flex min-h-dvh items-center overflow-hidden">
+      {/* 4rem = navbar height (h-16), so the hero ends at the fold */}
+      <div className="relative flex min-h-[calc(100dvh-4rem)] items-center overflow-hidden">
         <Image
           src={image}
           alt={alt}

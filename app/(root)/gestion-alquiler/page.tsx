@@ -368,7 +368,11 @@ export default function GestionAlquilerPage() {
               align="center"
               className="mb-8"
             />
-            <Button asChild size="lg" className="h-12 rounded-xl px-8">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 rounded-xl bg-[#fe6b01] px-8 text-white hover:bg-[#fe6b01]/90"
+            >
               <Link href="/#contacto">
                 <RollingText text="Solicita tu consulta gratuita" />
               </Link>

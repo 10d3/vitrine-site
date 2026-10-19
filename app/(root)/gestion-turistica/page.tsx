@@ -166,7 +166,6 @@ const comparativa = [
     ],
     href: "/#contacto",
     cta: "Quiero alquilar como VUT",
-    featured: false,
   },
   {
     tag: "Ingreso estable",
@@ -180,7 +179,6 @@ const comparativa = [
     ],
     href: "/gestion-alquiler",
     cta: "Ver gestión de larga duración",
-    featured: true,
   },
 ];
 
@@ -391,8 +389,12 @@ export default function GestionTuristicaPage() {
                 </ul>
                 <Button
                   asChild
-                  variant={c.featured ? "default" : "outline"}
-                  className="w-full rounded-xl py-6"
+                  variant={c.href === "/#contacto" ? "default" : "outline"}
+                  className={`w-full rounded-xl py-6 ${
+                    c.href === "/#contacto"
+                      ? "bg-[#fe6b01] text-white hover:bg-[#fe6b01]/90"
+                      : ""
+                  }`}
                 >
                   <Link href={c.href}>
                     <RollingText text={c.cta} />
@@ -474,7 +476,11 @@ export default function GestionTuristicaPage() {
               align="center"
               className="mb-8"
             />
-            <Button asChild size="lg" className="h-12 rounded-xl px-8">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 rounded-xl bg-[#fe6b01] px-8 text-white hover:bg-[#fe6b01]/90"
+            >
               <Link href="/#contacto">
                 <RollingText text="Solicita tu consulta gratuita" />
               </Link>

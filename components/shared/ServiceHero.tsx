@@ -20,7 +20,7 @@ export default function ServiceHero({
 }) {
   return (
     <section className="relative md:-mx-24 md:w-[calc(100%+12rem)]">
-      <div className="relative flex min-h-[68vh] items-end overflow-hidden md:min-h-[74vh]">
+      <div className="relative flex min-h-dvh items-center overflow-hidden">
         <Image
           src={image}
           alt={alt}
@@ -30,7 +30,7 @@ export default function ServiceHero({
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20" />
-        <div className="relative z-10 w-full px-6 pb-14 pt-28 md:px-16 md:pb-20">
+        <div className="relative z-10 w-full px-6 py-20 md:px-16 md:py-24">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
             <span className="size-1.5 rounded-full bg-primary" />
             {eyebrow}
@@ -48,7 +48,11 @@ export default function ServiceHero({
             className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-white/85 sm:text-lg md:text-xl"
           />
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-xl px-8">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 rounded-xl bg-[#fe6b01] px-8 text-white hover:bg-[#fe6b01]/90"
+            >
               <Link href="/#contacto">
                 <RollingText text="Solicita tu consulta gratuita" />
               </Link>

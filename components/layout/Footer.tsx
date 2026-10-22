@@ -9,11 +9,8 @@ import {
   useTransform,
 } from "motion/react";
 import {
-  FaFacebookF,
   FaInstagram,
   FaWhatsapp,
-  FaXTwitter,
-  FaYoutube,
 } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
@@ -118,14 +115,13 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const services = [
-    { name: "Gestión de Alquiler", href: "/gestion-alquiler" },
+    { name: "Media Estancia y Habitaciones", href: "/gestion-alquiler" },
     { name: "Gestión Turística (VUT)", href: "/gestion-turistica" },
     { name: "Todos los Servicios", href: "/servicios" },
   ];
 
   const company = [
     { name: "Quiénes Somos", href: "/sobre-nosotros" },
-    { name: "Testimonios", href: "/testimonios" },
     { name: "Blog", href: "/blog" },
     { name: "Contacto", href: "/#contacto" },
   ];
@@ -164,12 +160,12 @@ export default function Footer() {
                 </Link>
               </div>
               <p className="select-none text-base sm:text-lg text-pretty leading-relaxed text-muted-foreground">
-                Gestión integral de propiedades en Valencia. Gestionamos tu propiedad, garantizamos tu ingreso.
+                Tu piso cuidado y alquilado en Valencia, sin que tengas que estar encima.
               </p>
               {/* Social Icons */}
               <div className="flex space-x-5 mt-6 text-2xl">
                 <Link
-                  href="https://wa.me/34642815465"
+                  href="https://wa.me/34614231373"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
@@ -177,36 +173,12 @@ export default function Footer() {
                   <FaWhatsapp className="text-muted-foreground hover:text-green-600 transition-colors cursor-pointer" />
                 </Link>
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/isola.gestion_de_alquileres/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
                   <FaInstagram className="text-muted-foreground hover:text-pink-600 transition-colors cursor-pointer" />
-                </Link>
-                <Link
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                >
-                  <FaFacebookF className="text-muted-foreground hover:text-blue-600 transition-colors cursor-pointer" />
-                </Link>
-                <Link
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X (Twitter)"
-                >
-                  <FaXTwitter className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer" />
-                </Link>
-                <Link
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="YouTube"
-                >
-                  <FaYoutube className="text-muted-foreground hover:text-red-600 transition-colors cursor-pointer" />
                 </Link>
               </div>
             </div>
@@ -285,7 +257,7 @@ export default function Footer() {
             &copy; {year} ISOLA — Gestión Integral de Propiedades en Valencia. Todos los derechos reservados.
           </span>
           <span className="text-xs text-muted-foreground">
-            Valencia, España · <a href="tel:+34642815465" className="hover:underline">+34 642 81 54 65</a>
+            C/ Editor Manuel Aguilar 13, 46001 Valencia · <a href="tel:+34614231373" className="hover:underline">+34 614 231 373</a> · <a href="tel:+34642815465" className="hover:underline">+34 642 815 465</a>
           </span>
         </div>
       </div>

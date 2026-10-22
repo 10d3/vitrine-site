@@ -5,10 +5,9 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes sobre Gestión de Alquileres en Valencia",
   description:
-    "Respuestas a las dudas más comunes de propietarios: alquiler garantizado, costes de la gestión, mantenimiento, inquilinos y viviendas turísticas en Valencia.",
+    "Respuestas a las dudas más comunes de propietarios: tarifas, comisiones, mantenimiento, inquilinos y viviendas turísticas en Valencia.",
   keywords: [
     "preguntas frecuentes gestión de alquileres",
-    "alquiler garantizado Valencia preguntas",
     "cuánto cuesta gestionar un alquiler Valencia",
     "gestión de propiedades Valencia dudas",
     "FAQ propiedad Valencia",

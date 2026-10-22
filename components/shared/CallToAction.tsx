@@ -53,7 +53,7 @@ export default function CallToAction() {
               <ScrollRevealText
                 className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
                 text={[
-                  "Recibe consejos exclusivos sobre alquiler garantizado, cambios normativos en viviendas turísticas en Valencia y estrategias para rentabilizar tu patrimonio.",
+                  "Recibe consejos sobre media estancia, cambios normativos en viviendas turísticas en Valencia y estrategias para rentabilizar tu patrimonio.",
                 ]}
               />
             }

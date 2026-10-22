@@ -11,48 +11,66 @@ import InViewReveal from "./landing/in-view-reveal";
 import ScrollRevealText from "./landing/scroll-reveal-text";
 import RollingText from "./landing/rolling-text";
 
+// Tarifas 2026 — mantener alineado con el PDF "Isola - Tarifas".
 const plans = [
   {
     number: "01",
-    plan: "Gestión Básico",
+    plan: "Media estancia y temporada",
+    price: "Desde 15 %",
+    priceNote: "+ IVA sobre lo cobrado",
     description:
-      "Diseñado para propietarios que buscan una gestión eficaz y confiable para el día a día de sus propiedades.",
+      "Alquileres de 1 a 11 meses publicados en Airbnb y Booking. Legal sin licencia turística.",
     features: [
-      "Check-in y Check-out: Coordinación y supervisión de la entrada y salida de huéspedes o inquilinos.",
-      "Limpieza: Servicio de limpieza profesional y profunda de la vivienda.",
-      "Mantenimiento: Inspección técnica y resolución rápida de pequeños desperfectos.",
+      "Anuncio, fotos, precios y selección de inquilinos",
+      "Contratos de temporada, cobros y gestión de incidencias",
+      "Limpieza de salida pagada por el huésped: sin coste para ti",
     ],
-    featured: false,
-    cta: "Elegir Plan Básico",
+    featured: true,
+    cta: "Pide tu estudio gratis",
   },
   {
     number: "02",
-    plan: "Gestión Plus",
-    description:
-      "Equilibrio perfecto entre tranquilidad garantizada y un catálogo completo de servicios administrativos.",
+    plan: "Alquiler turístico",
+    price: "15–20 %",
+    priceNote: "+ IVA, según rotación y estado del piso",
+    description: "Solo para pisos con licencia turística en vigor.",
     features: [
-      "Todos los servicios del Plan Gestión Básico",
-      "Atención al Cliente: Soporte y asistencia telefónica continua durante su estancia.",
-      "Gestión de Inquilinos: Selección rigurosa, solvencia y contratos legales.",
-      "Gestión de Cobros y Pagos: Control de facturas, ingresos y suministros.",
-      "Atención a Siniestros: Gestión directa de partes y seguros.",
+      "Anuncios en Airbnb y Booking y ajuste de precios",
+      "Check-in, check-out y atención a los huéspedes",
+      "Limpieza entre estancias pagada por el huésped: sin coste para ti",
     ],
-    featured: true,
-    cta: "Elegir Plan Plus",
+    featured: false,
+    cta: "Pide tu estudio gratis",
   },
   {
     number: "03",
-    plan: "Gestión Premium",
+    plan: "Gestión por habitaciones",
+    price: "Desde 15 %",
+    priceNote: "+ IVA sobre lo cobrado",
     description:
-      "Solución 360° llave en mano con máxima rentabilidad, alquiler asegurado y dedicación prioritaria.",
+      "Alquiler habitación por habitación con contrato de temporada para cada inquilino.",
     features: [
-      "Todos los servicios del Plan Básico y Plan Plus",
-      "Comercialización Multicanal: Fotografía profesional, marketing y posicionamiento óptimo.",
-      "Mantenimiento Integral: Supervisión técnica completa, reparaciones y reformas.",
-      "Servicio VIP: Gestor personal dedicado y atención prioritaria 24/7.",
+      "Búsqueda de inquilinos, contratos, cobros y convivencia",
+      "Incluido en la entrada que paga el inquilino (200 € + IVA): limpieza de zonas comunes cada 15 días durante toda la estancia y limpieza de la habitación al check-out",
+      "Revisiones periódicas del piso",
     ],
     featured: false,
-    cta: "Elegir Plan Premium",
+    cta: "Pide tu estudio gratis",
+  },
+  {
+    number: "04",
+    plan: "Limpieza y operativa",
+    price: "A medida",
+    priceNote: "por horas o precio fijo por piso",
+    description:
+      "Para inmobiliarias, propietarios y oficinas que ya tienen quien alquile.",
+    features: [
+      "Limpiezas puntuales o recurrentes con equipo propio",
+      "Entrega y recogida de llaves, check-in y check-out",
+      "Revisión de la vivienda y pequeñas incidencias",
+    ],
+    featured: false,
+    cta: "Pide presupuesto",
   },
 ];
 
@@ -60,20 +78,20 @@ export function Services() {
   return (
     <SectionWrapper id="planes">
       <SectionHeader
-        eyebrow="PLANES DE GESTIÓN"
-        title={<InViewReveal text="Elige el Plan Perfecto para Tu Propiedad" />}
+        eyebrow="SERVICIOS Y TARIFAS"
+        title={<InViewReveal text="Lo que hacemos y lo que cuesta" />}
         description={
           <ScrollRevealText
             className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
             text={[
-              "Ofrecemos planes transparentes adaptados a cada tipo de propietario y vivienda en Valencia. Sin sorpresas ni costes ocultos.",
+              "Sin permanencia. El precio final lo cerramos contigo después de ver el piso, según su ubicación, su estado, la rotación prevista y el número de viviendas.",
             ]}
           />
         }
         align="center"
       />
 
-      <div className="grid md:grid-cols-3 gap-8 items-stretch">
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
         {plans.map((plan, index) => (
           <motion.div
             key={plan.number}
@@ -111,6 +129,10 @@ export function Services() {
                   {plan.plan}
                 </h3>
 
+                {/* Price */}
+                <p className="text-3xl font-semibold text-foreground">{plan.price}</p>
+                <p className="text-xs text-muted-foreground mb-4">{plan.priceNote}</p>
+
                 {/* Description */}
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {plan.description}
@@ -146,6 +168,28 @@ export function Services() {
           </motion.div>
         ))}
       </div>
+
+      <div className="mt-10 rounded-2xl bg-[#122D5B] text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+        <div className="md:w-56 shrink-0">
+          <p className="text-xs uppercase tracking-widest text-[#FD9A6C]">Extra opcional</p>
+          <p className="text-xl font-semibold">Pack Tranquilidad</p>
+        </div>
+        <p className="text-sm text-white/80 flex-1">
+          Control y pago de facturas de suministros, gestión de siniestros con el
+          seguro e informe detallado de gastos.
+        </p>
+        <div className="md:text-right shrink-0">
+          <p className="text-3xl font-semibold">29 €</p>
+          <p className="text-xs text-white/80">+ IVA al mes por piso</p>
+        </div>
+      </div>
+
+      <p className="mt-6 text-sm text-muted-foreground">
+        <strong>Incluido en toda gestión:</strong> un interlocutor fijo, resumen
+        mensual de ingresos y gastos, gestión de averías (buscamos y coordinamos
+        la solución; reparaciones y materiales a cargo del propietario) y
+        oficina abierta en el centro de Valencia.
+      </p>
     </SectionWrapper>
   );
 }

@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import Service from "@/components/shared/service2";
+import { Services } from "@/components/shared/Service";
 
 export const metadata: Metadata = {
   title: "Servicios de Gestión de Alquileres en Valencia",
   description:
-    "Gestión integral de alquileres en Valencia: registro turístico (NRU), SES Hospedajes, administración de propiedades y gestión Airbnb. Descubre todos los servicios de ISOLA.",
+    "Servicios y tarifas de ISOLA en Valencia: media estancia, alquiler turístico, gestión por habitaciones y limpieza. Desde el 15 % + IVA, sin permanencia.",
   keywords: [
     "servicios gestión de alquileres Valencia",
     "gestión de propiedades Valencia",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Servicios de Gestión de Alquileres en Valencia | ISOLA",
     description:
-      "Registro turístico NRU, SES Hospedajes, administración de propiedades y gestión de apartamentos turísticos en Valencia.",
+      "Registro de turismo de la Comunitat Valenciana, SES Hospedajes, administración de propiedades y gestión de apartamentos turísticos en Valencia.",
     url: "/servicios",
     siteName: "ISOLA",
     locale: "es_ES",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <>
-      <Service />
+      <Services />
     </>
   );
 }

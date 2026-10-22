@@ -29,23 +29,23 @@ import Reveal from "@/components/shared/landing/reveal";
 import ServiceHero from "@/components/shared/ServiceHero";
 
 export const metadata: Metadata = {
-  title: "Gestión de Alquiler de Larga Duración en Valencia",
+  title: "Gestión de Alquiler de Media Estancia y por Habitaciones en Valencia",
   description:
-    "Alquila tu vivienda en Valencia sin preocupaciones: alquiler garantizado, selección de inquilinos, contratos y mantenimiento. ISOLA se encarga de todo.",
+    "Alquila tu piso en Valencia por meses o por habitaciones sin estar encima: inquilinos, contratos, cobros, limpiezas y averías. Desde el 15 % + IVA, sin permanencia.",
   keywords: [
-    "gestión de alquiler larga duración Valencia",
-    "alquiler garantizado Valencia",
+    "gestión alquiler media estancia Valencia",
+    "gestión alquiler por habitaciones Valencia",
     "alquilar mi piso sin preocupaciones Valencia",
     "empresa gestión alquiler pisos Valencia",
-    "qué pasa si mi inquilino no paga",
+    "alquiler de temporada Valencia",
   ],
   alternates: {
     canonical: "/gestion-alquiler",
   },
   openGraph: {
-    title: "Gestión de Alquiler de Larga Duración en Valencia | ISOLA",
+    title: "Gestión de Media Estancia y Habitaciones en Valencia | ISOLA",
     description:
-      "Alquiler garantizado y gestión completa de tu vivienda en Valencia: inquilinos, contratos, cobros y mantenimiento.",
+      "Gestión completa de tu piso en Valencia por meses o por habitaciones: inquilinos, contratos, cobros, limpiezas y mantenimiento.",
     url: "/gestion-alquiler",
     siteName: "ISOLA",
     locale: "es_ES",
@@ -61,33 +61,33 @@ type Item = {
 
 const beneficios: Item[] = [
   {
-    title: "Ingreso mensual garantizado",
+    title: "Más rentable que la larga duración",
     description:
-      "Cobras tu renta cada mes, esté alquilada la vivienda o no. El riesgo de impago lo asumimos nosotros.",
+      "Alquileres de 1 a 11 meses en Airbnb y Booking, o habitación por habitación. Legal sin licencia turística y, en Valencia, suele rendir bastante más.",
     icon: HandCoins,
   },
   {
-    title: "Selección rigurosa de inquilinos",
+    title: "Selección de inquilinos",
     description:
-      "Verificamos solvencia, nóminas y referencias antes de firmar. Un buen inquilino vale más que una renta alta.",
+      "Estudiantes, profesionales y traslados. Revisamos cada solicitud antes de aceptar la reserva o firmar el contrato.",
     icon: UserCheck,
   },
   {
-    title: "Contratos, cobros y facturación",
+    title: "Contratos de temporada y cobros",
     description:
-      "Contrato conforme a la LAU, fianzas depositadas y cobro mensual sin que tengas que perseguir recibos.",
+      "Contrato de temporada para cada inquilino, fianza y cobro mensual sin que tengas que perseguir recibos.",
     icon: FileSignature,
   },
   {
-    title: "Mantenimiento e incidencias",
+    title: "Limpiezas y averías",
     description:
-      "Revisiones preventivas, reparaciones y coordinación de profesionales para mantener la vivienda en condiciones.",
+      "Limpiezas con equipo propio pagadas por el inquilino. Si hay una avería, buscamos y coordinamos la solución (reparaciones y materiales a cargo del propietario).",
     icon: Wrench,
   },
   {
-    title: "Informes periódicos",
+    title: "Resumen mensual",
     description:
-      "Sabes en todo momento cómo está tu propiedad y qué gestiones se han realizado, sin tener que preguntar.",
+      "Cada mes sabes cuánto ha ingresado tu piso, qué se ha gastado y cuánto te queda. Sin permanencia.",
     icon: BarChart3,
   },
 ];
@@ -96,25 +96,25 @@ const pasos: Item[] = [
   {
     title: "Valoración y propuesta",
     description:
-      "Visitamos la vivienda, revisamos su documentación y estado, y te proponemos una renta realista y un plan de gestión cerrado.",
+      "Visitamos la vivienda, revisamos su documentación y estado, y te preparamos un estudio gratuito de cuánto podría darte por meses o por habitaciones.",
     icon: ScanSearch,
   },
   {
     title: "Selección del inquilino",
     description:
-      "Comprobamos solvencia, nóminas y referencias, y preparamos el contrato y las fianzas legales antes de entregar las llaves.",
+      "Publicamos el piso en Airbnb y Booking, revisamos cada solicitud y preparamos el contrato de temporada y la fianza antes de entregar las llaves.",
     icon: UserCheck,
   },
   {
     title: "Contrato y cobros",
     description:
-      "Altas de suministros, seguro, cobro mensual y liquidación. Tú recibes tu ingreso sin perseguir recibos ni llamadas.",
+      "Cobro mensual, limpiezas y liquidación. Tú recibes tu parte cada mes con un resumen claro.",
     icon: FileSignature,
   },
   {
     title: "Mantenimiento e informes",
     description:
-      "Gestionamos incidencias y revisiones, coordinamos profesionales y te enviamos informes periódicos del estado de tu propiedad.",
+      "Gestionamos incidencias y revisiones, y si hay una avería buscamos y coordinamos la solución.",
     icon: Wrench,
   },
 ];
@@ -130,44 +130,39 @@ const revision = [
 
 const faqs = [
   {
-    question: "¿Cuánto dura un contrato de alquiler de vivienda?",
+    question: "¿Qué es la media estancia y por qué rinde más?",
     answer:
-      "Con la Ley de Arrendamientos Urbanos, el contrato se prorroga hasta cinco años si el propietario es una persona física y hasta siete si es una sociedad, salvo que el inquilino decida no continuar. Nosotros redactamos y gestionamos el contrato para que todo quede claro desde el primer día.",
+      "Son alquileres de 1 a 11 meses para estudiantes, profesionales y traslados, con contrato de temporada. No necesitan licencia turística y, en Valencia, suelen rendir bastante más que el alquiler de larga duración.",
   },
   {
-    question: "¿Cómo se actualiza la renta cada año?",
+    question: "¿Y el alquiler por habitaciones?",
     answer:
-      "La actualización anual se aplica conforme al índice legal vigente para arrendamientos de vivienda. Nos encargamos de calcularla y comunicarla en plazo, sin que tengas que revisar normativa.",
+      "Alquilamos el piso habitación por habitación, con un contrato de temporada para cada inquilino. Nos ocupamos de buscar inquilinos, los contratos, los cobros y la convivencia.",
   },
   {
-    question: "¿Puedo vender la vivienda si está alquilada?",
+    question: "¿Cuánto cuesta la gestión?",
     answer:
-      "Sí. El comprador asume el contrato en los términos legales, así que la venta no obliga a echar al inquilino. Te acompañamos en la coordinación con la otra parte y con la notaría.",
+      "Desde el 15 % + IVA sobre lo cobrado cada mes, sin permanencia. El precio final lo cerramos después de ver el piso, según zona, estado, rotación prevista y número de viviendas.",
+  },
+  {
+    question: "¿Quién paga las limpiezas?",
+    answer:
+      "El inquilino. En media estancia va incluida en el precio de la reserva; en habitaciones, la cuota de entrada (200 € + IVA) incluye la limpieza de zonas comunes cada 15 días y la de la habitación al check-out.",
   },
   {
     question: "¿Qué pasa con la fianza del inquilino?",
     answer:
-      "La fianza legal equivale a una mensualidad y debe depositarse en el organismo autonómico correspondiente. La gestionamos íntegramente, incluida su devolución al finalizar el contrato.",
-  },
-  {
-    question: "¿Qué pasa si mi inquilino no paga?",
-    answer:
-      "Con nuestros planes de gestión, ISOLA te garantiza un ingreso mensual fijo independientemente de si la propiedad está alquilada o de si existe algún impago. Nosotros asumimos la gestión del cobro y las gestiones necesarias.",
-  },
-  {
-    question: "¿Cuánto cuesta contratar una gestión integral de alquileres en Valencia?",
-    answer:
-      "El coste depende del plan elegido y de las características de tu propiedad. Ofrecemos una primera consulta gratuita para evaluar tu inmueble y ofrecerte una propuesta personalizada.",
-  },
-  {
-    question: "¿Qué tipos de propiedades gestionáis?",
-    answer:
-      "Gestionamos apartamentos, casas y unidades multifamiliares en Valencia y alrededores, tanto para alquiler de larga duración como para uso turístico.",
+      "Gestionamos la fianza de cada contrato de temporada, incluida su devolución al finalizar la estancia tras revisar el estado del piso.",
   },
   {
     question: "¿Tengo que ocuparme del mantenimiento de la vivienda?",
     answer:
-      "No. Nos encargamos del mantenimiento regular y preventivo, las reparaciones básicas y la coordinación de profesionales cuando sea necesario, según el plan seleccionado.",
+      "No. Si hay una avería buscamos y coordinamos la solución, y comprobamos que queda bien. El coste de reparaciones y materiales corre a cargo del propietario.",
+  },
+  {
+    question: "¿Puedo dejar de trabajar con vosotros cuando quiera?",
+    answer:
+      "Sí. No hay permanencia: seguimos juntos porque las cosas funcionan, no por una cláusula.",
   },
 ];
 
@@ -212,9 +207,9 @@ export default function GestionAlquilerPage() {
 
       {/* Hero */}
       <ServiceHero
-        eyebrow="LARGA ESTANCIA"
-        title="Gestión de alquiler de larga duración en Valencia"
-        description="Alquila tu vivienda sin preocupaciones: ISOLA garantiza tu ingreso mensual fijo y se encarga de todo el proceso, desde la selección de inquilinos hasta el mantenimiento de tu propiedad."
+        eyebrow="MEDIA ESTANCIA Y HABITACIONES"
+        title="Gestión de alquiler por meses y por habitaciones en Valencia"
+        description="Alquila tu piso sin estar encima: ISOLA se encarga de todo el proceso, desde el anuncio y la selección de inquilinos hasta las limpiezas y las averías. Tú recibes tu parte cada mes."
         image="/vitrine3.jpg"
         alt="Vivienda luminosa gestionada por ISOLA en Valencia"
       />
@@ -228,7 +223,7 @@ export default function GestionAlquilerPage() {
             <ScrollRevealText
               className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
               text={[
-                "Un único interlocutor para todo lo que necesita tu propiedad. Sin llamadas del inquilino, sin recibos pendientes, sin sorpresas.",
+                "Un único interlocutor para todo lo que necesita tu piso. Las llamadas del inquilino nos llegan a nosotros, no a ti.",
               ]}
             />
           }
@@ -252,7 +247,7 @@ export default function GestionAlquilerPage() {
             <ScrollRevealText
               className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
               text={[
-                "Sabes qué va a pasar en cada momento y cuánto vas a cobrar. Sin letra pequeña.",
+                "Sabes qué va a pasar en cada momento. Sin letra pequeña y sin permanencia.",
               ]}
             />
           }
@@ -276,7 +271,7 @@ export default function GestionAlquilerPage() {
             <ScrollRevealText
               className="text-base sm:text-lg md:text-xl text-pretty leading-relaxed text-muted-foreground"
               text={[
-                "Un contrato mal preparado se paga durante años. Antes de publicar el anuncio comprobamos que todo esté en regla.",
+                "Antes de publicar el anuncio comprobamos que todo esté en regla.",
               ]}
             />
           }
@@ -311,7 +306,7 @@ export default function GestionAlquilerPage() {
               <ScrollRevealText
                 className="text-base sm:text-lg text-pretty leading-relaxed text-muted-foreground"
                 text={[
-                  "Contratos, impagos, fianzas y mantenimiento: lo que más nos preguntan los propietarios antes de confiarnos su vivienda.",
+                  "Tarifas, limpiezas, fianzas y mantenimiento: lo que más nos preguntan los propietarios antes de confiarnos su vivienda.",
                 ]}
               />
             }
@@ -361,7 +356,7 @@ export default function GestionAlquilerPage() {
                 <ScrollRevealText
                   className="text-base sm:text-lg text-pretty leading-relaxed text-muted-foreground"
                   text={[
-                    "Te damos una valoración realista, te explicamos qué incluye el plan y decides con calma. La primera consulta es gratuita.",
+                    "Te preparamos un estudio de lo que podría darte tu piso, te explicamos qué incluye la gestión y decides con calma. Es gratis y sin compromiso.",
                   ]}
                 />
               }

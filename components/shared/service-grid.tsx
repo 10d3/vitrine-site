@@ -19,7 +19,7 @@ const services = [
     number: "01",
     title: "Registro de Turismo (Comunitat Valenciana)",
     description:
-      "Tramitamos el NRU (Número de Registro) de tu vivienda de uso turístico ante la Generalitat Valenciana. Te guiamos paso a paso para cumplir la normativa vigente sin sanciones.",
+      "Tramitamos la inscripción de tu vivienda de uso turístico en el Registro de Turismo de la Comunitat Valenciana. Te guiamos paso a paso para cumplir la normativa vigente sin sanciones.",
     icon: FileText,
     featured: true,
   },

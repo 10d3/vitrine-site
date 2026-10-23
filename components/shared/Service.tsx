@@ -31,8 +31,10 @@ const plans = [
     plan: "Alquiler turístico y vacacional",
     price: "15–20 %",
     priceNote: "+ IVA, según rotación y estado del piso",
-    description:
-      "Alquiler turístico: solo para pisos con licencia turística en vigor. Alquiler vacacional: a partir de 11 noches, legal sin licencia turística.",
+    description: [
+      "Alquiler turístico: solo para pisos con licencia turística en vigor.",
+      "Alquiler vacacional: a partir de 11 noches, legal sin licencia turística.",
+    ],
     features: [
       "Anuncios en Airbnb, Booking y otras plataformas, y ajuste de precios",
       "Check-in, check-out y atención a los huéspedes",
@@ -140,9 +142,11 @@ export function Services() {
                 )}
 
                 {/* Description */}
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {plan.description}
-                </p>
+                <div className="text-muted-foreground text-sm leading-relaxed mb-6 space-y-3">
+                  {[plan.description].flat().map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
 
                 {/* Features list */}
                 <ul className="space-y-3.5 flex-grow mb-8">

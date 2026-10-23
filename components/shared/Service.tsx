@@ -15,7 +15,7 @@ import RollingText from "./landing/rolling-text";
 const plans = [
   {
     number: "01",
-    plan: "Media y larga estancia, temporada",
+    plan: "Alquiler de media y larga estancia",
     description:
       "Anuncios publicados en las plataformas de alquileres.",
     features: [
@@ -28,12 +28,12 @@ const plans = [
   },
   {
     number: "02",
-    plan: "Alquiler turístico y vacacional",
+    plan: "Alquiler turístico y de temporada",
     price: "15–20 %",
     priceNote: "+ IVA, según rotación y estado del piso",
     description: [
       "Alquiler turístico: solo para pisos con licencia turística en vigor.",
-      "Alquiler vacacional: a partir de 11 noches, legal sin licencia turística.",
+      "Alquiler de temporada: a partir de 11 noches, legal sin licencia turística.",
     ],
     features: [
       "Anuncios en Airbnb, Booking y otras plataformas, y ajuste de precios",
@@ -53,7 +53,7 @@ const plans = [
       "Alquiler habitación por habitación con contrato de temporada para cada inquilino.",
     features: [
       "Búsqueda de inquilinos, contratos, cobros y convivencia",
-      "Limpieza de zonas comunes cada 15 días y limpieza de la habitación al check-out",
+      "Limpieza de zonas comunes semanal o cada 15 días y limpieza de la habitación al check-out",
       "Revisiones periódicas del piso",
       "Mantenimiento y gestión de incidencias",
     ],

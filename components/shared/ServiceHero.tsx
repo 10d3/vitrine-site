@@ -11,12 +11,16 @@ export default function ServiceHero({
   description,
   image,
   alt,
+  secondaryHref = "/servicios",
+  secondaryLabel = "Ver todos los servicios",
 }: {
   eyebrow: string;
   title: string;
   description: string;
   image: string;
   alt: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
 }) {
   return (
     <section className="relative md:-mx-24 md:w-[calc(100%+12rem)]">
@@ -64,8 +68,8 @@ export default function ServiceHero({
               variant="outline"
               className="h-12 rounded-xl border-white/30 bg-white/10 px-8 text-white hover:bg-white/20 hover:text-white"
             >
-              <Link href="/servicios">
-                <RollingText text="Ver todos los servicios" />
+              <Link href={secondaryHref}>
+                <RollingText text={secondaryLabel} />
               </Link>
             </Button>
           </div>

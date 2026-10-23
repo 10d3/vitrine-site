@@ -170,7 +170,7 @@ export function Services() {
                   variant={plan.featured ? "default" : "outline"}
                   className="w-full rounded-xl py-6 transition-transform duration-150 active:scale-[0.98]"
                 >
-                  <Link href="#contacto">
+                  <Link href="/#contacto">
                     <RollingText text={plan.cta} />
                   </Link>
                 </Button>

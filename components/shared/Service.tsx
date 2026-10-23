@@ -15,31 +15,34 @@ import RollingText from "./landing/rolling-text";
 const plans = [
   {
     number: "01",
-    plan: "Media estancia y temporada",
-    price: "Desde 15 %",
-    priceNote: "+ IVA sobre lo cobrado",
+    plan: "Alquiler de media y larga estancia",
     description:
-      "Alquileres de 1 a 11 meses publicados en Airbnb y Booking. Legal sin licencia turística.",
+      "Anuncios publicados en las plataformas de alquileres.",
     features: [
       "Anuncio, fotos, precios y selección de inquilinos",
       "Contratos de temporada, cobros y gestión de incidencias",
       "Limpieza de salida pagada por el huésped: sin coste para ti",
     ],
-    featured: true,
+    featured: false,
     cta: "Pide tu estudio gratis",
   },
   {
     number: "02",
-    plan: "Alquiler turístico",
+    plan: "Alquiler turístico y de temporada",
     price: "15–20 %",
     priceNote: "+ IVA, según rotación y estado del piso",
-    description: "Solo para pisos con licencia turística en vigor.",
+    description: [
+      "Alquiler turístico: solo para pisos con licencia turística en vigor.",
+      "Alquiler de temporada: a partir de 11 noches, legal sin licencia turística.",
+    ],
     features: [
-      "Anuncios en Airbnb y Booking y ajuste de precios",
+      "Anuncios en Airbnb, Booking y otras plataformas, y ajuste de precios",
       "Check-in, check-out y atención a los huéspedes",
       "Limpieza entre estancias pagada por el huésped: sin coste para ti",
+      "Gestión de incidencias y mantenimiento",
+      "Registro de huéspedes en SES Hospedajes",
     ],
-    featured: false,
+    featured: true,
     cta: "Pide tu estudio gratis",
   },
   {
@@ -51,8 +54,9 @@ const plans = [
       "Alquiler habitación por habitación con contrato de temporada para cada inquilino.",
     features: [
       "Búsqueda de inquilinos, contratos, cobros y convivencia",
-      "Incluido en la entrada que paga el inquilino (200 € + IVA): limpieza de zonas comunes cada 15 días durante toda la estancia y limpieza de la habitación al check-out",
+      "Limpieza de zonas comunes semanal o cada 15 días y limpieza de la habitación al check-out",
       "Revisiones periódicas del piso",
+      "Mantenimiento y gestión de incidencias",
     ],
     featured: false,
     cta: "Pide tu estudio gratis",
@@ -68,6 +72,7 @@ const plans = [
       "Limpiezas puntuales o recurrentes con equipo propio",
       "Entrega y recogida de llaves, check-in y check-out",
       "Revisión de la vivienda y pequeñas incidencias",
+      "Kit de amenities",
     ],
     featured: false,
     cta: "Pide presupuesto",
@@ -130,13 +135,19 @@ export function Services() {
                 </h3>
 
                 {/* Price */}
-                <p className="text-3xl font-semibold text-foreground">{plan.price}</p>
-                <p className="text-xs text-muted-foreground mb-4">{plan.priceNote}</p>
+                {plan.price && (
+                  <>
+                    <p className="text-3xl font-semibold text-foreground">{plan.price}</p>
+                    <p className="text-xs text-muted-foreground mb-4">{plan.priceNote}</p>
+                  </>
+                )}
 
                 {/* Description */}
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {plan.description}
-                </p>
+                <div className="text-muted-foreground text-sm leading-relaxed mb-6 space-y-3">
+                  {[plan.description].flat().map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
 
                 {/* Features list */}
                 <ul className="space-y-3.5 flex-grow mb-8">

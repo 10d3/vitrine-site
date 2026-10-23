@@ -147,7 +147,7 @@ const faqs = [
   {
     question: "¿Quién paga las limpiezas?",
     answer:
-      "El inquilino. En media estancia va incluida en el precio de la reserva; en habitaciones, la cuota de entrada (200 € + IVA) incluye la limpieza de zonas comunes cada 15 días y la de la habitación al check-out.",
+      "El inquilino. En media estancia va incluida en el precio de la reserva; en habitaciones, el coste de las limpiezas de las zonas comunes se reparte entre los inquilinos.",
   },
   {
     question: "¿Qué pasa con la fianza del inquilino?",

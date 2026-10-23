@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "¿Qué tipos de alquiler gestionáis?",
     answer:
-      "Media estancia y temporada (de 1 a 11 meses, en Airbnb y Booking), alquiler por habitaciones con contrato de temporada, y alquiler turístico para pisos con licencia en vigor. También hacemos limpieza y operativa para inmobiliarias y propietarios que ya tienen quien alquile.",
+      "Larga estancia, media estancia, temporada y alquiler turístico para pisos con licencia en vigor. También hacemos limpieza y operativa para inmobiliarias y propietarios que ya tienen quien alquile.",
   },
   {
     question: "¿Cuánto cuesta la gestión?",
@@ -32,7 +32,7 @@ export const faqs = [
   {
     question: "¿Tengo que pagar las limpiezas?",
     answer:
-      "No. En media estancia y turístico la limpieza la paga el huésped en el precio de la reserva. En habitaciones, la cuota de entrada que paga el inquilino (200 € + IVA) incluye la limpieza de zonas comunes cada 15 días y la de su habitación al irse.",
+      "No. En media estancia y turístico la limpieza la paga el huésped en el precio de la reserva. En habitaciones, el coste de las limpiezas de las zonas comunes se reparte entre los inquilinos.",
   },
   {
     question: "¿Hay permanencia?",

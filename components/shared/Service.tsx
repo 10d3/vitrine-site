@@ -17,7 +17,7 @@ const plans = [
     number: "01",
     plan: "Media y larga estancia, temporada",
     description:
-      "Anuncios publicados en las plataformas de alquileres. Legal sin licencia turística.",
+      "Anuncios publicados en las plataformas de alquileres.",
     features: [
       "Anuncio, fotos, precios y selección de inquilinos",
       "Contratos de temporada, cobros y gestión de incidencias",

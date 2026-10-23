@@ -40,6 +40,7 @@ const plans = [
       "Check-in, check-out y atención a los huéspedes",
       "Limpieza entre estancias pagada por el huésped: sin coste para ti",
       "Gestión de incidencias y mantenimiento",
+      "Registro de huéspedes en SES Hospedajes",
     ],
     featured: true,
     cta: "Pide tu estudio gratis",
